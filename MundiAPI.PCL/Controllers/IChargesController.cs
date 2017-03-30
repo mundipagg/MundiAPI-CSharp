@@ -127,17 +127,17 @@ namespace MundiAPI.PCL.Controllers
         /// Captures a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Required parameter: Request for capturing a charge</param>
+        /// <param name="body">Optional parameter: Request for capturing a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Models.GetChargeResponse CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest body);
+        Models.GetChargeResponse CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest body = null);
 
         /// <summary>
         /// Captures a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Required parameter: Request for capturing a charge</param>
+        /// <param name="body">Optional parameter: Request for capturing a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Task<Models.GetChargeResponse> CaptureChargeAsync(string chargeId, Models.CreateCaptureChargeRequest body);
+        Task<Models.GetChargeResponse> CaptureChargeAsync(string chargeId, Models.CreateCaptureChargeRequest body = null);
 
     }
 } 
