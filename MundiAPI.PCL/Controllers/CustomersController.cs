@@ -117,9 +117,9 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <return>Returns the Models.ListCardsResponse response from the API call</return>
-        public Models.ListCardsResponse GetCustomerCreditCards(string customerId)
+        public Models.ListCardsResponse GetCreditCards(string customerId)
         {
-            Task<Models.ListCardsResponse> t = GetCustomerCreditCardsAsync(customerId);
+            Task<Models.ListCardsResponse> t = GetCreditCardsAsync(customerId);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -129,7 +129,7 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <return>Returns the Models.ListCardsResponse response from the API call</return>
-        public async Task<Models.ListCardsResponse> GetCustomerCreditCardsAsync(string customerId)
+        public async Task<Models.ListCardsResponse> GetCreditCardsAsync(string customerId)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
