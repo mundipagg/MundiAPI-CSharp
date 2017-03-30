@@ -679,7 +679,7 @@ Models.GetCreditCardResponse result = await customers.CreateCreditCard(body, cus
 
 
 ```csharp
-Task UpdateCustomer(string customerId, Models.UpdateCustomerRequest body)
+Task<Models.GetCustomerResponse> UpdateCustomer(string customerId, Models.UpdateCustomerRequest body)
 ```
 
 #### Parameters
@@ -696,7 +696,7 @@ Task UpdateCustomer(string customerId, Models.UpdateCustomerRequest body)
 string customerId = "customer_id";
 var body = new Models.UpdateCustomerRequest();
 
-await customers.UpdateCustomer(customerId, body);
+Models.GetCustomerResponse result = await customers.UpdateCustomer(customerId, body);
 
 ```
 

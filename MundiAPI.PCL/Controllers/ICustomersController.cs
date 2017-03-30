@@ -226,16 +226,16 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
         /// <param name="body">Required parameter: Request for updating a customer</param>
-        /// <return>Returns the void response from the API call</return>
-        void UpdateCustomer(string customerId, Models.UpdateCustomerRequest body);
+        /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
+        Models.GetCustomerResponse UpdateCustomer(string customerId, Models.UpdateCustomerRequest body);
 
         /// <summary>
         /// Updates a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
         /// <param name="body">Required parameter: Request for updating a customer</param>
-        /// <return>Returns the void response from the API call</return>
-        Task UpdateCustomerAsync(string customerId, Models.UpdateCustomerRequest body);
+        /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
+        Task<Models.GetCustomerResponse> UpdateCustomerAsync(string customerId, Models.UpdateCustomerRequest body);
 
     }
 } 
