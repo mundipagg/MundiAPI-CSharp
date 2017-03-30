@@ -40,14 +40,14 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <return>Returns the Models.ListCardsResponse response from the API call</return>
-        Models.ListCardsResponse GetCustomerCreditCards(string customerId);
+        Models.ListCardsResponse GetCreditCards(string customerId);
 
         /// <summary>
         /// Get all credit cards from a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <return>Returns the Models.ListCardsResponse response from the API call</return>
-        Task<Models.ListCardsResponse> GetCustomerCreditCardsAsync(string customerId);
+        Task<Models.ListCardsResponse> GetCreditCardsAsync(string customerId);
 
         /// <summary>
         /// Get all Customers

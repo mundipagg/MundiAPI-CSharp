@@ -349,13 +349,13 @@ Models.ListAddressesResponse result = await customers.GetAddresses(customerId);
 ```
 
 
-#### <a name="get_customer_credit_cards"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.CustomersController.GetCustomerCreditCards") GetCustomerCreditCards
+#### <a name="get_credit_cards"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.CustomersController.GetCreditCards") GetCreditCards
 
 > Get all credit cards from a customer
 
 
 ```csharp
-Task<Models.ListCardsResponse> GetCustomerCreditCards(string customerId)
+Task<Models.ListCardsResponse> GetCreditCards(string customerId)
 ```
 
 #### Parameters
@@ -370,7 +370,7 @@ Task<Models.ListCardsResponse> GetCustomerCreditCards(string customerId)
 ```csharp
 string customerId = "customer_id";
 
-Models.ListCardsResponse result = await customers.GetCustomerCreditCards(customerId);
+Models.ListCardsResponse result = await customers.GetCreditCards(customerId);
 
 ```
 
