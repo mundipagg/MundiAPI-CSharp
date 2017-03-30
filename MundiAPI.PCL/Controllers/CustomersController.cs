@@ -893,11 +893,12 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
         /// <param name="body">Required parameter: Request for updating a customer</param>
-        /// <return>Returns the void response from the API call</return>
-        public void UpdateCustomer(string customerId, Models.UpdateCustomerRequest body)
+        /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
+        public Models.GetCustomerResponse UpdateCustomer(string customerId, Models.UpdateCustomerRequest body)
         {
-            Task t = UpdateCustomerAsync(customerId, body);
+            Task<Models.GetCustomerResponse> t = UpdateCustomerAsync(customerId, body);
             APIHelper.RunTaskSynchronously(t);
+            return t.Result;
         }
 
         /// <summary>
@@ -905,8 +906,8 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
         /// <param name="body">Required parameter: Request for updating a customer</param>
-        /// <return>Returns the void response from the API call</return>
-        public async Task UpdateCustomerAsync(string customerId, Models.UpdateCustomerRequest body)
+        /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
+        public async Task<Models.GetCustomerResponse> UpdateCustomerAsync(string customerId, Models.UpdateCustomerRequest body)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -929,6 +930,7 @@ namespace MundiAPI.PCL.Controllers
             var _headers = new Dictionary<string,string>()
             {
                 { "user-agent", "MundiSDK" },
+                { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" }
             };
 
@@ -944,6 +946,14 @@ namespace MundiAPI.PCL.Controllers
             //handle errors defined at the API level
             base.ValidateResponse(_response, _context);
 
+            try
+            {
+                return APIHelper.JsonDeserialize<Models.GetCustomerResponse>(_response.Body);
+            }
+            catch (Exception _ex)
+            {
+                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
+            }
         }
 
     }
