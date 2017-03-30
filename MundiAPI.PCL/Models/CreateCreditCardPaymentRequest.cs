@@ -24,10 +24,10 @@ namespace MundiAPI.PCL.Models
         private string statementDescriptor;
         private Models.CreateCreditCardRequest creditCardInfo;
         private int retries;
-        private bool capture = true;
         private bool updateSubscriptionCard;
         private string creditCardId;
         private string creditCardGatewayId;
+        private bool? capture = true;
 
         /// <summary>
         /// Number of installments
@@ -98,23 +98,6 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Indicates if the operation should be only authorization or auth and capture.
-        /// </summary>
-        [JsonProperty("capture")]
-        public bool Capture 
-        { 
-            get 
-            {
-                return this.capture; 
-            } 
-            set 
-            {
-                this.capture = value;
-                onPropertyChanged("Capture");
-            }
-        }
-
-        /// <summary>
         /// Indicates if the card from the subscription must be updated
         /// </summary>
         [JsonProperty("update_subscription_card")]
@@ -162,6 +145,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.creditCardGatewayId = value;
                 onPropertyChanged("CreditCardGatewayId");
+            }
+        }
+
+        /// <summary>
+        /// Indicates if the operation should be only authorization or auth and capture.
+        /// </summary>
+        [JsonProperty("capture")]
+        public bool? Capture 
+        { 
+            get 
+            {
+                return this.capture; 
+            } 
+            set 
+            {
+                this.capture = value;
+                onPropertyChanged("Capture");
             }
         }
     }

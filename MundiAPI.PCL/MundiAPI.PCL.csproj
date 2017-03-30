@@ -10,7 +10,7 @@
     <AssemblyName>MundiAPI.PCL</AssemblyName>
     <OutputType>Library</OutputType>
     <OutputPath>bin/DEBUG/</OutputPath>
-    <ProjectGuid>{2503e63e-66b0-4b95-a007-451267a4e86c}</ProjectGuid>
+    <ProjectGuid>{d0c2ab5e-b334-4ff7-869e-9b8327910014}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>ee2bb91c</NuGetPackageImportStamp>
@@ -69,7 +69,7 @@
       <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\portable-net40+win8+wp8+wpa81\System.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="unirest-net">
-      <HintPath>..\packages\Unirest-APIMATIC.1.0.1.26\lib\portable-net40+sl5+wp80+win8+wpa81\unirest-net.dll</HintPath>
+      <HintPath>..\packages\Unirest-APIMATIC.1.0.1.27\lib\portable-net40+sl5+wp80+win8+wpa81\unirest-net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

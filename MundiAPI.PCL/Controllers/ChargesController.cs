@@ -496,9 +496,9 @@ namespace MundiAPI.PCL.Controllers
         /// Captures a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Required parameter: Request for capturing a charge</param>
+        /// <param name="body">Optional parameter: Request for capturing a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public Models.GetChargeResponse CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest body)
+        public Models.GetChargeResponse CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest body = null)
         {
             Task<Models.GetChargeResponse> t = CaptureChargeAsync(chargeId, body);
             APIHelper.RunTaskSynchronously(t);
@@ -509,9 +509,9 @@ namespace MundiAPI.PCL.Controllers
         /// Captures a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Required parameter: Request for capturing a charge</param>
+        /// <param name="body">Optional parameter: Request for capturing a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public async Task<Models.GetChargeResponse> CaptureChargeAsync(string chargeId, Models.CreateCaptureChargeRequest body)
+        public async Task<Models.GetChargeResponse> CaptureChargeAsync(string chargeId, Models.CreateCaptureChargeRequest body = null)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;

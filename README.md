@@ -289,7 +289,7 @@ Models.GetChargeResponse result = await charges.CancelCharge(chargeId, body);
 
 
 ```csharp
-Task<Models.GetChargeResponse> CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest body)
+Task<Models.GetChargeResponse> CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest body = null)
 ```
 
 #### Parameters
@@ -297,7 +297,7 @@ Task<Models.GetChargeResponse> CaptureCharge(string chargeId, Models.CreateCaptu
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | chargeId |  ``` Required ```  | Charge id |
-| body |  ``` Required ```  | Request for capturing a charge |
+| body |  ``` Optional ```  | Request for capturing a charge |
 
 
 #### Example Usage
