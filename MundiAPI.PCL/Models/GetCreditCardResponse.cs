@@ -21,7 +21,6 @@ namespace MundiAPI.PCL.Models
     {
         // These fields hold the values for the public properties.
         private string id;
-        private string gatewayId;
         private string lastFourDigits;
         private string brand;
         private string holderName;
@@ -49,23 +48,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.id = value;
                 onPropertyChanged("Id");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonProperty("gateway_id")]
-        public string GatewayId 
-        { 
-            get 
-            {
-                return this.gatewayId; 
-            } 
-            set 
-            {
-                this.gatewayId = value;
-                onPropertyChanged("GatewayId");
             }
         }
 

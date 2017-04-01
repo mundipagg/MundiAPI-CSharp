@@ -231,11 +231,11 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Creates a new charge
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a charge</param>
+        /// <param name="request">Required parameter: Request for creating a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public Models.GetChargeResponse CreateCharge(Models.CreateChargeRequest body)
+        public Models.GetChargeResponse CreateCharge(Models.CreateChargeRequest request)
         {
-            Task<Models.GetChargeResponse> t = CreateChargeAsync(body);
+            Task<Models.GetChargeResponse> t = CreateChargeAsync(request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -243,9 +243,9 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Creates a new charge
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a charge</param>
+        /// <param name="request">Required parameter: Request for creating a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public async Task<Models.GetChargeResponse> CreateChargeAsync(Models.CreateChargeRequest body)
+        public async Task<Models.GetChargeResponse> CreateChargeAsync(Models.CreateChargeRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -267,7 +267,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PostBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
@@ -291,12 +291,12 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Updates the credit card from a charge
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating a charge's credit card</param>
         /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating a charge's credit card</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public Models.GetChargeResponse UpdateChargeCreditCard(Models.UpdateChargeCreditCardRequest body, string chargeId)
+        public Models.GetChargeResponse UpdateChargeCreditCard(string chargeId, Models.UpdateChargeCreditCardRequest request)
         {
-            Task<Models.GetChargeResponse> t = UpdateChargeCreditCardAsync(body, chargeId);
+            Task<Models.GetChargeResponse> t = UpdateChargeCreditCardAsync(chargeId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -304,10 +304,10 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Updates the credit card from a charge
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating a charge's credit card</param>
         /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating a charge's credit card</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public async Task<Models.GetChargeResponse> UpdateChargeCreditCardAsync(Models.UpdateChargeCreditCardRequest body, string chargeId)
+        public async Task<Models.GetChargeResponse> UpdateChargeCreditCardAsync(string chargeId, Models.UpdateChargeCreditCardRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -335,7 +335,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PatchBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
@@ -359,12 +359,12 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Updates a charge's payment method
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating the payment method from a charge</param>
         /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating the payment method from a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public Models.GetChargeResponse UpdateChargePaymentMethod(Models.UpdateChargePaymentMethodRequest body, string chargeId)
+        public Models.GetChargeResponse UpdateChargePaymentMethod(string chargeId, Models.UpdateChargePaymentMethodRequest request)
         {
-            Task<Models.GetChargeResponse> t = UpdateChargePaymentMethodAsync(body, chargeId);
+            Task<Models.GetChargeResponse> t = UpdateChargePaymentMethodAsync(chargeId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -372,10 +372,10 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Updates a charge's payment method
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating the payment method from a charge</param>
         /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating the payment method from a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public async Task<Models.GetChargeResponse> UpdateChargePaymentMethodAsync(Models.UpdateChargePaymentMethodRequest body, string chargeId)
+        public async Task<Models.GetChargeResponse> UpdateChargePaymentMethodAsync(string chargeId, Models.UpdateChargePaymentMethodRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -403,7 +403,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PatchBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
@@ -428,11 +428,11 @@ namespace MundiAPI.PCL.Controllers
         /// Cancel a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Optional parameter: Request for cancelling a charge</param>
+        /// <param name="request">Optional parameter: Request for cancelling a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public Models.GetChargeResponse CancelCharge(string chargeId, Models.CreateCancelChargeRequest body = null)
+        public Models.GetChargeResponse CancelCharge(string chargeId, Models.CreateCancelChargeRequest request = null)
         {
-            Task<Models.GetChargeResponse> t = CancelChargeAsync(chargeId, body);
+            Task<Models.GetChargeResponse> t = CancelChargeAsync(chargeId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -441,9 +441,9 @@ namespace MundiAPI.PCL.Controllers
         /// Cancel a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Optional parameter: Request for cancelling a charge</param>
+        /// <param name="request">Optional parameter: Request for cancelling a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public async Task<Models.GetChargeResponse> CancelChargeAsync(string chargeId, Models.CreateCancelChargeRequest body = null)
+        public async Task<Models.GetChargeResponse> CancelChargeAsync(string chargeId, Models.CreateCancelChargeRequest request = null)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -471,7 +471,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.DeleteBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
@@ -496,11 +496,11 @@ namespace MundiAPI.PCL.Controllers
         /// Captures a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Optional parameter: Request for capturing a charge</param>
+        /// <param name="request">Optional parameter: Request for capturing a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public Models.GetChargeResponse CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest body = null)
+        public Models.GetChargeResponse CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest request = null)
         {
-            Task<Models.GetChargeResponse> t = CaptureChargeAsync(chargeId, body);
+            Task<Models.GetChargeResponse> t = CaptureChargeAsync(chargeId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -509,9 +509,9 @@ namespace MundiAPI.PCL.Controllers
         /// Captures a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Optional parameter: Request for capturing a charge</param>
+        /// <param name="request">Optional parameter: Request for capturing a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public async Task<Models.GetChargeResponse> CaptureChargeAsync(string chargeId, Models.CreateCaptureChargeRequest body = null)
+        public async Task<Models.GetChargeResponse> CaptureChargeAsync(string chargeId, Models.CreateCaptureChargeRequest request = null)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -539,7 +539,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PostBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);

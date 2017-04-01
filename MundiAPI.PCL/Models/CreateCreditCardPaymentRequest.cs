@@ -26,7 +26,6 @@ namespace MundiAPI.PCL.Models
         private int retries;
         private bool updateSubscriptionCard;
         private string creditCardId;
-        private string creditCardGatewayId;
         private bool? capture = true;
 
         /// <summary>
@@ -128,23 +127,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.creditCardId = value;
                 onPropertyChanged("CreditCardId");
-            }
-        }
-
-        /// <summary>
-        /// The credit card's id on the payment gateway
-        /// </summary>
-        [JsonProperty("credit_card_gateway_id")]
-        public string CreditCardGatewayId 
-        { 
-            get 
-            {
-                return this.creditCardGatewayId; 
-            } 
-            set 
-            {
-                this.creditCardGatewayId = value;
-                onPropertyChanged("CreditCardGatewayId");
             }
         }
 

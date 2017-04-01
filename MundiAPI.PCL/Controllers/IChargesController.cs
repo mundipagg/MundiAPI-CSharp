@@ -64,80 +64,80 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Creates a new charge
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a charge</param>
+        /// <param name="request">Required parameter: Request for creating a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Models.GetChargeResponse CreateCharge(Models.CreateChargeRequest body);
+        Models.GetChargeResponse CreateCharge(Models.CreateChargeRequest request);
 
         /// <summary>
         /// Creates a new charge
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a charge</param>
+        /// <param name="request">Required parameter: Request for creating a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Task<Models.GetChargeResponse> CreateChargeAsync(Models.CreateChargeRequest body);
+        Task<Models.GetChargeResponse> CreateChargeAsync(Models.CreateChargeRequest request);
 
         /// <summary>
         /// Updates the credit card from a charge
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating a charge's credit card</param>
         /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating a charge's credit card</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Models.GetChargeResponse UpdateChargeCreditCard(Models.UpdateChargeCreditCardRequest body, string chargeId);
+        Models.GetChargeResponse UpdateChargeCreditCard(string chargeId, Models.UpdateChargeCreditCardRequest request);
 
         /// <summary>
         /// Updates the credit card from a charge
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating a charge's credit card</param>
         /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating a charge's credit card</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Task<Models.GetChargeResponse> UpdateChargeCreditCardAsync(Models.UpdateChargeCreditCardRequest body, string chargeId);
+        Task<Models.GetChargeResponse> UpdateChargeCreditCardAsync(string chargeId, Models.UpdateChargeCreditCardRequest request);
 
         /// <summary>
         /// Updates a charge's payment method
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating the payment method from a charge</param>
         /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating the payment method from a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Models.GetChargeResponse UpdateChargePaymentMethod(Models.UpdateChargePaymentMethodRequest body, string chargeId);
+        Models.GetChargeResponse UpdateChargePaymentMethod(string chargeId, Models.UpdateChargePaymentMethodRequest request);
 
         /// <summary>
         /// Updates a charge's payment method
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating the payment method from a charge</param>
         /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating the payment method from a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Task<Models.GetChargeResponse> UpdateChargePaymentMethodAsync(Models.UpdateChargePaymentMethodRequest body, string chargeId);
+        Task<Models.GetChargeResponse> UpdateChargePaymentMethodAsync(string chargeId, Models.UpdateChargePaymentMethodRequest request);
 
         /// <summary>
         /// Cancel a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Optional parameter: Request for cancelling a charge</param>
+        /// <param name="request">Optional parameter: Request for cancelling a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Models.GetChargeResponse CancelCharge(string chargeId, Models.CreateCancelChargeRequest body = null);
+        Models.GetChargeResponse CancelCharge(string chargeId, Models.CreateCancelChargeRequest request = null);
 
         /// <summary>
         /// Cancel a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Optional parameter: Request for cancelling a charge</param>
+        /// <param name="request">Optional parameter: Request for cancelling a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Task<Models.GetChargeResponse> CancelChargeAsync(string chargeId, Models.CreateCancelChargeRequest body = null);
+        Task<Models.GetChargeResponse> CancelChargeAsync(string chargeId, Models.CreateCancelChargeRequest request = null);
 
         /// <summary>
         /// Captures a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Optional parameter: Request for capturing a charge</param>
+        /// <param name="request">Optional parameter: Request for capturing a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Models.GetChargeResponse CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest body = null);
+        Models.GetChargeResponse CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest request = null);
 
         /// <summary>
         /// Captures a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="body">Optional parameter: Request for capturing a charge</param>
+        /// <param name="request">Optional parameter: Request for capturing a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Task<Models.GetChargeResponse> CaptureChargeAsync(string chargeId, Models.CreateCaptureChargeRequest body = null);
+        Task<Models.GetChargeResponse> CaptureChargeAsync(string chargeId, Models.CreateCaptureChargeRequest request = null);
 
     }
 } 

@@ -231,11 +231,11 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Creates a new customer
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a customer</param>
+        /// <param name="request">Required parameter: Request for creating a customer</param>
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
-        public Models.GetCustomerResponse CreateCustomer(Models.CreateCustomerRequest body)
+        public Models.GetCustomerResponse CreateCustomer(Models.CreateCustomerRequest request)
         {
-            Task<Models.GetCustomerResponse> t = CreateCustomerAsync(body);
+            Task<Models.GetCustomerResponse> t = CreateCustomerAsync(request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -243,9 +243,9 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Creates a new customer
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a customer</param>
+        /// <param name="request">Required parameter: Request for creating a customer</param>
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
-        public async Task<Models.GetCustomerResponse> CreateCustomerAsync(Models.CreateCustomerRequest body)
+        public async Task<Models.GetCustomerResponse> CreateCustomerAsync(Models.CreateCustomerRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -267,7 +267,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PostBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
@@ -355,11 +355,11 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="addressId">Required parameter: Address Id</param>
-        /// <param name="body">Required parameter: Request for updating an address</param>
+        /// <param name="request">Required parameter: Request for updating an address</param>
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
-        public Models.GetAddressResponse UpdateAddress(string customerId, string addressId, Models.UpdateAddressRequest body)
+        public Models.GetAddressResponse UpdateAddress(string customerId, string addressId, Models.UpdateAddressRequest request)
         {
-            Task<Models.GetAddressResponse> t = UpdateAddressAsync(customerId, addressId, body);
+            Task<Models.GetAddressResponse> t = UpdateAddressAsync(customerId, addressId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -369,9 +369,9 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="addressId">Required parameter: Address Id</param>
-        /// <param name="body">Required parameter: Request for updating an address</param>
+        /// <param name="request">Required parameter: Request for updating an address</param>
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
-        public async Task<Models.GetAddressResponse> UpdateAddressAsync(string customerId, string addressId, Models.UpdateAddressRequest body)
+        public async Task<Models.GetAddressResponse> UpdateAddressAsync(string customerId, string addressId, Models.UpdateAddressRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -400,7 +400,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PutBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
@@ -426,11 +426,11 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="cardId">Required parameter: Credit card id</param>
-        /// <param name="body">Required parameter: Request for updating a credit card</param>
+        /// <param name="request">Required parameter: Request for updating a credit card</param>
         /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public Models.GetCreditCardResponse UpdateCreditCard(string customerId, string cardId, Models.UpdateCreditCardRequest body)
+        public Models.GetCreditCardResponse UpdateCreditCard(string customerId, string cardId, Models.UpdateCreditCardRequest request)
         {
-            Task<Models.GetCreditCardResponse> t = UpdateCreditCardAsync(customerId, cardId, body);
+            Task<Models.GetCreditCardResponse> t = UpdateCreditCardAsync(customerId, cardId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -440,9 +440,9 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="cardId">Required parameter: Credit card id</param>
-        /// <param name="body">Required parameter: Request for updating a credit card</param>
+        /// <param name="request">Required parameter: Request for updating a credit card</param>
         /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public async Task<Models.GetCreditCardResponse> UpdateCreditCardAsync(string customerId, string cardId, Models.UpdateCreditCardRequest body)
+        public async Task<Models.GetCreditCardResponse> UpdateCreditCardAsync(string customerId, string cardId, Models.UpdateCreditCardRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -471,7 +471,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PutBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
@@ -691,11 +691,11 @@ namespace MundiAPI.PCL.Controllers
         /// Creates a new address for a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="body">Required parameter: Request for creating an address</param>
+        /// <param name="request">Required parameter: Request for creating an address</param>
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
-        public Models.GetAddressResponse CreateAddress(string customerId, Models.CreateAddressRequest body)
+        public Models.GetAddressResponse CreateAddress(string customerId, Models.CreateAddressRequest request)
         {
-            Task<Models.GetAddressResponse> t = CreateAddressAsync(customerId, body);
+            Task<Models.GetAddressResponse> t = CreateAddressAsync(customerId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -704,9 +704,9 @@ namespace MundiAPI.PCL.Controllers
         /// Creates a new address for a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="body">Required parameter: Request for creating an address</param>
+        /// <param name="request">Required parameter: Request for creating an address</param>
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
-        public async Task<Models.GetAddressResponse> CreateAddressAsync(string customerId, Models.CreateAddressRequest body)
+        public async Task<Models.GetAddressResponse> CreateAddressAsync(string customerId, Models.CreateAddressRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -734,7 +734,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PostBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
@@ -823,12 +823,12 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Creates a new credit card for a customer
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a credit card</param>
         /// <param name="customerId">Required parameter: Customer id</param>
+        /// <param name="request">Required parameter: Request for creating a credit card</param>
         /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public Models.GetCreditCardResponse CreateCreditCard(Models.CreateCreditCardRequest body, string customerId)
+        public Models.GetCreditCardResponse CreateCreditCard(string customerId, Models.CreateCreditCardRequest request)
         {
-            Task<Models.GetCreditCardResponse> t = CreateCreditCardAsync(body, customerId);
+            Task<Models.GetCreditCardResponse> t = CreateCreditCardAsync(customerId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -836,10 +836,10 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Creates a new credit card for a customer
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a credit card</param>
         /// <param name="customerId">Required parameter: Customer id</param>
+        /// <param name="request">Required parameter: Request for creating a credit card</param>
         /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public async Task<Models.GetCreditCardResponse> CreateCreditCardAsync(Models.CreateCreditCardRequest body, string customerId)
+        public async Task<Models.GetCreditCardResponse> CreateCreditCardAsync(string customerId, Models.CreateCreditCardRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -867,7 +867,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PostBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
@@ -892,11 +892,11 @@ namespace MundiAPI.PCL.Controllers
         /// Updates a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="body">Required parameter: Request for updating a customer</param>
+        /// <param name="request">Required parameter: Request for updating a customer</param>
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
-        public Models.GetCustomerResponse UpdateCustomer(string customerId, Models.UpdateCustomerRequest body)
+        public Models.GetCustomerResponse UpdateCustomer(string customerId, Models.UpdateCustomerRequest request)
         {
-            Task<Models.GetCustomerResponse> t = UpdateCustomerAsync(customerId, body);
+            Task<Models.GetCustomerResponse> t = UpdateCustomerAsync(customerId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -905,9 +905,9 @@ namespace MundiAPI.PCL.Controllers
         /// Updates a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="body">Required parameter: Request for updating a customer</param>
+        /// <param name="request">Required parameter: Request for updating a customer</param>
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
-        public async Task<Models.GetCustomerResponse> UpdateCustomerAsync(string customerId, Models.UpdateCustomerRequest body)
+        public async Task<Models.GetCustomerResponse> UpdateCustomerAsync(string customerId, Models.UpdateCustomerRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -935,7 +935,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PutBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
