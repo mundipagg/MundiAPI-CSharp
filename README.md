@@ -1147,34 +1147,6 @@ Models.GetDiscountResponse result = await subscriptions.DeleteDiscount(subscript
 ```
 
 
-#### <a name="get_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetSubscriptionItem") GetSubscriptionItem
-
-> Gets a subscription item
-
-
-```csharp
-Task<Models.GetSubscriptionItemResponse> GetSubscriptionItem(string subscriptionId, string itemId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| itemId |  ``` Required ```  | Subscription item id |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-string itemId = "item_id";
-
-Models.GetSubscriptionItemResponse result = await subscriptions.GetSubscriptionItem(subscriptionId, itemId);
-
-```
-
-
 #### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.CancelSubscription") CancelSubscription
 
 > Cancels a subscription

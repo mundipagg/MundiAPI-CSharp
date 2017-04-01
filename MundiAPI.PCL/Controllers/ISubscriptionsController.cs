@@ -270,22 +270,6 @@ namespace MundiAPI.PCL.Controllers
         Task<Models.GetDiscountResponse> DeleteDiscountAsync(string subscriptionId, string discountId);
 
         /// <summary>
-        /// Gets a subscription item
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: Subscription id</param>
-        /// <param name="itemId">Required parameter: Subscription item id</param>
-        /// <return>Returns the Models.GetSubscriptionItemResponse response from the API call</return>
-        Models.GetSubscriptionItemResponse GetSubscriptionItem(string subscriptionId, string itemId);
-
-        /// <summary>
-        /// Gets a subscription item
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: Subscription id</param>
-        /// <param name="itemId">Required parameter: Subscription item id</param>
-        /// <return>Returns the Models.GetSubscriptionItemResponse response from the API call</return>
-        Task<Models.GetSubscriptionItemResponse> GetSubscriptionItemAsync(string subscriptionId, string itemId);
-
-        /// <summary>
         /// Cancels a subscription
         /// </summary>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
