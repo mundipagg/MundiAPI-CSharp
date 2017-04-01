@@ -286,22 +286,6 @@ namespace MundiAPI.PCL.Controllers
         Task<Models.GetSubscriptionItemResponse> GetSubscriptionItemAsync(string subscriptionId, string itemId);
 
         /// <summary>
-        /// Changes a subscription billing date
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: Subscription id</param>
-        /// <param name="body">Required parameter: Request for updating the billing day of a subscription</param>
-        /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Models.GetSubscriptionResponse RescheduleSubscription(string subscriptionId, Models.CreateRescheduleSubscriptionRequest body);
-
-        /// <summary>
-        /// Changes a subscription billing date
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: Subscription id</param>
-        /// <param name="body">Required parameter: Request for updating the billing day of a subscription</param>
-        /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Task<Models.GetSubscriptionResponse> RescheduleSubscriptionAsync(string subscriptionId, Models.CreateRescheduleSubscriptionRequest body);
-
-        /// <summary>
         /// Cancels a subscription
         /// </summary>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>

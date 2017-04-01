@@ -1175,34 +1175,6 @@ Models.GetSubscriptionItemResponse result = await subscriptions.GetSubscriptionI
 ```
 
 
-#### <a name="reschedule_subscription"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.RescheduleSubscription") RescheduleSubscription
-
-> Changes a subscription billing date
-
-
-```csharp
-Task<Models.GetSubscriptionResponse> RescheduleSubscription(string subscriptionId, Models.CreateRescheduleSubscriptionRequest body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| body |  ``` Required ```  | Request for updating the billing day of a subscription |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-var body = new Models.CreateRescheduleSubscriptionRequest();
-
-Models.GetSubscriptionResponse result = await subscriptions.RescheduleSubscription(subscriptionId, body);
-
-```
-
-
 #### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.CancelSubscription") CancelSubscription
 
 > Cancels a subscription
