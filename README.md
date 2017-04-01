@@ -179,22 +179,22 @@ Models.ListChargesResponse result = await charges.GetCharges();
 
 
 ```csharp
-Task<Models.GetChargeResponse> CreateCharge(Models.CreateChargeRequest body)
+Task<Models.GetChargeResponse> CreateCharge(Models.CreateChargeRequest request)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating a charge |
+| request |  ``` Required ```  | Request for creating a charge |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CreateChargeRequest();
+var request = new Models.CreateChargeRequest();
 
-Models.GetChargeResponse result = await charges.CreateCharge(body);
+Models.GetChargeResponse result = await charges.CreateCharge(request);
 
 ```
 
@@ -205,24 +205,24 @@ Models.GetChargeResponse result = await charges.CreateCharge(body);
 
 
 ```csharp
-Task<Models.GetChargeResponse> UpdateChargeCreditCard(Models.UpdateChargeCreditCardRequest body, string chargeId)
+Task<Models.GetChargeResponse> UpdateChargeCreditCard(string chargeId, Models.UpdateChargeCreditCardRequest request)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Request for updating a charge's credit card |
 | chargeId |  ``` Required ```  | Charge id |
+| request |  ``` Required ```  | Request for updating a charge's credit card |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.UpdateChargeCreditCardRequest();
 string chargeId = "charge_id";
+var request = new Models.UpdateChargeCreditCardRequest();
 
-Models.GetChargeResponse result = await charges.UpdateChargeCreditCard(body, chargeId);
+Models.GetChargeResponse result = await charges.UpdateChargeCreditCard(chargeId, request);
 
 ```
 
@@ -233,24 +233,24 @@ Models.GetChargeResponse result = await charges.UpdateChargeCreditCard(body, cha
 
 
 ```csharp
-Task<Models.GetChargeResponse> UpdateChargePaymentMethod(Models.UpdateChargePaymentMethodRequest body, string chargeId)
+Task<Models.GetChargeResponse> UpdateChargePaymentMethod(string chargeId, Models.UpdateChargePaymentMethodRequest request)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Request for updating the payment method from a charge |
 | chargeId |  ``` Required ```  | Charge id |
+| request |  ``` Required ```  | Request for updating the payment method from a charge |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.UpdateChargePaymentMethodRequest();
 string chargeId = "charge_id";
+var request = new Models.UpdateChargePaymentMethodRequest();
 
-Models.GetChargeResponse result = await charges.UpdateChargePaymentMethod(body, chargeId);
+Models.GetChargeResponse result = await charges.UpdateChargePaymentMethod(chargeId, request);
 
 ```
 
@@ -261,7 +261,7 @@ Models.GetChargeResponse result = await charges.UpdateChargePaymentMethod(body, 
 
 
 ```csharp
-Task<Models.GetChargeResponse> CancelCharge(string chargeId, Models.CreateCancelChargeRequest body = null)
+Task<Models.GetChargeResponse> CancelCharge(string chargeId, Models.CreateCancelChargeRequest request = null)
 ```
 
 #### Parameters
@@ -269,16 +269,16 @@ Task<Models.GetChargeResponse> CancelCharge(string chargeId, Models.CreateCancel
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | chargeId |  ``` Required ```  | Charge id |
-| body |  ``` Optional ```  | Request for cancelling a charge |
+| request |  ``` Optional ```  | Request for cancelling a charge |
 
 
 #### Example Usage
 
 ```csharp
 string chargeId = "charge_id";
-var body = new Models.CreateCancelChargeRequest();
+var request = new Models.CreateCancelChargeRequest();
 
-Models.GetChargeResponse result = await charges.CancelCharge(chargeId, body);
+Models.GetChargeResponse result = await charges.CancelCharge(chargeId, request);
 
 ```
 
@@ -289,7 +289,7 @@ Models.GetChargeResponse result = await charges.CancelCharge(chargeId, body);
 
 
 ```csharp
-Task<Models.GetChargeResponse> CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest body = null)
+Task<Models.GetChargeResponse> CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest request = null)
 ```
 
 #### Parameters
@@ -297,16 +297,16 @@ Task<Models.GetChargeResponse> CaptureCharge(string chargeId, Models.CreateCaptu
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | chargeId |  ``` Required ```  | Charge id |
-| body |  ``` Optional ```  | Request for capturing a charge |
+| request |  ``` Optional ```  | Request for capturing a charge |
 
 
 #### Example Usage
 
 ```csharp
 string chargeId = "charge_id";
-var body = new Models.CreateCaptureChargeRequest();
+var request = new Models.CreateCaptureChargeRequest();
 
-Models.GetChargeResponse result = await charges.CaptureCharge(chargeId, body);
+Models.GetChargeResponse result = await charges.CaptureCharge(chargeId, request);
 
 ```
 
@@ -399,22 +399,22 @@ Models.ListCustomersResponse result = await customers.GetCustomers();
 
 
 ```csharp
-Task<Models.GetCustomerResponse> CreateCustomer(Models.CreateCustomerRequest body)
+Task<Models.GetCustomerResponse> CreateCustomer(Models.CreateCustomerRequest request)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating a customer |
+| request |  ``` Required ```  | Request for creating a customer |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CreateCustomerRequest();
+var request = new Models.CreateCustomerRequest();
 
-Models.GetCustomerResponse result = await customers.CreateCustomer(body);
+Models.GetCustomerResponse result = await customers.CreateCustomer(request);
 
 ```
 
@@ -451,7 +451,7 @@ Models.GetCustomerResponse result = await customers.GetCustomer(customerId);
 
 
 ```csharp
-Task<Models.GetAddressResponse> UpdateAddress(string customerId, string addressId, Models.UpdateAddressRequest body)
+Task<Models.GetAddressResponse> UpdateAddress(string customerId, string addressId, Models.UpdateAddressRequest request)
 ```
 
 #### Parameters
@@ -460,7 +460,7 @@ Task<Models.GetAddressResponse> UpdateAddress(string customerId, string addressI
 |-----------|------|-------------|
 | customerId |  ``` Required ```  | Customer Id |
 | addressId |  ``` Required ```  | Address Id |
-| body |  ``` Required ```  | Request for updating an address |
+| request |  ``` Required ```  | Request for updating an address |
 
 
 #### Example Usage
@@ -468,9 +468,9 @@ Task<Models.GetAddressResponse> UpdateAddress(string customerId, string addressI
 ```csharp
 string customerId = "customer_id";
 string addressId = "address_id";
-var body = new Models.UpdateAddressRequest();
+var request = new Models.UpdateAddressRequest();
 
-Models.GetAddressResponse result = await customers.UpdateAddress(customerId, addressId, body);
+Models.GetAddressResponse result = await customers.UpdateAddress(customerId, addressId, request);
 
 ```
 
@@ -481,7 +481,7 @@ Models.GetAddressResponse result = await customers.UpdateAddress(customerId, add
 
 
 ```csharp
-Task<Models.GetCreditCardResponse> UpdateCreditCard(string customerId, string cardId, Models.UpdateCreditCardRequest body)
+Task<Models.GetCreditCardResponse> UpdateCreditCard(string customerId, string cardId, Models.UpdateCreditCardRequest request)
 ```
 
 #### Parameters
@@ -490,7 +490,7 @@ Task<Models.GetCreditCardResponse> UpdateCreditCard(string customerId, string ca
 |-----------|------|-------------|
 | customerId |  ``` Required ```  | Customer Id |
 | cardId |  ``` Required ```  | Credit card id |
-| body |  ``` Required ```  | Request for updating a credit card |
+| request |  ``` Required ```  | Request for updating a credit card |
 
 
 #### Example Usage
@@ -498,9 +498,9 @@ Task<Models.GetCreditCardResponse> UpdateCreditCard(string customerId, string ca
 ```csharp
 string customerId = "customer_id";
 string cardId = "card_id";
-var body = new Models.UpdateCreditCardRequest();
+var request = new Models.UpdateCreditCardRequest();
 
-Models.GetCreditCardResponse result = await customers.UpdateCreditCard(customerId, cardId, body);
+Models.GetCreditCardResponse result = await customers.UpdateCreditCard(customerId, cardId, request);
 
 ```
 
@@ -595,7 +595,7 @@ Models.GetCreditCardResponse result = await customers.DeleteCreditCard(customerI
 
 
 ```csharp
-Task<Models.GetAddressResponse> CreateAddress(string customerId, Models.CreateAddressRequest body)
+Task<Models.GetAddressResponse> CreateAddress(string customerId, Models.CreateAddressRequest request)
 ```
 
 #### Parameters
@@ -603,16 +603,16 @@ Task<Models.GetAddressResponse> CreateAddress(string customerId, Models.CreateAd
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | customerId |  ``` Required ```  | Customer Id |
-| body |  ``` Required ```  | Request for creating an address |
+| request |  ``` Required ```  | Request for creating an address |
 
 
 #### Example Usage
 
 ```csharp
 string customerId = "customer_id";
-var body = new Models.CreateAddressRequest();
+var request = new Models.CreateAddressRequest();
 
-Models.GetAddressResponse result = await customers.CreateAddress(customerId, body);
+Models.GetAddressResponse result = await customers.CreateAddress(customerId, request);
 
 ```
 
@@ -651,24 +651,24 @@ Models.GetCreditCardResponse result = await customers.GetCreditCard(customerId, 
 
 
 ```csharp
-Task<Models.GetCreditCardResponse> CreateCreditCard(Models.CreateCreditCardRequest body, string customerId)
+Task<Models.GetCreditCardResponse> CreateCreditCard(string customerId, Models.CreateCreditCardRequest request)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating a credit card |
 | customerId |  ``` Required ```  | Customer id |
+| request |  ``` Required ```  | Request for creating a credit card |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CreateCreditCardRequest();
 string customerId = "customer_id";
+var request = new Models.CreateCreditCardRequest();
 
-Models.GetCreditCardResponse result = await customers.CreateCreditCard(body, customerId);
+Models.GetCreditCardResponse result = await customers.CreateCreditCard(customerId, request);
 
 ```
 
@@ -679,7 +679,7 @@ Models.GetCreditCardResponse result = await customers.CreateCreditCard(body, cus
 
 
 ```csharp
-Task<Models.GetCustomerResponse> UpdateCustomer(string customerId, Models.UpdateCustomerRequest body)
+Task<Models.GetCustomerResponse> UpdateCustomer(string customerId, Models.UpdateCustomerRequest request)
 ```
 
 #### Parameters
@@ -687,16 +687,16 @@ Task<Models.GetCustomerResponse> UpdateCustomer(string customerId, Models.Update
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | customerId |  ``` Required ```  | Customer id |
-| body |  ``` Required ```  | Request for updating a customer |
+| request |  ``` Required ```  | Request for updating a customer |
 
 
 #### Example Usage
 
 ```csharp
 string customerId = "customer_id";
-var body = new Models.UpdateCustomerRequest();
+var request = new Models.UpdateCustomerRequest();
 
-Models.GetCustomerResponse result = await customers.UpdateCustomer(customerId, body);
+Models.GetCustomerResponse result = await customers.UpdateCustomer(customerId, request);
 
 ```
 
@@ -713,20 +713,20 @@ The singleton instance of the ``` SubscriptionsController ``` class can be acces
 ISubscriptionsController subscriptions = client.Subscriptions;
 ```
 
-#### <a name="get_last_subscription_charge"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetLastSubscriptionCharge") GetLastSubscriptionCharge
+#### <a name="delete_subscription"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.DeleteSubscription") DeleteSubscription
 
-> Gets the last charge from a subscription
+> Cancels a subscription
 
 
 ```csharp
-Task<Models.GetChargeResponse> GetLastSubscriptionCharge(string subscriptionId)
+Task<Models.GetSubscriptionResponse> DeleteSubscription(string subscriptionId)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
+| subscriptionId |  ``` Required ```  | The subscription id |
 
 
 #### Example Usage
@@ -734,7 +734,7 @@ Task<Models.GetChargeResponse> GetLastSubscriptionCharge(string subscriptionId)
 ```csharp
 string subscriptionId = "subscription_id";
 
-Models.GetChargeResponse result = await subscriptions.GetLastSubscriptionCharge(subscriptionId);
+Models.GetSubscriptionResponse result = await subscriptions.DeleteSubscription(subscriptionId);
 
 ```
 
@@ -765,20 +765,20 @@ Models.ListInvoicesResponse result = await subscriptions.GetSubscriptionInvoices
 ```
 
 
-#### <a name="get_subscription_cycles"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetSubscriptionCycles") GetSubscriptionCycles
+#### <a name="get_subscription_items"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetSubscriptionItems") GetSubscriptionItems
 
-> Gets all cycles from a subscription
+> Gets all the items from a subscription
 
 
 ```csharp
-Task<dynamic> GetSubscriptionCycles(string subscriptionId)
+Task<Models.ListSubscriptionItemsResponse> GetSubscriptionItems(string subscriptionId)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
+| subscriptionId |  ``` Required ```  | The subscription id |
 
 
 #### Example Usage
@@ -786,37 +786,35 @@ Task<dynamic> GetSubscriptionCycles(string subscriptionId)
 ```csharp
 string subscriptionId = "subscription_id";
 
-dynamic result = await subscriptions.GetSubscriptionCycles(subscriptionId);
+Models.ListSubscriptionItemsResponse result = await subscriptions.GetSubscriptionItems(subscriptionId);
 
 ```
 
 
-#### <a name="get_usage"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetUsage") GetUsage
+#### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.UpdateSubscriptionBillingDate") UpdateSubscriptionBillingDate
 
-> Gets a usage
+> Updates the billing date from a subscription
 
 
 ```csharp
-Task<Models.GetUsageResponse> GetUsage(string subscriptionId, string itemId, string usageId)
+Task<Models.GetSubscriptionResponse> UpdateSubscriptionBillingDate(string subscriptionId, Models.UpdateSubscriptionBillingDateRequest request)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| itemId |  ``` Required ```  | item id |
-| usageId |  ``` Required ```  | Usage id |
+| subscriptionId |  ``` Required ```  | The subscription id |
+| request |  ``` Required ```  | Request for updating the subscription billing date |
 
 
 #### Example Usage
 
 ```csharp
 string subscriptionId = "subscription_id";
-string itemId = "item_id";
-string usageId = "usage_id";
+var request = new Models.UpdateSubscriptionBillingDateRequest();
 
-Models.GetUsageResponse result = await subscriptions.GetUsage(subscriptionId, itemId, usageId);
+Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionBillingDate(subscriptionId, request);
 
 ```
 
@@ -1063,58 +1061,60 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionPa
 ```
 
 
-#### <a name="get_cycle"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetCycle") GetCycle
+#### <a name="get_usages"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetUsages") GetUsages
 
-> Gets a cycle from a subscription
+> Lists all usages from a subscription item
 
 
 ```csharp
-Task<Models.GetPeriodResponse> GetCycle(string subscriptionId, string cycleId)
+Task<Models.ListUsagesResponse> GetUsages(string subscriptionId, string itemId)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| cycleId |  ``` Required ```  | Cycle id |
+| subscriptionId |  ``` Required ```  | The subscription id |
+| itemId |  ``` Required ```  | The subscription item id |
 
 
 #### Example Usage
 
 ```csharp
 string subscriptionId = "subscription_id";
-string cycleId = "cycle_id";
+string itemId = "item_id";
 
-Models.GetPeriodResponse result = await subscriptions.GetCycle(subscriptionId, cycleId);
+Models.ListUsagesResponse result = await subscriptions.GetUsages(subscriptionId, itemId);
 
 ```
 
 
-#### <a name="get_discount"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetDiscount") GetDiscount
+#### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.DeleteUsage") DeleteUsage
 
-> Gets a discount
+> Deletes a usage
 
 
 ```csharp
-Task<Models.GetDiscountResponse> GetDiscount(string subscriptionId, string discountId)
+Task<Models.GetUsageResponse> DeleteUsage(string subscriptionId, string itemId, string usageId)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| discountId |  ``` Required ```  | Discount id |
+| subscriptionId |  ``` Required ```  | The subscription id |
+| itemId |  ``` Required ```  | The subscription item id |
+| usageId |  ``` Required ```  | The usage id |
 
 
 #### Example Usage
 
 ```csharp
 string subscriptionId = "subscription_id";
-string discountId = "discount_id";
+string itemId = "item_id";
+string usageId = "usage_id";
 
-Models.GetDiscountResponse result = await subscriptions.GetDiscount(subscriptionId, discountId);
+Models.GetUsageResponse result = await subscriptions.DeleteUsage(subscriptionId, itemId, usageId);
 
 ```
 

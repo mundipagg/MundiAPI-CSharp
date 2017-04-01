@@ -64,16 +64,16 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Creates a new customer
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a customer</param>
+        /// <param name="request">Required parameter: Request for creating a customer</param>
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
-        Models.GetCustomerResponse CreateCustomer(Models.CreateCustomerRequest body);
+        Models.GetCustomerResponse CreateCustomer(Models.CreateCustomerRequest request);
 
         /// <summary>
         /// Creates a new customer
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a customer</param>
+        /// <param name="request">Required parameter: Request for creating a customer</param>
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
-        Task<Models.GetCustomerResponse> CreateCustomerAsync(Models.CreateCustomerRequest body);
+        Task<Models.GetCustomerResponse> CreateCustomerAsync(Models.CreateCustomerRequest request);
 
         /// <summary>
         /// Get a customer
@@ -94,36 +94,36 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="addressId">Required parameter: Address Id</param>
-        /// <param name="body">Required parameter: Request for updating an address</param>
+        /// <param name="request">Required parameter: Request for updating an address</param>
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
-        Models.GetAddressResponse UpdateAddress(string customerId, string addressId, Models.UpdateAddressRequest body);
+        Models.GetAddressResponse UpdateAddress(string customerId, string addressId, Models.UpdateAddressRequest request);
 
         /// <summary>
         /// Updates an address
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="addressId">Required parameter: Address Id</param>
-        /// <param name="body">Required parameter: Request for updating an address</param>
+        /// <param name="request">Required parameter: Request for updating an address</param>
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
-        Task<Models.GetAddressResponse> UpdateAddressAsync(string customerId, string addressId, Models.UpdateAddressRequest body);
+        Task<Models.GetAddressResponse> UpdateAddressAsync(string customerId, string addressId, Models.UpdateAddressRequest request);
 
         /// <summary>
         /// Updates a credit card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="cardId">Required parameter: Credit card id</param>
-        /// <param name="body">Required parameter: Request for updating a credit card</param>
+        /// <param name="request">Required parameter: Request for updating a credit card</param>
         /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Models.GetCreditCardResponse UpdateCreditCard(string customerId, string cardId, Models.UpdateCreditCardRequest body);
+        Models.GetCreditCardResponse UpdateCreditCard(string customerId, string cardId, Models.UpdateCreditCardRequest request);
 
         /// <summary>
         /// Updates a credit card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="cardId">Required parameter: Credit card id</param>
-        /// <param name="body">Required parameter: Request for updating a credit card</param>
+        /// <param name="request">Required parameter: Request for updating a credit card</param>
         /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Task<Models.GetCreditCardResponse> UpdateCreditCardAsync(string customerId, string cardId, Models.UpdateCreditCardRequest body);
+        Task<Models.GetCreditCardResponse> UpdateCreditCardAsync(string customerId, string cardId, Models.UpdateCreditCardRequest request);
 
         /// <summary>
         /// Get a customer's address
@@ -177,17 +177,17 @@ namespace MundiAPI.PCL.Controllers
         /// Creates a new address for a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="body">Required parameter: Request for creating an address</param>
+        /// <param name="request">Required parameter: Request for creating an address</param>
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
-        Models.GetAddressResponse CreateAddress(string customerId, Models.CreateAddressRequest body);
+        Models.GetAddressResponse CreateAddress(string customerId, Models.CreateAddressRequest request);
 
         /// <summary>
         /// Creates a new address for a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="body">Required parameter: Request for creating an address</param>
+        /// <param name="request">Required parameter: Request for creating an address</param>
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
-        Task<Models.GetAddressResponse> CreateAddressAsync(string customerId, Models.CreateAddressRequest body);
+        Task<Models.GetAddressResponse> CreateAddressAsync(string customerId, Models.CreateAddressRequest request);
 
         /// <summary>
         /// Get a customer's credit card
@@ -208,34 +208,34 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Creates a new credit card for a customer
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a credit card</param>
         /// <param name="customerId">Required parameter: Customer id</param>
+        /// <param name="request">Required parameter: Request for creating a credit card</param>
         /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Models.GetCreditCardResponse CreateCreditCard(Models.CreateCreditCardRequest body, string customerId);
+        Models.GetCreditCardResponse CreateCreditCard(string customerId, Models.CreateCreditCardRequest request);
 
         /// <summary>
         /// Creates a new credit card for a customer
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a credit card</param>
         /// <param name="customerId">Required parameter: Customer id</param>
+        /// <param name="request">Required parameter: Request for creating a credit card</param>
         /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Task<Models.GetCreditCardResponse> CreateCreditCardAsync(Models.CreateCreditCardRequest body, string customerId);
+        Task<Models.GetCreditCardResponse> CreateCreditCardAsync(string customerId, Models.CreateCreditCardRequest request);
 
         /// <summary>
         /// Updates a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="body">Required parameter: Request for updating a customer</param>
+        /// <param name="request">Required parameter: Request for updating a customer</param>
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
-        Models.GetCustomerResponse UpdateCustomer(string customerId, Models.UpdateCustomerRequest body);
+        Models.GetCustomerResponse UpdateCustomer(string customerId, Models.UpdateCustomerRequest request);
 
         /// <summary>
         /// Updates a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="body">Required parameter: Request for updating a customer</param>
+        /// <param name="request">Required parameter: Request for updating a customer</param>
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
-        Task<Models.GetCustomerResponse> UpdateCustomerAsync(string customerId, Models.UpdateCustomerRequest body);
+        Task<Models.GetCustomerResponse> UpdateCustomerAsync(string customerId, Models.UpdateCustomerRequest request);
 
     }
 } 
