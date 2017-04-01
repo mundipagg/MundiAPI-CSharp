@@ -10,7 +10,7 @@
     <AssemblyName>MundiAPI.PCL</AssemblyName>
     <OutputType>Library</OutputType>
     <OutputPath>bin/DEBUG/</OutputPath>
-    <ProjectGuid>{737fe2d8-d37f-4fd6-8fc2-b3fc5188fc8a}</ProjectGuid>
+    <ProjectGuid>{5f707783-340e-40f7-b99b-115bf72cb0e8}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>ee2bb91c</NuGetPackageImportStamp>
@@ -108,34 +108,34 @@
     <Compile Include="Models\CreateSetupRequest.cs" />
     <Compile Include="Models\GetShippingResponse.cs" />
     <Compile Include="Models\GetCustomerResponse.cs" />
+    <Compile Include="Models\ListSubscriptionItemsResponse.cs" />
     <Compile Include="Models\GetInvoiceItemResponse.cs" />
-    <Compile Include="Models\UpdateSubscriptionCreditCardRequest.cs" />
     <Compile Include="Models\CreateOrderItemRequest.cs" />
+    <Compile Include="Models\ListPlanItemsResponse.cs" />
     <Compile Include="Models\CreateChargeRequest.cs" />
     <Compile Include="Models\GetUsageResponse.cs" />
     <Compile Include="Models\PagingResponse.cs" />
     <Compile Include="Models\UpdateCreditCardRequest.cs" />
     <Compile Include="Models\UpdateCustomerRequest.cs" />
+    <Compile Include="Models\ListTransactionsResponse.cs" />
     <Compile Include="Models\UpdatePlanItemRequest.cs" />
-    <Compile Include="Models\ListPlanItemsResponse.cs" />
-    <Compile Include="Models\UpdateSubscriptionItemRequest.cs" />
-    <Compile Include="Models\CreateRescheduleSubscriptionRequest.cs" />
+    <Compile Include="Models\CreateCaptureChargeRequest.cs" />
     <Compile Include="Models\CreateCancelChargeRequest.cs" />
     <Compile Include="Models\GetOrdersResponse.cs" />
     <Compile Include="Models\GetCreditCardTransactionResponse.cs" />
     <Compile Include="Models\GetBoletoTransactionResponse.cs" />
     <Compile Include="Models\UpdateAddressRequest.cs" />
-    <Compile Include="Models\CreateCaptureChargeRequest.cs" />
-    <Compile Include="Models\ListSubscriptionItemsResponse.cs" />
-    <Compile Include="Models\ListTransactionsResponse.cs" />
-    <Compile Include="Models\ListInvoicesResponse.cs" />
+    <Compile Include="Models\UpdateSubscriptionItemRequest.cs" />
+    <Compile Include="Models\UpdateSubscriptionCreditCardRequest.cs" />
+    <Compile Include="Models\ListChargesResponse.cs" />
+    <Compile Include="Models\ListSubscriptionsResponse.cs" />
     <Compile Include="Models\CreatePriceBracketRequest.cs" />
     <Compile Include="Models\CreatePlanItemRequest.cs" />
     <Compile Include="Models\CreateCustomerRequest.cs" />
     <Compile Include="Models\CreatePaymentRequest.cs" />
     <Compile Include="Models\CreateDiscountRequest.cs" />
     <Compile Include="Models\CreateOrderRequest.cs" />
-    <Compile Include="Models\ListChargesResponse.cs" />
+    <Compile Include="Models\ListInvoicesResponse.cs" />
     <Compile Include="Models\CreateUsageRequest.cs" />
     <Compile Include="Models\UpdateChargeDueDateRequest.cs" />
     <Compile Include="Models\CreateCancelSubscriptionRequest.cs" />
@@ -143,7 +143,6 @@
     <Compile Include="Models\ListCardsResponse.cs" />
     <Compile Include="Models\ListAddressesResponse.cs" />
     <Compile Include="Models\ListPlansResponse.cs" />
-    <Compile Include="Models\ListSubscriptionsResponse.cs" />
     <Compile Include="Models\ListOrderResponse.cs" />
     <Compile Include="Models\UpdateSubscriptionBillingDateRequest.cs" />
     <Compile Include="Exceptions\ErrorException.cs" />
