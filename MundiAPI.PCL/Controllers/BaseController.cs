@@ -56,22 +56,22 @@ namespace MundiAPI.PCL.Controllers
         internal void ValidateResponse(HttpResponse _response, HttpContext _context)
         {
             if (_response.StatusCode == 400)
-                throw new ErrorException(@"Requisição inválida", _context);
+                throw new ErrorException(@"Invalid request", _context);
 
             if (_response.StatusCode == 401)
-                throw new ErrorException(@"Chave de API inválida", _context);
+                throw new ErrorException(@"Invalid API key", _context);
 
             if (_response.StatusCode == 404)
-                throw new ErrorException(@"Um recurso informado não existe", _context);
+                throw new ErrorException(@"An informed resource was not found", _context);
 
             if (_response.StatusCode == 412)
-                throw new ErrorException(@"Parâmetros válidos mas a requisição falhou", _context);
+                throw new ErrorException(@"Business validation error", _context);
 
             if (_response.StatusCode == 422)
-                throw new ErrorException(@"Parâmetros inválidos", _context);
+                throw new ErrorException(@"Contract validation error", _context);
 
             if (_response.StatusCode == 500)
-                throw new ErrorException(@"Ocorreu um erro interno", _context);
+                throw new ErrorException(@"Internal server error", _context);
 
             if ((_response.StatusCode < 200) || (_response.StatusCode > 208)) //[200,208] = HTTP OK
                 throw new APIException(@"HTTP Response Not OK", _context);
