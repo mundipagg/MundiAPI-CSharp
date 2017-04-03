@@ -17,7 +17,7 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class GetOrdersResponse : BaseModel 
+    public class GetOrderResponse : BaseModel 
     {
         // These fields hold the values for the public properties.
         private string id;

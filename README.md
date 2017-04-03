@@ -1631,7 +1631,7 @@ IOrdersController orders = client.Orders;
 
 
 ```csharp
-Task<Models.GetOrdersResponse> GetOrder(string orderId)
+Task<Models.GetOrderResponse> GetOrder(string orderId)
 ```
 
 #### Parameters
@@ -1646,7 +1646,7 @@ Task<Models.GetOrdersResponse> GetOrder(string orderId)
 ```csharp
 string orderId = "order_id";
 
-Models.GetOrdersResponse result = await orders.GetOrder(orderId);
+Models.GetOrderResponse result = await orders.GetOrder(orderId);
 
 ```
 
@@ -1675,7 +1675,7 @@ Models.ListOrderResponse result = await orders.GetOrders();
 
 
 ```csharp
-Task<Models.GetOrdersResponse> CreateOrder(Models.CreateOrderRequest body)
+Task<Models.GetOrderResponse> CreateOrder(Models.CreateOrderRequest body)
 ```
 
 #### Parameters
@@ -1690,7 +1690,7 @@ Task<Models.GetOrdersResponse> CreateOrder(Models.CreateOrderRequest body)
 ```csharp
 var body = new Models.CreateOrderRequest();
 
-Models.GetOrdersResponse result = await orders.CreateOrder(body);
+Models.GetOrderResponse result = await orders.CreateOrder(body);
 
 ```
 

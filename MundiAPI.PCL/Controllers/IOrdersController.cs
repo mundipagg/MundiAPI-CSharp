@@ -25,15 +25,15 @@ namespace MundiAPI.PCL.Controllers
         /// Gets an order
         /// </summary>
         /// <param name="orderId">Required parameter: Order id</param>
-        /// <return>Returns the Models.GetOrdersResponse response from the API call</return>
-        Models.GetOrdersResponse GetOrder(string orderId);
+        /// <return>Returns the Models.GetOrderResponse response from the API call</return>
+        Models.GetOrderResponse GetOrder(string orderId);
 
         /// <summary>
         /// Gets an order
         /// </summary>
         /// <param name="orderId">Required parameter: Order id</param>
-        /// <return>Returns the Models.GetOrdersResponse response from the API call</return>
-        Task<Models.GetOrdersResponse> GetOrderAsync(string orderId);
+        /// <return>Returns the Models.GetOrderResponse response from the API call</return>
+        Task<Models.GetOrderResponse> GetOrderAsync(string orderId);
 
         /// <summary>
         /// Gets all orders
@@ -51,15 +51,15 @@ namespace MundiAPI.PCL.Controllers
         /// Creates a new Order
         /// </summary>
         /// <param name="body">Required parameter: Request for creating an order</param>
-        /// <return>Returns the Models.GetOrdersResponse response from the API call</return>
-        Models.GetOrdersResponse CreateOrder(Models.CreateOrderRequest body);
+        /// <return>Returns the Models.GetOrderResponse response from the API call</return>
+        Models.GetOrderResponse CreateOrder(Models.CreateOrderRequest body);
 
         /// <summary>
         /// Creates a new Order
         /// </summary>
         /// <param name="body">Required parameter: Request for creating an order</param>
-        /// <return>Returns the Models.GetOrdersResponse response from the API call</return>
-        Task<Models.GetOrdersResponse> CreateOrderAsync(Models.CreateOrderRequest body);
+        /// <return>Returns the Models.GetOrderResponse response from the API call</return>
+        Task<Models.GetOrderResponse> CreateOrderAsync(Models.CreateOrderRequest body);
 
     }
 } 
