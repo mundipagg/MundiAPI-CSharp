@@ -32,7 +32,6 @@ namespace MundiAPI.PCL.Models
         private int maxAttempts;
         private DateTime? nextAttempt;
         private string transactionType;
-        private string transactionType;
 
         /// <summary>
         /// Gateway transaction id
@@ -187,23 +186,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.nextAttempt = value;
                 onPropertyChanged("NextAttempt");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonProperty("transaction_type")]
-        public string TransactionType 
-        { 
-            get 
-            {
-                return this.transactionType; 
-            } 
-            set 
-            {
-                this.transactionType = value;
-                onPropertyChanged("TransactionType");
             }
         }
 

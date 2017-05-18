@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiAPI.PCL", "MundiAPI.PCL/MundiAPI.PCL.csproj", "{eb5fc9cb-1256-4d98-a4b6-56cc1a1b3c40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiAPI.PCL", "MundiAPI.PCL/MundiAPI.PCL.csproj", "{5e80818f-f937-4ce3-9164-7d23b67d6a8e}"
 EndProject
 Global
     GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
         Release|Any CPU = Release|Any CPU
     EndGlobalSection
     GlobalSection(ProjectConfigurationPlatforms) = postSolution
-        {eb5fc9cb-1256-4d98-a4b6-56cc1a1b3c40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-        {eb5fc9cb-1256-4d98-a4b6-56cc1a1b3c40}.Debug|Any CPU.Build.0 = Debug|Any CPU
-        {eb5fc9cb-1256-4d98-a4b6-56cc1a1b3c40}.Release|Any CPU.ActiveCfg = Release|Any CPU
-        {eb5fc9cb-1256-4d98-a4b6-56cc1a1b3c40}.Release|Any CPU.Build.0 = Release|Any CPU
+        {5e80818f-f937-4ce3-9164-7d23b67d6a8e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {5e80818f-f937-4ce3-9164-7d23b67d6a8e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {5e80818f-f937-4ce3-9164-7d23b67d6a8e}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {5e80818f-f937-4ce3-9164-7d23b67d6a8e}.Release|Any CPU.Build.0 = Release|Any CPU
     EndGlobalSection
     GlobalSection(SolutionProperties) = preSolution
         HideSolutionNode = FALSE
