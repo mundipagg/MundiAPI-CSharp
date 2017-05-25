@@ -22,20 +22,6 @@ namespace MundiAPI.PCL.Controllers
     public partial interface ISubscriptionsController
     {
         /// <summary>
-        /// Gets all the items from a subscription
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: The subscription id</param>
-        /// <return>Returns the Models.ListSubscriptionItemsResponse response from the API call</return>
-        Models.ListSubscriptionItemsResponse GetSubscriptionItems(string subscriptionId);
-
-        /// <summary>
-        /// Gets all the items from a subscription
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: The subscription id</param>
-        /// <return>Returns the Models.ListSubscriptionItemsResponse response from the API call</return>
-        Task<Models.ListSubscriptionItemsResponse> GetSubscriptionItemsAsync(string subscriptionId);
-
-        /// <summary>
         /// Updates the billing date from a subscription
         /// </summary>
         /// <param name="subscriptionId">Required parameter: The subscription id</param>
