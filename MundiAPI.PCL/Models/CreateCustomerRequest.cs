@@ -28,6 +28,7 @@ namespace MundiAPI.PCL.Models
         private Models.CreateAddressRequest address;
         private Dictionary<string, string> metadata;
         private Models.CreatePhonesRequest phones;
+        private string code;
 
         /// <summary>
         /// Name
@@ -145,6 +146,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.phones = value;
                 onPropertyChanged("Phones");
+            }
+        }
+
+        /// <summary>
+        /// Customer code
+        /// </summary>
+        [JsonProperty("code")]
+        public string Code 
+        { 
+            get 
+            {
+                return this.code; 
+            } 
+            set 
+            {
+                this.code = value;
+                onPropertyChanged("Code");
             }
         }
     }

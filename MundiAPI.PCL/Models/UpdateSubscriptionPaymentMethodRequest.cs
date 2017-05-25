@@ -22,9 +22,8 @@ namespace MundiAPI.PCL.Models
     {
         // These fields hold the values for the public properties.
         private string paymentMethod;
-        private string creditCardId;
-        private string creditCardGatewayId;
-        private Models.CreateCardRequest creditCard;
+        private string cardId;
+        private Models.CreateCardRequest card;
 
         /// <summary>
         /// The new payment method
@@ -44,53 +43,36 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Credit card's id
+        /// Card id
         /// </summary>
-        [JsonProperty("credit_card_id")]
-        public string CreditCardId 
+        [JsonProperty("card_id")]
+        public string CardId 
         { 
             get 
             {
-                return this.creditCardId; 
+                return this.cardId; 
             } 
             set 
             {
-                this.creditCardId = value;
-                onPropertyChanged("CreditCardId");
+                this.cardId = value;
+                onPropertyChanged("CardId");
             }
         }
 
         /// <summary>
-        /// Credit card's gateway id
+        /// Card data
         /// </summary>
-        [JsonProperty("credit_card_gateway_id")]
-        public string CreditCardGatewayId 
+        [JsonProperty("card")]
+        public Models.CreateCardRequest Card 
         { 
             get 
             {
-                return this.creditCardGatewayId; 
+                return this.card; 
             } 
             set 
             {
-                this.creditCardGatewayId = value;
-                onPropertyChanged("CreditCardGatewayId");
-            }
-        }
-
-        /// <summary>
-        /// Credit card data
-        /// </summary>
-        [JsonProperty("credit_card")]
-        public Models.CreateCardRequest CreditCard 
-        { 
-            get 
-            {
-                return this.creditCard; 
-            } 
-            set 
-            {
-                this.creditCard = value;
-                onPropertyChanged("CreditCard");
+                this.card = value;
+                onPropertyChanged("Card");
             }
         }
     }

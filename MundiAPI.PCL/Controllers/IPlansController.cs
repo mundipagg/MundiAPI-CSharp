@@ -54,20 +54,6 @@ namespace MundiAPI.PCL.Controllers
         Task<Models.GetPlanItemResponse> UpdatePlanItemAsync(string planId, string planItemId, Models.UpdatePlanItemRequest body);
 
         /// <summary>
-        /// Get all subscriptions from a plan
-        /// </summary>
-        /// <param name="planId">Required parameter: Plan id</param>
-        /// <return>Returns the dynamic response from the API call</return>
-        dynamic GetPlanSubscriptions(string planId);
-
-        /// <summary>
-        /// Get all subscriptions from a plan
-        /// </summary>
-        /// <param name="planId">Required parameter: Plan id</param>
-        /// <return>Returns the dynamic response from the API call</return>
-        Task<dynamic> GetPlanSubscriptionsAsync(string planId);
-
-        /// <summary>
         /// Gets a plan
         /// </summary>
         /// <param name="planId">Required parameter: Plan id</param>
@@ -84,34 +70,34 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Adds a new item to a plan
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a plan item</param>
         /// <param name="planId">Required parameter: Plan id</param>
+        /// <param name="request">Required parameter: Request for creating a plan item</param>
         /// <return>Returns the Models.GetPlanItemResponse response from the API call</return>
-        Models.GetPlanItemResponse CreatePlanItem(Models.CreatePlanItemRequest body, string planId);
+        Models.GetPlanItemResponse CreatePlanItem(string planId, Models.CreatePlanItemRequest request);
 
         /// <summary>
         /// Adds a new item to a plan
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a plan item</param>
         /// <param name="planId">Required parameter: Plan id</param>
+        /// <param name="request">Required parameter: Request for creating a plan item</param>
         /// <return>Returns the Models.GetPlanItemResponse response from the API call</return>
-        Task<Models.GetPlanItemResponse> CreatePlanItemAsync(Models.CreatePlanItemRequest body, string planId);
+        Task<Models.GetPlanItemResponse> CreatePlanItemAsync(string planId, Models.CreatePlanItemRequest request);
 
         /// <summary>
         /// Updates a plan
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating a plan</param>
         /// <param name="planId">Required parameter: Plan id</param>
+        /// <param name="request">Required parameter: Request for updating a plan</param>
         /// <return>Returns the Models.GetPlanResponse response from the API call</return>
-        Models.GetPlanResponse UpdatePlan(Models.UpdatePlanRequest body, string planId);
+        Models.GetPlanResponse UpdatePlan(string planId, Models.UpdatePlanRequest request);
 
         /// <summary>
         /// Updates a plan
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating a plan</param>
         /// <param name="planId">Required parameter: Plan id</param>
+        /// <param name="request">Required parameter: Request for updating a plan</param>
         /// <return>Returns the Models.GetPlanResponse response from the API call</return>
-        Task<Models.GetPlanResponse> UpdatePlanAsync(Models.UpdatePlanRequest body, string planId);
+        Task<Models.GetPlanResponse> UpdatePlanAsync(string planId, Models.UpdatePlanRequest request);
 
         /// <summary>
         /// Creates a new plan

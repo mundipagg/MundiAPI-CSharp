@@ -26,8 +26,7 @@ namespace MundiAPI.PCL.Models
         private Models.CreateCardRequest card;
         private string code;
         private string customerId;
-        private string creditCardId;
-        private string creditCardGatewayId;
+        private string cardId;
         private string paymentMethod;
         private string billingType;
         private string statementDescriptor;
@@ -48,7 +47,7 @@ namespace MundiAPI.PCL.Models
         private int? cycles;
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Plan id
         /// </summary>
         [JsonProperty("plan_id")]
         public string PlanId 
@@ -65,7 +64,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Customer
         /// </summary>
         [JsonProperty("customer")]
         public Models.CreateCustomerRequest Customer 
@@ -82,7 +81,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Card
         /// </summary>
         [JsonProperty("card")]
         public Models.CreateCardRequest Card 
@@ -99,7 +98,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Subscription code
         /// </summary>
         [JsonProperty("code")]
         public string Code 
@@ -116,7 +115,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Customer id
         /// </summary>
         [JsonProperty("customer_id")]
         public string CustomerId 
@@ -133,41 +132,24 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Card id
         /// </summary>
-        [JsonProperty("credit_card_id")]
-        public string CreditCardId 
+        [JsonProperty("card_id")]
+        public string CardId 
         { 
             get 
             {
-                return this.creditCardId; 
+                return this.cardId; 
             } 
             set 
             {
-                this.creditCardId = value;
-                onPropertyChanged("CreditCardId");
+                this.cardId = value;
+                onPropertyChanged("CardId");
             }
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonProperty("credit_card_gateway_id")]
-        public string CreditCardGatewayId 
-        { 
-            get 
-            {
-                return this.creditCardGatewayId; 
-            } 
-            set 
-            {
-                this.creditCardGatewayId = value;
-                onPropertyChanged("CreditCardGatewayId");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
+        /// Payment method
         /// </summary>
         [JsonProperty("payment_method")]
         public string PaymentMethod 
@@ -184,7 +166,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Billing type
         /// </summary>
         [JsonProperty("billing_type")]
         public string BillingType 
@@ -201,7 +183,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Statement descriptor for credit card subscriptions
         /// </summary>
         [JsonProperty("statement_descriptor")]
         public string StatementDescriptor 
@@ -218,7 +200,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Subscription description
         /// </summary>
         [JsonProperty("description")]
         public string Description 
@@ -235,7 +217,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Currency
         /// </summary>
         [JsonProperty("currency")]
         public string Currency 
@@ -252,7 +234,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Interval
         /// </summary>
         [JsonProperty("interval")]
         public string Interval 
@@ -269,7 +251,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Interval count
         /// </summary>
         [JsonProperty("interval_count")]
         public int IntervalCount 
@@ -286,7 +268,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Subscription pricing scheme
         /// </summary>
         [JsonProperty("pricing_scheme")]
         public Models.CreatePricingSchemeRequest PricingScheme 
@@ -303,7 +285,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Subscription items
         /// </summary>
         [JsonProperty("items")]
         public List<Models.CreateSubscriptionItemRequest> Items 
@@ -320,7 +302,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Shipping
         /// </summary>
         [JsonProperty("shipping")]
         public Models.CreateShippingRequest Shipping 
@@ -337,7 +319,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Discounts
         /// </summary>
         [JsonProperty("discounts")]
         public List<Models.CreateDiscountRequest> Discounts 
@@ -354,7 +336,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Metadata
         /// </summary>
         [JsonProperty("metadata")]
         public Dictionary<string, string> Metadata 
@@ -371,7 +353,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Setup data
         /// </summary>
         [JsonProperty("setup")]
         public Models.CreateSetupRequest Setup 
@@ -388,7 +370,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Billing day
         /// </summary>
         [JsonProperty("billing_day")]
         public int? BillingDay 
@@ -405,7 +387,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Number of installments
         /// </summary>
         [JsonProperty("installments")]
         public int? Installments 
@@ -422,7 +404,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Subscription start date
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
         [JsonProperty("start_at")]
@@ -440,7 +422,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Subscription minimum price
         /// </summary>
         [JsonProperty("minimum_price")]
         public int? MinimumPrice 
@@ -457,7 +439,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Number of cycles
         /// </summary>
         [JsonProperty("cycles")]
         public int? Cycles 
