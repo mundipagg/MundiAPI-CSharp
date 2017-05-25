@@ -178,18 +178,18 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Updates the payment method from a subscription
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating the payment method from a subscription</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for updating the paymentmethod from a subscription</param>
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Models.GetSubscriptionResponse UpdateSubscriptionPaymentMethod(Models.UpdateSubscriptionPaymentMethodRequest body, string subscriptionId);
+        Models.GetSubscriptionResponse UpdateSubscriptionPaymentMethod(string subscriptionId, Models.UpdateSubscriptionPaymentMethodRequest request);
 
         /// <summary>
         /// Updates the payment method from a subscription
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating the payment method from a subscription</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for updating the paymentmethod from a subscription</param>
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Task<Models.GetSubscriptionResponse> UpdateSubscriptionPaymentMethodAsync(Models.UpdateSubscriptionPaymentMethodRequest body, string subscriptionId);
+        Task<Models.GetSubscriptionResponse> UpdateSubscriptionPaymentMethodAsync(string subscriptionId, Models.UpdateSubscriptionPaymentMethodRequest request);
 
         /// <summary>
         /// Lists all usages from a subscription item

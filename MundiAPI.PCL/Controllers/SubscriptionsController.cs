@@ -705,12 +705,12 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Updates the payment method from a subscription
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating the payment method from a subscription</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for updating the paymentmethod from a subscription</param>
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        public Models.GetSubscriptionResponse UpdateSubscriptionPaymentMethod(Models.UpdateSubscriptionPaymentMethodRequest body, string subscriptionId)
+        public Models.GetSubscriptionResponse UpdateSubscriptionPaymentMethod(string subscriptionId, Models.UpdateSubscriptionPaymentMethodRequest request)
         {
-            Task<Models.GetSubscriptionResponse> t = UpdateSubscriptionPaymentMethodAsync(body, subscriptionId);
+            Task<Models.GetSubscriptionResponse> t = UpdateSubscriptionPaymentMethodAsync(subscriptionId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -718,10 +718,10 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Updates the payment method from a subscription
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating the payment method from a subscription</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for updating the paymentmethod from a subscription</param>
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        public async Task<Models.GetSubscriptionResponse> UpdateSubscriptionPaymentMethodAsync(Models.UpdateSubscriptionPaymentMethodRequest body, string subscriptionId)
+        public async Task<Models.GetSubscriptionResponse> UpdateSubscriptionPaymentMethodAsync(string subscriptionId, Models.UpdateSubscriptionPaymentMethodRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -749,7 +749,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PatchBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
