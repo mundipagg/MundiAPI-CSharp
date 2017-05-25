@@ -15,24 +15,24 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
-    public class GetCreditCardResponse : BaseModel 
+    public class GetOrderResponse : BaseModel 
     {
         // These fields hold the values for the public properties.
         private string id;
-        private string lastFourDigits;
-        private string brand;
-        private string holderName;
-        private int expMonth;
-        private int expYear;
+        private string code;
+        private string currency;
+        private List<Models.GetOrderItemResponse> items;
+        private Models.GetCustomerResponse customer;
         private string status;
         private DateTime createdAt;
         private DateTime updatedAt;
-        private Models.GetBillingAddressResponse billingAddress;
-        private Models.GetCustomerResponse customer;
+        private List<Models.GetChargeResponse> charges;
+        private string invoiceUrl;
+        private Models.GetShippingResponse shipping;
         private Dictionary<string, string> metadata;
-        private DateTime? deletedAt;
 
         /// <summary>
         /// TODO: Write general description for this method
@@ -54,85 +54,68 @@ namespace MundiAPI.PCL.Models
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("last_four_digits")]
-        public string LastFourDigits 
+        [JsonProperty("code")]
+        public string Code 
         { 
             get 
             {
-                return this.lastFourDigits; 
+                return this.code; 
             } 
             set 
             {
-                this.lastFourDigits = value;
-                onPropertyChanged("LastFourDigits");
+                this.code = value;
+                onPropertyChanged("Code");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("brand")]
-        public string Brand 
+        [JsonProperty("currency")]
+        public string Currency 
         { 
             get 
             {
-                return this.brand; 
+                return this.currency; 
             } 
             set 
             {
-                this.brand = value;
-                onPropertyChanged("Brand");
+                this.currency = value;
+                onPropertyChanged("Currency");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("holder_name")]
-        public string HolderName 
+        [JsonProperty("items")]
+        public List<Models.GetOrderItemResponse> Items 
         { 
             get 
             {
-                return this.holderName; 
+                return this.items; 
             } 
             set 
             {
-                this.holderName = value;
-                onPropertyChanged("HolderName");
+                this.items = value;
+                onPropertyChanged("Items");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("exp_month")]
-        public int ExpMonth 
+        [JsonProperty("customer")]
+        public Models.GetCustomerResponse Customer 
         { 
             get 
             {
-                return this.expMonth; 
+                return this.customer; 
             } 
             set 
             {
-                this.expMonth = value;
-                onPropertyChanged("ExpMonth");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonProperty("exp_year")]
-        public int ExpYear 
-        { 
-            get 
-            {
-                return this.expYear; 
-            } 
-            set 
-            {
-                this.expYear = value;
-                onPropertyChanged("ExpYear");
+                this.customer = value;
+                onPropertyChanged("Customer");
             }
         }
 
@@ -192,34 +175,51 @@ namespace MundiAPI.PCL.Models
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("billing_address")]
-        public Models.GetBillingAddressResponse BillingAddress 
+        [JsonProperty("charges")]
+        public List<Models.GetChargeResponse> Charges 
         { 
             get 
             {
-                return this.billingAddress; 
+                return this.charges; 
             } 
             set 
             {
-                this.billingAddress = value;
-                onPropertyChanged("BillingAddress");
+                this.charges = value;
+                onPropertyChanged("Charges");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("customer")]
-        public Models.GetCustomerResponse Customer 
+        [JsonProperty("invoice_url")]
+        public string InvoiceUrl 
         { 
             get 
             {
-                return this.customer; 
+                return this.invoiceUrl; 
             } 
             set 
             {
-                this.customer = value;
-                onPropertyChanged("Customer");
+                this.invoiceUrl = value;
+                onPropertyChanged("InvoiceUrl");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("shipping")]
+        public Models.GetShippingResponse Shipping 
+        { 
+            get 
+            {
+                return this.shipping; 
+            } 
+            set 
+            {
+                this.shipping = value;
+                onPropertyChanged("Shipping");
             }
         }
 
@@ -237,24 +237,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.metadata = value;
                 onPropertyChanged("Metadata");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("deleted_at")]
-        public DateTime? DeletedAt 
-        { 
-            get 
-            {
-                return this.deletedAt; 
-            } 
-            set 
-            {
-                this.deletedAt = value;
-                onPropertyChanged("DeletedAt");
             }
         }
     }

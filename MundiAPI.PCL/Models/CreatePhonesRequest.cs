@@ -18,43 +18,43 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class ListPlansResponse : BaseModel 
+    public class CreatePhonesRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private List<Models.GetPlanResponse> data;
-        private string paging;
+        private Models.CreatePhoneRequest homePhone;
+        private Models.CreatePhoneRequest mobilePhone;
 
         /// <summary>
-        /// The plan objects
+        /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("data")]
-        public List<Models.GetPlanResponse> Data 
+        [JsonProperty("home_phone")]
+        public Models.CreatePhoneRequest HomePhone 
         { 
             get 
             {
-                return this.data; 
+                return this.homePhone; 
             } 
             set 
             {
-                this.data = value;
-                onPropertyChanged("Data");
+                this.homePhone = value;
+                onPropertyChanged("HomePhone");
             }
         }
 
         /// <summary>
-        /// Paging object
+        /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("paging")]
-        public string Paging 
+        [JsonProperty("mobile_phone")]
+        public Models.CreatePhoneRequest MobilePhone 
         { 
             get 
             {
-                return this.paging; 
+                return this.mobilePhone; 
             } 
             set 
             {
-                this.paging = value;
-                onPropertyChanged("Paging");
+                this.mobilePhone = value;
+                onPropertyChanged("MobilePhone");
             }
         }
     }

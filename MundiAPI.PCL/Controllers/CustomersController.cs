@@ -113,30 +113,30 @@ namespace MundiAPI.PCL.Controllers
         }
 
         /// <summary>
-        /// Get all credit cards from a customer
+        /// Get all cards from a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <return>Returns the Models.ListCardsResponse response from the API call</return>
-        public Models.ListCardsResponse GetCreditCards(string customerId)
+        public Models.ListCardsResponse GetCards(string customerId)
         {
-            Task<Models.ListCardsResponse> t = GetCreditCardsAsync(customerId);
+            Task<Models.ListCardsResponse> t = GetCardsAsync(customerId);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
 
         /// <summary>
-        /// Get all credit cards from a customer
+        /// Get all cards from a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <return>Returns the Models.ListCardsResponse response from the API call</return>
-        public async Task<Models.ListCardsResponse> GetCreditCardsAsync(string customerId)
+        public async Task<Models.ListCardsResponse> GetCardsAsync(string customerId)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/customers/{customer_id}/credit_cards");
+            _queryBuilder.Append("/customers/{customer_id}/cards");
 
             //process optional template parameters
             APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
@@ -422,34 +422,34 @@ namespace MundiAPI.PCL.Controllers
         }
 
         /// <summary>
-        /// Updates a credit card
+        /// Updates a card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="cardId">Required parameter: Credit card id</param>
-        /// <param name="request">Required parameter: Request for updating a credit card</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public Models.GetCreditCardResponse UpdateCreditCard(string customerId, string cardId, Models.UpdateCreditCardRequest request)
+        /// <param name="cardId">Required parameter: Card id</param>
+        /// <param name="request">Required parameter: Request for updating a card</param>
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        public Models.GetCardResponse UpdateCard(string customerId, string cardId, Models.UpdateCardRequest request)
         {
-            Task<Models.GetCreditCardResponse> t = UpdateCreditCardAsync(customerId, cardId, request);
+            Task<Models.GetCardResponse> t = UpdateCardAsync(customerId, cardId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
 
         /// <summary>
-        /// Updates a credit card
+        /// Updates a card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="cardId">Required parameter: Credit card id</param>
-        /// <param name="request">Required parameter: Request for updating a credit card</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public async Task<Models.GetCreditCardResponse> UpdateCreditCardAsync(string customerId, string cardId, Models.UpdateCreditCardRequest request)
+        /// <param name="cardId">Required parameter: Card id</param>
+        /// <param name="request">Required parameter: Request for updating a card</param>
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        public async Task<Models.GetCardResponse> UpdateCardAsync(string customerId, string cardId, Models.UpdateCardRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/customers/{customer_id}/credit_cards/{card_id}");
+            _queryBuilder.Append("/customers/{customer_id}/cards/{card_id}");
 
             //process optional template parameters
             APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
@@ -484,7 +484,7 @@ namespace MundiAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.GetCreditCardResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.GetCardResponse>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -623,32 +623,32 @@ namespace MundiAPI.PCL.Controllers
         }
 
         /// <summary>
-        /// Delete a customer's credit card
+        /// Delete a customer's card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="cardId">Required parameter: Card Id</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public Models.GetCreditCardResponse DeleteCreditCard(string customerId, string cardId)
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        public Models.GetCardResponse DeleteCard(string customerId, string cardId)
         {
-            Task<Models.GetCreditCardResponse> t = DeleteCreditCardAsync(customerId, cardId);
+            Task<Models.GetCardResponse> t = DeleteCardAsync(customerId, cardId);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
 
         /// <summary>
-        /// Delete a customer's credit card
+        /// Delete a customer's card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="cardId">Required parameter: Card Id</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public async Task<Models.GetCreditCardResponse> DeleteCreditCardAsync(string customerId, string cardId)
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        public async Task<Models.GetCardResponse> DeleteCardAsync(string customerId, string cardId)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/customers/{customer_id}/credit_cards/{card_id}");
+            _queryBuilder.Append("/customers/{customer_id}/cards/{card_id}");
 
             //process optional template parameters
             APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
@@ -679,7 +679,7 @@ namespace MundiAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.GetCreditCardResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.GetCardResponse>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -756,32 +756,32 @@ namespace MundiAPI.PCL.Controllers
         }
 
         /// <summary>
-        /// Get a customer's credit card
+        /// Get a customer's card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
         /// <param name="cardId">Required parameter: Card id</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public Models.GetCreditCardResponse GetCreditCard(string customerId, string cardId)
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        public Models.GetCardResponse GetCard(string customerId, string cardId)
         {
-            Task<Models.GetCreditCardResponse> t = GetCreditCardAsync(customerId, cardId);
+            Task<Models.GetCardResponse> t = GetCardAsync(customerId, cardId);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
 
         /// <summary>
-        /// Get a customer's credit card
+        /// Get a customer's card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
         /// <param name="cardId">Required parameter: Card id</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public async Task<Models.GetCreditCardResponse> GetCreditCardAsync(string customerId, string cardId)
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        public async Task<Models.GetCardResponse> GetCardAsync(string customerId, string cardId)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/customers/{customer_id}/credit_cards/{card_id}");
+            _queryBuilder.Append("/customers/{customer_id}/cards/{card_id}");
 
             //process optional template parameters
             APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
@@ -812,7 +812,7 @@ namespace MundiAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.GetCreditCardResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.GetCardResponse>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -821,32 +821,32 @@ namespace MundiAPI.PCL.Controllers
         }
 
         /// <summary>
-        /// Creates a new credit card for a customer
+        /// Creates a new card for a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="request">Required parameter: Request for creating a credit card</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public Models.GetCreditCardResponse CreateCreditCard(string customerId, Models.CreateCreditCardRequest request)
+        /// <param name="request">Required parameter: Request for creating a card</param>
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        public Models.GetCardResponse CreateCard(string customerId, Models.CreateCardRequest request)
         {
-            Task<Models.GetCreditCardResponse> t = CreateCreditCardAsync(customerId, request);
+            Task<Models.GetCardResponse> t = CreateCardAsync(customerId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
 
         /// <summary>
-        /// Creates a new credit card for a customer
+        /// Creates a new card for a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="request">Required parameter: Request for creating a credit card</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        public async Task<Models.GetCreditCardResponse> CreateCreditCardAsync(string customerId, Models.CreateCreditCardRequest request)
+        /// <param name="request">Required parameter: Request for creating a card</param>
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        public async Task<Models.GetCardResponse> CreateCardAsync(string customerId, Models.CreateCardRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/customers/{customer_id}/credit_cards");
+            _queryBuilder.Append("/customers/{customer_id}/cards");
 
             //process optional template parameters
             APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
@@ -880,7 +880,7 @@ namespace MundiAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.GetCreditCardResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.GetCardResponse>(_response.Body);
             }
             catch (Exception _ex)
             {

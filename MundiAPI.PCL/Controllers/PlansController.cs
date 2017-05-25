@@ -184,68 +184,6 @@ namespace MundiAPI.PCL.Controllers
         }
 
         /// <summary>
-        /// Get all subscriptions from a plan
-        /// </summary>
-        /// <param name="planId">Required parameter: Plan id</param>
-        /// <return>Returns the dynamic response from the API call</return>
-        public dynamic GetPlanSubscriptions(string planId)
-        {
-            Task<dynamic> t = GetPlanSubscriptionsAsync(planId);
-            APIHelper.RunTaskSynchronously(t);
-            return t.Result;
-        }
-
-        /// <summary>
-        /// Get all subscriptions from a plan
-        /// </summary>
-        /// <param name="planId">Required parameter: Plan id</param>
-        /// <return>Returns the dynamic response from the API call</return>
-        public async Task<dynamic> GetPlanSubscriptionsAsync(string planId)
-        {
-            //the base uri for api requestss
-            string _baseUri = Configuration.BaseUri;
-
-            //prepare query string for API call
-            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/plans/{plan_id}/subscriptions");
-
-            //process optional template parameters
-            APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
-            {
-                { "plan_id", planId }
-            });
-
-
-            //validate and preprocess url
-            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
-
-            //append request with appropriate headers and parameters
-            var _headers = new Dictionary<string,string>()
-            {
-                { "user-agent", "MundiSDK" },
-                { "accept", "application/json" }
-            };
-
-            //prepare the API call request to fetch the response
-            HttpRequest _request = ClientInstance.Get(_queryUrl,_headers, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
-
-            //invoke request and get response
-            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
-            HttpContext _context = new HttpContext(_request,_response);
-            //handle errors defined at the API level
-            base.ValidateResponse(_response, _context);
-
-            try
-            {
-                return APIHelper.JsonDeserialize<dynamic>(_response.Body);
-            }
-            catch (Exception _ex)
-            {
-                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
-            }
-        }
-
-        /// <summary>
         /// Gets a plan
         /// </summary>
         /// <param name="planId">Required parameter: Plan id</param>
@@ -310,12 +248,12 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Adds a new item to a plan
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a plan item</param>
         /// <param name="planId">Required parameter: Plan id</param>
+        /// <param name="request">Required parameter: Request for creating a plan item</param>
         /// <return>Returns the Models.GetPlanItemResponse response from the API call</return>
-        public Models.GetPlanItemResponse CreatePlanItem(Models.CreatePlanItemRequest body, string planId)
+        public Models.GetPlanItemResponse CreatePlanItem(string planId, Models.CreatePlanItemRequest request)
         {
-            Task<Models.GetPlanItemResponse> t = CreatePlanItemAsync(body, planId);
+            Task<Models.GetPlanItemResponse> t = CreatePlanItemAsync(planId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -323,10 +261,10 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Adds a new item to a plan
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a plan item</param>
         /// <param name="planId">Required parameter: Plan id</param>
+        /// <param name="request">Required parameter: Request for creating a plan item</param>
         /// <return>Returns the Models.GetPlanItemResponse response from the API call</return>
-        public async Task<Models.GetPlanItemResponse> CreatePlanItemAsync(Models.CreatePlanItemRequest body, string planId)
+        public async Task<Models.GetPlanItemResponse> CreatePlanItemAsync(string planId, Models.CreatePlanItemRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -354,7 +292,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PostBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
@@ -378,12 +316,12 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Updates a plan
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating a plan</param>
         /// <param name="planId">Required parameter: Plan id</param>
+        /// <param name="request">Required parameter: Request for updating a plan</param>
         /// <return>Returns the Models.GetPlanResponse response from the API call</return>
-        public Models.GetPlanResponse UpdatePlan(Models.UpdatePlanRequest body, string planId)
+        public Models.GetPlanResponse UpdatePlan(string planId, Models.UpdatePlanRequest request)
         {
-            Task<Models.GetPlanResponse> t = UpdatePlanAsync(body, planId);
+            Task<Models.GetPlanResponse> t = UpdatePlanAsync(planId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -391,10 +329,10 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Updates a plan
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating a plan</param>
         /// <param name="planId">Required parameter: Plan id</param>
+        /// <param name="request">Required parameter: Request for updating a plan</param>
         /// <return>Returns the Models.GetPlanResponse response from the API call</return>
-        public async Task<Models.GetPlanResponse> UpdatePlanAsync(Models.UpdatePlanRequest body, string planId)
+        public async Task<Models.GetPlanResponse> UpdatePlanAsync(string planId, Models.UpdatePlanRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -422,7 +360,7 @@ namespace MundiAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(body);
+            var _body = APIHelper.JsonSerialize(request);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PutBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);

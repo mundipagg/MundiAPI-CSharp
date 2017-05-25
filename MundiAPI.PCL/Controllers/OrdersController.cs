@@ -54,10 +54,10 @@ namespace MundiAPI.PCL.Controllers
         /// Gets an order
         /// </summary>
         /// <param name="orderId">Required parameter: Order id</param>
-        /// <return>Returns the Models.GetOrdersResponse response from the API call</return>
-        public Models.GetOrdersResponse GetOrder(string orderId)
+        /// <return>Returns the Models.GetOrderResponse response from the API call</return>
+        public Models.GetOrderResponse GetOrder(string orderId)
         {
-            Task<Models.GetOrdersResponse> t = GetOrderAsync(orderId);
+            Task<Models.GetOrderResponse> t = GetOrderAsync(orderId);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -66,8 +66,8 @@ namespace MundiAPI.PCL.Controllers
         /// Gets an order
         /// </summary>
         /// <param name="orderId">Required parameter: Order id</param>
-        /// <return>Returns the Models.GetOrdersResponse response from the API call</return>
-        public async Task<Models.GetOrdersResponse> GetOrderAsync(string orderId)
+        /// <return>Returns the Models.GetOrderResponse response from the API call</return>
+        public async Task<Models.GetOrderResponse> GetOrderAsync(string orderId)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -104,7 +104,7 @@ namespace MundiAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.GetOrdersResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.GetOrderResponse>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -170,10 +170,10 @@ namespace MundiAPI.PCL.Controllers
         /// Creates a new Order
         /// </summary>
         /// <param name="body">Required parameter: Request for creating an order</param>
-        /// <return>Returns the Models.GetOrdersResponse response from the API call</return>
-        public Models.GetOrdersResponse CreateOrder(Models.CreateOrderRequest body)
+        /// <return>Returns the Models.GetOrderResponse response from the API call</return>
+        public Models.GetOrderResponse CreateOrder(Models.CreateOrderRequest body)
         {
-            Task<Models.GetOrdersResponse> t = CreateOrderAsync(body);
+            Task<Models.GetOrderResponse> t = CreateOrderAsync(body);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -182,8 +182,8 @@ namespace MundiAPI.PCL.Controllers
         /// Creates a new Order
         /// </summary>
         /// <param name="body">Required parameter: Request for creating an order</param>
-        /// <return>Returns the Models.GetOrdersResponse response from the API call</return>
-        public async Task<Models.GetOrdersResponse> CreateOrderAsync(Models.CreateOrderRequest body)
+        /// <return>Returns the Models.GetOrderResponse response from the API call</return>
+        public async Task<Models.GetOrderResponse> CreateOrderAsync(Models.CreateOrderRequest body)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
@@ -218,7 +218,7 @@ namespace MundiAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.GetOrdersResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.GetOrderResponse>(_response.Body);
             }
             catch (Exception _ex)
             {

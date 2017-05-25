@@ -15,18 +15,19 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
     public class UpdateCustomerRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
         private string name;
-        private string phone;
         private string email;
         private string document;
         private string personType;
         private Models.CreateAddressRequest address;
         private Dictionary<string, string> metadata;
+        private Models.CreatePhonesRequest phones;
 
         /// <summary>
         /// Name
@@ -42,23 +43,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.name = value;
                 onPropertyChanged("Name");
-            }
-        }
-
-        /// <summary>
-        /// Phone
-        /// </summary>
-        [JsonProperty("phone")]
-        public string Phone 
-        { 
-            get 
-            {
-                return this.phone; 
-            } 
-            set 
-            {
-                this.phone = value;
-                onPropertyChanged("Phone");
             }
         }
 
@@ -144,6 +128,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.metadata = value;
                 onPropertyChanged("Metadata");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("phones")]
+        public Models.CreatePhonesRequest Phones 
+        { 
+            get 
+            {
+                return this.phones; 
+            } 
+            set 
+            {
+                this.phones = value;
+                onPropertyChanged("Phones");
             }
         }
     }

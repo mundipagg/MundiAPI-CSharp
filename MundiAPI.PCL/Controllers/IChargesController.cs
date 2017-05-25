@@ -76,20 +76,20 @@ namespace MundiAPI.PCL.Controllers
         Task<Models.GetChargeResponse> CreateChargeAsync(Models.CreateChargeRequest request);
 
         /// <summary>
-        /// Updates the credit card from a charge
+        /// Updates the card from a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="request">Required parameter: Request for updating a charge's credit card</param>
+        /// <param name="request">Required parameter: Request for updating a charge's card</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Models.GetChargeResponse UpdateChargeCreditCard(string chargeId, Models.UpdateChargeCreditCardRequest request);
+        Models.GetChargeResponse UpdateChargeCard(string chargeId, Models.UpdateChargeCardRequest request);
 
         /// <summary>
-        /// Updates the credit card from a charge
+        /// Updates the card from a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="request">Required parameter: Request for updating a charge's credit card</param>
+        /// <param name="request">Required parameter: Request for updating a charge's card</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        Task<Models.GetChargeResponse> UpdateChargeCreditCardAsync(string chargeId, Models.UpdateChargeCreditCardRequest request);
+        Task<Models.GetChargeResponse> UpdateChargeCardAsync(string chargeId, Models.UpdateChargeCardRequest request);
 
         /// <summary>
         /// Updates a charge's payment method

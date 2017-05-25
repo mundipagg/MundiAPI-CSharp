@@ -289,32 +289,32 @@ namespace MundiAPI.PCL.Controllers
         }
 
         /// <summary>
-        /// Updates the credit card from a charge
+        /// Updates the card from a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="request">Required parameter: Request for updating a charge's credit card</param>
+        /// <param name="request">Required parameter: Request for updating a charge's card</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public Models.GetChargeResponse UpdateChargeCreditCard(string chargeId, Models.UpdateChargeCreditCardRequest request)
+        public Models.GetChargeResponse UpdateChargeCard(string chargeId, Models.UpdateChargeCardRequest request)
         {
-            Task<Models.GetChargeResponse> t = UpdateChargeCreditCardAsync(chargeId, request);
+            Task<Models.GetChargeResponse> t = UpdateChargeCardAsync(chargeId, request);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
 
         /// <summary>
-        /// Updates the credit card from a charge
+        /// Updates the card from a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="request">Required parameter: Request for updating a charge's credit card</param>
+        /// <param name="request">Required parameter: Request for updating a charge's card</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        public async Task<Models.GetChargeResponse> UpdateChargeCreditCardAsync(string chargeId, Models.UpdateChargeCreditCardRequest request)
+        public async Task<Models.GetChargeResponse> UpdateChargeCardAsync(string chargeId, Models.UpdateChargeCardRequest request)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/charges/{charge_id}/credit-card");
+            _queryBuilder.Append("/charges/{charge_id}/card");
 
             //process optional template parameters
             APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()

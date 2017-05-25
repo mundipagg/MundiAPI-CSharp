@@ -18,43 +18,43 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class ListPlansResponse : BaseModel 
+    public class UpdateSubscriptionCardRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private List<Models.GetPlanResponse> data;
-        private string paging;
+        private Models.CreateCardRequest card;
+        private string cardId;
 
         /// <summary>
-        /// The plan objects
+        /// Credit card data
         /// </summary>
-        [JsonProperty("data")]
-        public List<Models.GetPlanResponse> Data 
+        [JsonProperty("card")]
+        public Models.CreateCardRequest Card 
         { 
             get 
             {
-                return this.data; 
+                return this.card; 
             } 
             set 
             {
-                this.data = value;
-                onPropertyChanged("Data");
+                this.card = value;
+                onPropertyChanged("Card");
             }
         }
 
         /// <summary>
-        /// Paging object
+        /// Credit card id
         /// </summary>
-        [JsonProperty("paging")]
-        public string Paging 
+        [JsonProperty("card_id")]
+        public string CardId 
         { 
             get 
             {
-                return this.paging; 
+                return this.cardId; 
             } 
             set 
             {
-                this.paging = value;
-                onPropertyChanged("Paging");
+                this.cardId = value;
+                onPropertyChanged("CardId");
             }
         }
     }

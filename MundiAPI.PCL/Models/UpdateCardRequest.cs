@@ -15,9 +15,10 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
-    public class UpdateCreditCardRequest : BaseModel 
+    public class UpdateCardRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
         private string holderName;

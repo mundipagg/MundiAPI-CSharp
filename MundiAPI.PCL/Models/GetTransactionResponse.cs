@@ -15,12 +15,13 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
+    [JsonConverter(typeof(GetTransactionResponseCreationConverter))]
     public class GetTransactionResponse : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private string transactionType;
         private string gatewayId;
         private int amount;
         private string status;
@@ -30,23 +31,7 @@ namespace MundiAPI.PCL.Models
         private int attemptCount;
         private int maxAttempts;
         private DateTime? nextAttempt;
-
-        /// <summary>
-        /// Transaction type
-        /// </summary>
-        [JsonProperty("transaction_type")]
-        public string TransactionType 
-        { 
-            get 
-            {
-                return this.transactionType; 
-            } 
-            set 
-            {
-                this.transactionType = value;
-                onPropertyChanged("TransactionType");
-            }
-        }
+        private string transactionType;
 
         /// <summary>
         /// Gateway transaction id
@@ -201,6 +186,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.nextAttempt = value;
                 onPropertyChanged("NextAttempt");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("transaction_type")]
+        public string TransactionType 
+        { 
+            get 
+            {
+                return this.transactionType; 
+            } 
+            set 
+            {
+                this.transactionType = value;
+                onPropertyChanged("TransactionType");
             }
         }
     }

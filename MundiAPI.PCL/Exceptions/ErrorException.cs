@@ -18,6 +18,7 @@ using MundiAPI.PCL.Models;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Exceptions
 {
     public class ErrorException : APIException 

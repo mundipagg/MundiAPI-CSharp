@@ -15,6 +15,7 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
     public class GetCustomerResponse : BaseModel 
@@ -26,12 +27,12 @@ namespace MundiAPI.PCL.Models
         private bool delinquent;
         private DateTime createdAt;
         private DateTime updatedAt;
-        private string phone;
         private string document;
-        private string personType;
+        private string type;
         private string fbAccessToken;
         private Models.GetAddressResponse address;
         private Dictionary<string, string> metadata;
+        private Models.GetPhonesResponse phones;
         private long? fbId;
 
         /// <summary>
@@ -141,23 +142,6 @@ namespace MundiAPI.PCL.Models
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("phone")]
-        public string Phone 
-        { 
-            get 
-            {
-                return this.phone; 
-            } 
-            set 
-            {
-                this.phone = value;
-                onPropertyChanged("Phone");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
         [JsonProperty("document")]
         public string Document 
         { 
@@ -175,17 +159,17 @@ namespace MundiAPI.PCL.Models
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("person_type")]
-        public string PersonType 
+        [JsonProperty("type")]
+        public string Type 
         { 
             get 
             {
-                return this.personType; 
+                return this.type; 
             } 
             set 
             {
-                this.personType = value;
-                onPropertyChanged("PersonType");
+                this.type = value;
+                onPropertyChanged("Type");
             }
         }
 
@@ -237,6 +221,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.metadata = value;
                 onPropertyChanged("Metadata");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("phones")]
+        public Models.GetPhonesResponse Phones 
+        { 
+            get 
+            {
+                return this.phones; 
+            } 
+            set 
+            {
+                this.phones = value;
+                onPropertyChanged("Phones");
             }
         }
 

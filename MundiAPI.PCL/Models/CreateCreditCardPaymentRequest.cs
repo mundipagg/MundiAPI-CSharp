@@ -15,6 +15,7 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
     public class CreateCreditCardPaymentRequest : BaseModel 
@@ -22,10 +23,11 @@ namespace MundiAPI.PCL.Models
         // These fields hold the values for the public properties.
         private int installments = 1;
         private string statementDescriptor;
-        private Models.CreateCreditCardRequest creditCardInfo;
+        private Models.CreateCardRequest card;
         private int retries;
         private bool updateSubscriptionCard;
-        private string creditCardId;
+        private string cardId;
+        private string cardToken;
         private bool? capture = true;
 
         /// <summary>
@@ -65,17 +67,17 @@ namespace MundiAPI.PCL.Models
         /// <summary>
         /// Credit card data
         /// </summary>
-        [JsonProperty("credit_card_info")]
-        public Models.CreateCreditCardRequest CreditCardInfo 
+        [JsonProperty("card")]
+        public Models.CreateCardRequest Card 
         { 
             get 
             {
-                return this.creditCardInfo; 
+                return this.card; 
             } 
             set 
             {
-                this.creditCardInfo = value;
-                onPropertyChanged("CreditCardInfo");
+                this.card = value;
+                onPropertyChanged("Card");
             }
         }
 
@@ -116,17 +118,34 @@ namespace MundiAPI.PCL.Models
         /// <summary>
         /// The credit card id
         /// </summary>
-        [JsonProperty("credit_card_id")]
-        public string CreditCardId 
+        [JsonProperty("card_id")]
+        public string CardId 
         { 
             get 
             {
-                return this.creditCardId; 
+                return this.cardId; 
             } 
             set 
             {
-                this.creditCardId = value;
-                onPropertyChanged("CreditCardId");
+                this.cardId = value;
+                onPropertyChanged("CardId");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("card_token")]
+        public string CardToken 
+        { 
+            get 
+            {
+                return this.cardToken; 
+            } 
+            set 
+            {
+                this.cardToken = value;
+                onPropertyChanged("CardToken");
             }
         }
 

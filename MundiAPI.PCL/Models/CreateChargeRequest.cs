@@ -15,6 +15,7 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
     public class CreateChargeRequest : BaseModel 
@@ -22,11 +23,11 @@ namespace MundiAPI.PCL.Models
         // These fields hold the values for the public properties.
         private string code;
         private int amount;
-        private DateTime dueAt;
         private string customerId;
         private Models.CreateCustomerRequest customer;
         private Models.CreatePaymentRequest payment;
         private Dictionary<string, string> metadata;
+        private DateTime? dueAt;
 
         /// <summary>
         /// Code
@@ -59,24 +60,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.amount = value;
                 onPropertyChanged("Amount");
-            }
-        }
-
-        /// <summary>
-        /// The charge due date
-        /// </summary>
-        [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("due_at")]
-        public DateTime DueAt 
-        { 
-            get 
-            {
-                return this.dueAt; 
-            } 
-            set 
-            {
-                this.dueAt = value;
-                onPropertyChanged("DueAt");
             }
         }
 
@@ -145,6 +128,24 @@ namespace MundiAPI.PCL.Models
             {
                 this.metadata = value;
                 onPropertyChanged("Metadata");
+            }
+        }
+
+        /// <summary>
+        /// The charge due date
+        /// </summary>
+        [JsonConverter(typeof(IsoDateTimeConverter))]
+        [JsonProperty("due_at")]
+        public DateTime? DueAt 
+        { 
+            get 
+            {
+                return this.dueAt; 
+            } 
+            set 
+            {
+                this.dueAt = value;
+                onPropertyChanged("DueAt");
             }
         }
     }

@@ -22,48 +22,6 @@ namespace MundiAPI.PCL.Controllers
     public partial interface ISubscriptionsController
     {
         /// <summary>
-        /// Cancels a subscription
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: The subscription id</param>
-        /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Models.GetSubscriptionResponse DeleteSubscription(string subscriptionId);
-
-        /// <summary>
-        /// Cancels a subscription
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: The subscription id</param>
-        /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Task<Models.GetSubscriptionResponse> DeleteSubscriptionAsync(string subscriptionId);
-
-        /// <summary>
-        /// Gets all invoices from a subscription
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: Subscription id</param>
-        /// <return>Returns the Models.ListInvoicesResponse response from the API call</return>
-        Models.ListInvoicesResponse GetSubscriptionInvoices(string subscriptionId);
-
-        /// <summary>
-        /// Gets all invoices from a subscription
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: Subscription id</param>
-        /// <return>Returns the Models.ListInvoicesResponse response from the API call</return>
-        Task<Models.ListInvoicesResponse> GetSubscriptionInvoicesAsync(string subscriptionId);
-
-        /// <summary>
-        /// Gets all the items from a subscription
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: The subscription id</param>
-        /// <return>Returns the Models.ListSubscriptionItemsResponse response from the API call</return>
-        Models.ListSubscriptionItemsResponse GetSubscriptionItems(string subscriptionId);
-
-        /// <summary>
-        /// Gets all the items from a subscription
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: The subscription id</param>
-        /// <return>Returns the Models.ListSubscriptionItemsResponse response from the API call</return>
-        Task<Models.ListSubscriptionItemsResponse> GetSubscriptionItemsAsync(string subscriptionId);
-
-        /// <summary>
         /// Updates the billing date from a subscription
         /// </summary>
         /// <param name="subscriptionId">Required parameter: The subscription id</param>
@@ -130,18 +88,18 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Updates the credit card from a subscription
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating a credit card</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for updating a card</param>
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Models.GetSubscriptionResponse UpdateSubscriptionCreditCard(Models.UpdateSubscriptionCreditCardRequest body, string subscriptionId);
+        Models.GetSubscriptionResponse UpdateSubscriptionCard(string subscriptionId, Models.UpdateSubscriptionCardRequest request);
 
         /// <summary>
         /// Updates the credit card from a subscription
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating a credit card</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for updating a card</param>
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Task<Models.GetSubscriptionResponse> UpdateSubscriptionCreditCardAsync(Models.UpdateSubscriptionCreditCardRequest body, string subscriptionId);
+        Task<Models.GetSubscriptionResponse> UpdateSubscriptionCardAsync(string subscriptionId, Models.UpdateSubscriptionCardRequest request);
 
         /// <summary>
         /// Creates a new subscription
@@ -160,34 +118,34 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Creates a new Subscription item
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a subscription item</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for creating a subscription item</param>
         /// <return>Returns the Models.GetSubscriptionItemResponse response from the API call</return>
-        Models.GetSubscriptionItemResponse CreateSubscriptionItem(Models.CreateSubscriptionItemRequest body, string subscriptionId);
+        Models.GetSubscriptionItemResponse CreateSubscriptionItem(string subscriptionId, Models.CreateSubscriptionItemRequest request);
 
         /// <summary>
         /// Creates a new Subscription item
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a subscription item</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for creating a subscription item</param>
         /// <return>Returns the Models.GetSubscriptionItemResponse response from the API call</return>
-        Task<Models.GetSubscriptionItemResponse> CreateSubscriptionItemAsync(Models.CreateSubscriptionItemRequest body, string subscriptionId);
+        Task<Models.GetSubscriptionItemResponse> CreateSubscriptionItemAsync(string subscriptionId, Models.CreateSubscriptionItemRequest request);
 
         /// <summary>
         /// Creates a discount
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a discount</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for creating a discount</param>
         /// <return>Returns the Models.GetDiscountResponse response from the API call</return>
-        Models.GetDiscountResponse CreateDiscount(Models.CreateDiscountRequest body, string subscriptionId);
+        Models.GetDiscountResponse CreateDiscount(string subscriptionId, Models.CreateDiscountRequest request);
 
         /// <summary>
         /// Creates a discount
         /// </summary>
-        /// <param name="body">Required parameter: Request for creating a discount</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for creating a discount</param>
         /// <return>Returns the Models.GetDiscountResponse response from the API call</return>
-        Task<Models.GetDiscountResponse> CreateDiscountAsync(Models.CreateDiscountRequest body, string subscriptionId);
+        Task<Models.GetDiscountResponse> CreateDiscountAsync(string subscriptionId, Models.CreateDiscountRequest request);
 
         /// <summary>
         /// Gets a subscription
@@ -206,18 +164,18 @@ namespace MundiAPI.PCL.Controllers
         /// <summary>
         /// Updates the payment method from a subscription
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating the payment method from a subscription</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for updating the paymentmethod from a subscription</param>
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Models.GetSubscriptionResponse UpdateSubscriptionPaymentMethod(Models.UpdateSubscriptionPaymentMethodRequest body, string subscriptionId);
+        Models.GetSubscriptionResponse UpdateSubscriptionPaymentMethod(string subscriptionId, Models.UpdateSubscriptionPaymentMethodRequest request);
 
         /// <summary>
         /// Updates the payment method from a subscription
         /// </summary>
-        /// <param name="body">Required parameter: Request for updating the payment method from a subscription</param>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
+        /// <param name="request">Required parameter: Request for updating the paymentmethod from a subscription</param>
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Task<Models.GetSubscriptionResponse> UpdateSubscriptionPaymentMethodAsync(Models.UpdateSubscriptionPaymentMethodRequest body, string subscriptionId);
+        Task<Models.GetSubscriptionResponse> UpdateSubscriptionPaymentMethodAsync(string subscriptionId, Models.UpdateSubscriptionPaymentMethodRequest request);
 
         /// <summary>
         /// Lists all usages from a subscription item
@@ -273,17 +231,17 @@ namespace MundiAPI.PCL.Controllers
         /// Cancels a subscription
         /// </summary>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
-        /// <param name="body">Optional parameter: Request for cancelling a subscription</param>
+        /// <param name="request">Optional parameter: Request for cancelling a subscription</param>
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Models.GetSubscriptionResponse CancelSubscription(string subscriptionId, Models.CreateCancelSubscriptionRequest body = null);
+        Models.GetSubscriptionResponse CancelSubscription(string subscriptionId, Models.CreateCancelSubscriptionRequest request = null);
 
         /// <summary>
         /// Cancels a subscription
         /// </summary>
         /// <param name="subscriptionId">Required parameter: Subscription id</param>
-        /// <param name="body">Optional parameter: Request for cancelling a subscription</param>
+        /// <param name="request">Optional parameter: Request for cancelling a subscription</param>
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
-        Task<Models.GetSubscriptionResponse> CancelSubscriptionAsync(string subscriptionId, Models.CreateCancelSubscriptionRequest body = null);
+        Task<Models.GetSubscriptionResponse> CancelSubscriptionAsync(string subscriptionId, Models.CreateCancelSubscriptionRequest request = null);
 
         /// <summary>
         /// Deletes a subscription item

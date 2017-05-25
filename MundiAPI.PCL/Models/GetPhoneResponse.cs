@@ -18,62 +18,61 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class CreateUsageRequest : BaseModel 
+    public class GetPhoneResponse : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private int quantity;
-        private string description;
-        private DateTime usedAt;
+        private string countryCode;
+        private string number;
+        private string areaCode;
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("quantity")]
-        public int Quantity 
+        [JsonProperty("country_code")]
+        public string CountryCode 
         { 
             get 
             {
-                return this.quantity; 
+                return this.countryCode; 
             } 
             set 
             {
-                this.quantity = value;
-                onPropertyChanged("Quantity");
+                this.countryCode = value;
+                onPropertyChanged("CountryCode");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("description")]
-        public string Description 
+        [JsonProperty("number")]
+        public string Number 
         { 
             get 
             {
-                return this.description; 
+                return this.number; 
             } 
             set 
             {
-                this.description = value;
-                onPropertyChanged("Description");
+                this.number = value;
+                onPropertyChanged("Number");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("used_at")]
-        public DateTime UsedAt 
+        [JsonProperty("area_code")]
+        public string AreaCode 
         { 
             get 
             {
-                return this.usedAt; 
+                return this.areaCode; 
             } 
             set 
             {
-                this.usedAt = value;
-                onPropertyChanged("UsedAt");
+                this.areaCode = value;
+                onPropertyChanged("AreaCode");
             }
         }
     }

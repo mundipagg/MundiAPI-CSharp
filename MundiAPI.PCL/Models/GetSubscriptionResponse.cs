@@ -15,6 +15,7 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
     public class GetSubscriptionResponse : BaseModel 
@@ -34,7 +35,7 @@ namespace MundiAPI.PCL.Models
         private DateTime createdAt;
         private DateTime updatedAt;
         private Models.GetCustomerResponse customer;
-        private Models.GetCreditCardResponse creditCard;
+        private Models.GetCardResponse creditCard;
         private List<Models.GetSubscriptionItemResponse> items;
         private string statementDescriptor;
         private Dictionary<string, string> metadata;
@@ -289,7 +290,7 @@ namespace MundiAPI.PCL.Models
         /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("credit_card")]
-        public Models.GetCreditCardResponse CreditCard 
+        public Models.GetCardResponse CreditCard 
         { 
             get 
             {

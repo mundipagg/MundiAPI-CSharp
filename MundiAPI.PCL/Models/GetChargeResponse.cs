@@ -15,6 +15,7 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
     public class GetChargeResponse : BaseModel 
@@ -32,7 +33,7 @@ namespace MundiAPI.PCL.Models
         private DateTime updatedAt;
         private Models.GetTransactionResponse lastTransaction;
         private Models.GetInvoiceResponse invoice;
-        private Models.GetOrdersResponse order;
+        private Models.GetOrderResponse order;
         private Models.GetCustomerResponse customer;
         private Dictionary<string, string> metadata;
         private DateTime? paidAt;
@@ -249,7 +250,7 @@ namespace MundiAPI.PCL.Models
         /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("order")]
-        public Models.GetOrdersResponse Order 
+        public Models.GetOrderResponse Order 
         { 
             get 
             {

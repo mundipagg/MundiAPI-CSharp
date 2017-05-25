@@ -15,63 +15,64 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
-    public class UpdateSubscriptionCreditCardRequest : BaseModel 
+    public class CreatePhoneRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private Models.CreateCreditCardRequest creditCard;
-        private string creditCardId;
-        private string creditCardGatewayId;
+        private string countryCode;
+        private string number;
+        private string areaCode;
 
         /// <summary>
-        /// Credit card data
+        /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("credit_card")]
-        public Models.CreateCreditCardRequest CreditCard 
+        [JsonProperty("country_code")]
+        public string CountryCode 
         { 
             get 
             {
-                return this.creditCard; 
+                return this.countryCode; 
             } 
             set 
             {
-                this.creditCard = value;
-                onPropertyChanged("CreditCard");
+                this.countryCode = value;
+                onPropertyChanged("CountryCode");
             }
         }
 
         /// <summary>
-        /// Credit card id
+        /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("credit_card_id")]
-        public string CreditCardId 
+        [JsonProperty("number")]
+        public string Number 
         { 
             get 
             {
-                return this.creditCardId; 
+                return this.number; 
             } 
             set 
             {
-                this.creditCardId = value;
-                onPropertyChanged("CreditCardId");
+                this.number = value;
+                onPropertyChanged("Number");
             }
         }
 
         /// <summary>
-        /// Credit card gateway id
+        /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("credit_card_gateway_id")]
-        public string CreditCardGatewayId 
+        [JsonProperty("area_code")]
+        public string AreaCode 
         { 
             get 
             {
-                return this.creditCardGatewayId; 
+                return this.areaCode; 
             } 
             set 
             {
-                this.creditCardGatewayId = value;
-                onPropertyChanged("CreditCardGatewayId");
+                this.areaCode = value;
+                onPropertyChanged("AreaCode");
             }
         }
     }

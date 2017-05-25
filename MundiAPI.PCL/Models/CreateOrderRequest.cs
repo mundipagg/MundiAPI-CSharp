@@ -15,6 +15,7 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
     public class CreateOrderRequest : BaseModel 
@@ -22,7 +23,7 @@ namespace MundiAPI.PCL.Models
         // These fields hold the values for the public properties.
         private List<Models.CreateOrderItemRequest> items;
         private Models.CreateCustomerRequest customer;
-        private Models.CreatePaymentRequest payment;
+        private List<Models.CreatePaymentRequest> payments;
         private string code;
         private string customerId;
         private Models.CreateShippingRequest shipping;
@@ -65,17 +66,17 @@ namespace MundiAPI.PCL.Models
         /// <summary>
         /// Payment data
         /// </summary>
-        [JsonProperty("payment")]
-        public Models.CreatePaymentRequest Payment 
+        [JsonProperty("payments")]
+        public List<Models.CreatePaymentRequest> Payments 
         { 
             get 
             {
-                return this.payment; 
+                return this.payments; 
             } 
             set 
             {
-                this.payment = value;
-                onPropertyChanged("Payment");
+                this.payments = value;
+                onPropertyChanged("Payments");
             }
         }
 

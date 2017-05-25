@@ -15,19 +15,20 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
     public class ListCardsResponse : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private List<Models.GetCreditCardResponse> data;
+        private List<Models.GetCardResponse> data;
         private Models.PagingResponse paging;
 
         /// <summary>
         /// The card objects
         /// </summary>
         [JsonProperty("data")]
-        public List<Models.GetCreditCardResponse> Data 
+        public List<Models.GetCardResponse> Data 
         { 
             get 
             {

@@ -15,6 +15,7 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
     public class GetCreditCardTransactionResponse : GetTransactionResponse 
@@ -27,7 +28,7 @@ namespace MundiAPI.PCL.Models
         private string acquirerNsu;
         private string acquirerAuthCode;
         private string operationType;
-        private Models.GetCreditCardResponse creditCard;
+        private Models.GetCardResponse creditCard;
         private int? installments;
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace MundiAPI.PCL.Models
         /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("credit_card")]
-        public Models.GetCreditCardResponse CreditCard 
+        public Models.GetCardResponse CreditCard 
         { 
             get 
             {

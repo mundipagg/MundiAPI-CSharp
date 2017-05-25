@@ -15,6 +15,7 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
     public class CreateBoletoPaymentRequest : BaseModel 
@@ -23,6 +24,7 @@ namespace MundiAPI.PCL.Models
         private int retries;
         private string bank;
         private string instructions;
+        private DateTime dueAt;
 
         /// <summary>
         /// Number of retries
@@ -72,6 +74,24 @@ namespace MundiAPI.PCL.Models
             {
                 this.instructions = value;
                 onPropertyChanged("Instructions");
+            }
+        }
+
+        /// <summary>
+        /// Boleto due date
+        /// </summary>
+        [JsonConverter(typeof(IsoDateTimeConverter))]
+        [JsonProperty("due_at")]
+        public DateTime DueAt 
+        { 
+            get 
+            {
+                return this.dueAt; 
+            } 
+            set 
+            {
+                this.dueAt = value;
+                onPropertyChanged("DueAt");
             }
         }
     }

@@ -15,15 +15,15 @@ using Newtonsoft.Json.Converters;
 using MundiAPI.PCL;
 using MundiAPI.PCL.Utilities;
 
+
 namespace MundiAPI.PCL.Models
 {
-    public class UpdateChargeCreditCardRequest : BaseModel 
+    public class UpdateChargeCardRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
         private bool updateSubscription;
-        private string creditCardId;
-        private string creditCardGatewayId;
-        private Models.CreateCreditCardRequest creditCard;
+        private string cardId;
+        private Models.CreateCardRequest card;
 
         /// <summary>
         /// Indicates if the subscriptions using this card must also be updated
@@ -43,53 +43,36 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Credit card id
+        /// Card id
         /// </summary>
-        [JsonProperty("credit_card_id")]
-        public string CreditCardId 
+        [JsonProperty("card_id")]
+        public string CardId 
         { 
             get 
             {
-                return this.creditCardId; 
+                return this.cardId; 
             } 
             set 
             {
-                this.creditCardId = value;
-                onPropertyChanged("CreditCardId");
+                this.cardId = value;
+                onPropertyChanged("CardId");
             }
         }
 
         /// <summary>
-        /// Credit card id on the gateway
+        /// Card data
         /// </summary>
-        [JsonProperty("credit_card_gateway_id")]
-        public string CreditCardGatewayId 
+        [JsonProperty("card")]
+        public Models.CreateCardRequest Card 
         { 
             get 
             {
-                return this.creditCardGatewayId; 
+                return this.card; 
             } 
             set 
             {
-                this.creditCardGatewayId = value;
-                onPropertyChanged("CreditCardGatewayId");
-            }
-        }
-
-        /// <summary>
-        /// Credit card data
-        /// </summary>
-        [JsonProperty("credit_card")]
-        public Models.CreateCreditCardRequest CreditCard 
-        { 
-            get 
-            {
-                return this.creditCard; 
-            } 
-            set 
-            {
-                this.creditCard = value;
-                onPropertyChanged("CreditCard");
+                this.card = value;
+                onPropertyChanged("Card");
             }
         }
     }

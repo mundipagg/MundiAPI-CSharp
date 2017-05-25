@@ -18,26 +18,25 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class UpdateChargeDueDateRequest : BaseModel 
+    public class CreateCardOptionsRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private DateTime? dueAt;
+        private bool verifyCard;
 
         /// <summary>
-        /// The charge's new due date
+        /// Indicates if the card should be verified before creation. If true, executes an authorization before saving the card.
         /// </summary>
-        [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("due_at")]
-        public DateTime? DueAt 
+        [JsonProperty("verify_card")]
+        public bool VerifyCard 
         { 
             get 
             {
-                return this.dueAt; 
+                return this.verifyCard; 
             } 
             set 
             {
-                this.dueAt = value;
-                onPropertyChanged("DueAt");
+                this.verifyCard = value;
+                onPropertyChanged("VerifyCard");
             }
         }
     }

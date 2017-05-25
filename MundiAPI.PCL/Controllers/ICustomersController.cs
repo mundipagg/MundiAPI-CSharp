@@ -36,18 +36,18 @@ namespace MundiAPI.PCL.Controllers
         Task<Models.ListAddressesResponse> GetAddressesAsync(string customerId);
 
         /// <summary>
-        /// Get all credit cards from a customer
+        /// Get all cards from a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <return>Returns the Models.ListCardsResponse response from the API call</return>
-        Models.ListCardsResponse GetCreditCards(string customerId);
+        Models.ListCardsResponse GetCards(string customerId);
 
         /// <summary>
-        /// Get all credit cards from a customer
+        /// Get all cards from a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <return>Returns the Models.ListCardsResponse response from the API call</return>
-        Task<Models.ListCardsResponse> GetCreditCardsAsync(string customerId);
+        Task<Models.ListCardsResponse> GetCardsAsync(string customerId);
 
         /// <summary>
         /// Get all Customers
@@ -108,22 +108,22 @@ namespace MundiAPI.PCL.Controllers
         Task<Models.GetAddressResponse> UpdateAddressAsync(string customerId, string addressId, Models.UpdateAddressRequest request);
 
         /// <summary>
-        /// Updates a credit card
+        /// Updates a card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="cardId">Required parameter: Credit card id</param>
-        /// <param name="request">Required parameter: Request for updating a credit card</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Models.GetCreditCardResponse UpdateCreditCard(string customerId, string cardId, Models.UpdateCreditCardRequest request);
+        /// <param name="cardId">Required parameter: Card id</param>
+        /// <param name="request">Required parameter: Request for updating a card</param>
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        Models.GetCardResponse UpdateCard(string customerId, string cardId, Models.UpdateCardRequest request);
 
         /// <summary>
-        /// Updates a credit card
+        /// Updates a card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="cardId">Required parameter: Credit card id</param>
-        /// <param name="request">Required parameter: Request for updating a credit card</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Task<Models.GetCreditCardResponse> UpdateCreditCardAsync(string customerId, string cardId, Models.UpdateCreditCardRequest request);
+        /// <param name="cardId">Required parameter: Card id</param>
+        /// <param name="request">Required parameter: Request for updating a card</param>
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        Task<Models.GetCardResponse> UpdateCardAsync(string customerId, string cardId, Models.UpdateCardRequest request);
 
         /// <summary>
         /// Get a customer's address
@@ -158,20 +158,20 @@ namespace MundiAPI.PCL.Controllers
         Task<Models.GetAddressResponse> DeleteAddressAsync(string customerId, string addressId);
 
         /// <summary>
-        /// Delete a customer's credit card
+        /// Delete a customer's card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="cardId">Required parameter: Card Id</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Models.GetCreditCardResponse DeleteCreditCard(string customerId, string cardId);
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        Models.GetCardResponse DeleteCard(string customerId, string cardId);
 
         /// <summary>
-        /// Delete a customer's credit card
+        /// Delete a customer's card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="cardId">Required parameter: Card Id</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Task<Models.GetCreditCardResponse> DeleteCreditCardAsync(string customerId, string cardId);
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        Task<Models.GetCardResponse> DeleteCardAsync(string customerId, string cardId);
 
         /// <summary>
         /// Creates a new address for a customer
@@ -190,36 +190,36 @@ namespace MundiAPI.PCL.Controllers
         Task<Models.GetAddressResponse> CreateAddressAsync(string customerId, Models.CreateAddressRequest request);
 
         /// <summary>
-        /// Get a customer's credit card
+        /// Get a customer's card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
         /// <param name="cardId">Required parameter: Card id</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Models.GetCreditCardResponse GetCreditCard(string customerId, string cardId);
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        Models.GetCardResponse GetCard(string customerId, string cardId);
 
         /// <summary>
-        /// Get a customer's credit card
+        /// Get a customer's card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
         /// <param name="cardId">Required parameter: Card id</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Task<Models.GetCreditCardResponse> GetCreditCardAsync(string customerId, string cardId);
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        Task<Models.GetCardResponse> GetCardAsync(string customerId, string cardId);
 
         /// <summary>
-        /// Creates a new credit card for a customer
+        /// Creates a new card for a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="request">Required parameter: Request for creating a credit card</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Models.GetCreditCardResponse CreateCreditCard(string customerId, Models.CreateCreditCardRequest request);
+        /// <param name="request">Required parameter: Request for creating a card</param>
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        Models.GetCardResponse CreateCard(string customerId, Models.CreateCardRequest request);
 
         /// <summary>
-        /// Creates a new credit card for a customer
+        /// Creates a new card for a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="request">Required parameter: Request for creating a credit card</param>
-        /// <return>Returns the Models.GetCreditCardResponse response from the API call</return>
-        Task<Models.GetCreditCardResponse> CreateCreditCardAsync(string customerId, Models.CreateCreditCardRequest request);
+        /// <param name="request">Required parameter: Request for creating a card</param>
+        /// <return>Returns the Models.GetCardResponse response from the API call</return>
+        Task<Models.GetCardResponse> CreateCardAsync(string customerId, Models.CreateCardRequest request);
 
         /// <summary>
         /// Updates a customer
