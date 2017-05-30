@@ -21,7 +21,25 @@ namespace MundiAPI.PCL.Models
     public class CreateCaptureChargeRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
+        private string code;
         private int? amount;
+
+        /// <summary>
+        /// Code for the charge. Sending this field will update the code send on the charge and order creation.
+        /// </summary>
+        [JsonProperty("code")]
+        public string Code 
+        { 
+            get 
+            {
+                return this.code; 
+            } 
+            set 
+            {
+                this.code = value;
+                onPropertyChanged("Code");
+            }
+        }
 
         /// <summary>
         /// The amount that will be captured

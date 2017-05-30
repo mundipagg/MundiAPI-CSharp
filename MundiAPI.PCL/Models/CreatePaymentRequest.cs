@@ -25,6 +25,7 @@ namespace MundiAPI.PCL.Models
         private Models.CreateCreditCardPaymentRequest creditCard;
         private Models.CreateBoletoPaymentRequest boleto;
         private string currency;
+        private Models.CreateVoucherPaymentRequest voucher;
 
         /// <summary>
         /// Payment method
@@ -91,6 +92,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.currency = value;
                 onPropertyChanged("Currency");
+            }
+        }
+
+        /// <summary>
+        /// Settings for voucher payment
+        /// </summary>
+        [JsonProperty("voucher")]
+        public Models.CreateVoucherPaymentRequest Voucher 
+        { 
+            get 
+            {
+                return this.voucher; 
+            } 
+            set 
+            {
+                this.voucher = value;
+                onPropertyChanged("Voucher");
             }
         }
     }

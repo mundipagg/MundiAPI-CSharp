@@ -17,6 +17,7 @@ namespace MundiAPI.PCL.Models
             {
                 { "boleto",typeof(GetBoletoTransactionResponse)},
                 { "credit_card",typeof(GetCreditCardTransactionResponse)},
+                { "voucher",typeof(GetVoucherTransactionResponse)},
             };
         }
     }

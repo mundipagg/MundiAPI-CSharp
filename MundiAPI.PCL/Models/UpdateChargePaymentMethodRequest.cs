@@ -25,6 +25,7 @@ namespace MundiAPI.PCL.Models
         private string paymentMethod;
         private Models.CreateCreditCardPaymentRequest creditCard;
         private Models.CreateBoletoPaymentRequest boleto;
+        private Models.CreateVoucherPaymentRequest voucher;
 
         /// <summary>
         /// Indicates if the payment method from the subscription must also be updated
@@ -91,6 +92,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.boleto = value;
                 onPropertyChanged("Boleto");
+            }
+        }
+
+        /// <summary>
+        /// Voucher data
+        /// </summary>
+        [JsonProperty("voucher")]
+        public Models.CreateVoucherPaymentRequest Voucher 
+        { 
+            get 
+            {
+                return this.voucher; 
+            } 
+            set 
+            {
+                this.voucher = value;
+                onPropertyChanged("Voucher");
             }
         }
     }
