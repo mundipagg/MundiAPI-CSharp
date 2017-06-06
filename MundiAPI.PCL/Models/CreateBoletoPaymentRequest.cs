@@ -25,6 +25,8 @@ namespace MundiAPI.PCL.Models
         private string bank;
         private string instructions;
         private DateTime dueAt;
+        private Models.CreateAddressRequest billingAddress;
+        private string billingAddressId;
 
         /// <summary>
         /// Number of retries
@@ -92,6 +94,40 @@ namespace MundiAPI.PCL.Models
             {
                 this.dueAt = value;
                 onPropertyChanged("DueAt");
+            }
+        }
+
+        /// <summary>
+        /// Card's billing address
+        /// </summary>
+        [JsonProperty("billing_address")]
+        public Models.CreateAddressRequest BillingAddress 
+        { 
+            get 
+            {
+                return this.billingAddress; 
+            } 
+            set 
+            {
+                this.billingAddress = value;
+                onPropertyChanged("BillingAddress");
+            }
+        }
+
+        /// <summary>
+        /// The address id for the billing address
+        /// </summary>
+        [JsonProperty("billing_address_id")]
+        public string BillingAddressId 
+        { 
+            get 
+            {
+                return this.billingAddressId; 
+            } 
+            set 
+            {
+                this.billingAddressId = value;
+                onPropertyChanged("BillingAddressId");
             }
         }
     }

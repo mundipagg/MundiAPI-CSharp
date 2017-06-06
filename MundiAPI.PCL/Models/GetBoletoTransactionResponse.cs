@@ -27,6 +27,7 @@ namespace MundiAPI.PCL.Models
         private string bank;
         private string documentNumber;
         private string instructions;
+        private Models.GetBillingAddressResponse billingAddress;
 
         /// <summary>
         /// TODO: Write general description for this method
@@ -127,6 +128,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.instructions = value;
                 onPropertyChanged("Instructions");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("billing_address")]
+        public Models.GetBillingAddressResponse BillingAddress 
+        { 
+            get 
+            {
+                return this.billingAddress; 
+            } 
+            set 
+            {
+                this.billingAddress = value;
+                onPropertyChanged("BillingAddress");
             }
         }
     }

@@ -26,6 +26,7 @@ namespace MundiAPI.PCL.Models
         private Models.CreateBoletoPaymentRequest boleto;
         private string currency;
         private Models.CreateVoucherPaymentRequest voucher;
+        private Models.CreateBankTransferPaymentRequest bankTransfer;
 
         /// <summary>
         /// Payment method
@@ -109,6 +110,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.voucher = value;
                 onPropertyChanged("Voucher");
+            }
+        }
+
+        /// <summary>
+        /// Settings for bank transfer payment
+        /// </summary>
+        [JsonProperty("bank_transfer")]
+        public Models.CreateBankTransferPaymentRequest BankTransfer 
+        { 
+            get 
+            {
+                return this.bankTransfer; 
+            } 
+            set 
+            {
+                this.bankTransfer = value;
+                onPropertyChanged("BankTransfer");
             }
         }
     }
