@@ -34,6 +34,7 @@ namespace MundiAPI.PCL.Models
         private Models.GetCustomerResponse customer;
         private Dictionary<string, string> metadata;
         private string type;
+        private string holderDocument;
         private DateTime? deletedAt;
 
         /// <summary>
@@ -256,6 +257,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.type = value;
                 onPropertyChanged("Type");
+            }
+        }
+
+        /// <summary>
+        /// Document number for the card's holder
+        /// </summary>
+        [JsonProperty("holder_document")]
+        public string HolderDocument 
+        { 
+            get 
+            {
+                return this.holderDocument; 
+            } 
+            set 
+            {
+                this.holderDocument = value;
+                onPropertyChanged("HolderDocument");
             }
         }
 

@@ -18,7 +18,7 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class GetCreditCardTransactionResponse : GetTransactionResponse 
+    public class GetVoucherTransactionResponse : GetTransactionResponse 
     {
         // These fields hold the values for the public properties.
         private string statementDescriptor;
@@ -27,12 +27,13 @@ namespace MundiAPI.PCL.Models
         private string acquirerTid;
         private string acquirerNsu;
         private string acquirerAuthCode;
+        private string acquirerMessage;
+        private string acquirerReturnCode;
         private string operationType;
         private Models.GetCardResponse card;
-        private int? installments;
 
         /// <summary>
-        /// Text that will appear on the credit card's statement
+        /// Text that will appear on the voucher's statement
         /// </summary>
         [JsonProperty("statement_descriptor")]
         public string StatementDescriptor 
@@ -66,7 +67,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Aquirer affiliation code
+        /// Acquirer affiliation code
         /// </summary>
         [JsonProperty("acquirer_affiliation_code")]
         public string AcquirerAffiliationCode 
@@ -134,6 +135,40 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
+        /// acquirer_message
+        /// </summary>
+        [JsonProperty("acquirer_message")]
+        public string AcquirerMessage 
+        { 
+            get 
+            {
+                return this.acquirerMessage; 
+            } 
+            set 
+            {
+                this.acquirerMessage = value;
+                onPropertyChanged("AcquirerMessage");
+            }
+        }
+
+        /// <summary>
+        /// Acquirer return code
+        /// </summary>
+        [JsonProperty("acquirer_return_code")]
+        public string AcquirerReturnCode 
+        { 
+            get 
+            {
+                return this.acquirerReturnCode; 
+            } 
+            set 
+            {
+                this.acquirerReturnCode = value;
+                onPropertyChanged("AcquirerReturnCode");
+            }
+        }
+
+        /// <summary>
         /// Operation type
         /// </summary>
         [JsonProperty("operation_type")]
@@ -164,23 +199,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.card = value;
                 onPropertyChanged("Card");
-            }
-        }
-
-        /// <summary>
-        /// Number of installments
-        /// </summary>
-        [JsonProperty("installments")]
-        public int? Installments 
-        { 
-            get 
-            {
-                return this.installments; 
-            } 
-            set 
-            {
-                this.installments = value;
-                onPropertyChanged("Installments");
             }
         }
     }

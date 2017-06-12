@@ -32,6 +32,7 @@ namespace MundiAPI.PCL.Models
         private Dictionary<string, string> metadata;
         private string type = "credit";
         private Models.CreateCardOptionsRequest options;
+        private string holderDocument;
 
         /// <summary>
         /// Credit card number
@@ -217,6 +218,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.options = value;
                 onPropertyChanged("Options");
+            }
+        }
+
+        /// <summary>
+        /// Document number for the card's holder
+        /// </summary>
+        [JsonProperty("holder_document")]
+        public string HolderDocument 
+        { 
+            get 
+            {
+                return this.holderDocument; 
+            } 
+            set 
+            {
+                this.holderDocument = value;
+                onPropertyChanged("HolderDocument");
             }
         }
     }

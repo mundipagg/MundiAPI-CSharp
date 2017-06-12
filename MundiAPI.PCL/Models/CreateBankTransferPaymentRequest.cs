@@ -18,43 +18,43 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class CreateCaptureChargeRequest : BaseModel 
+    public class CreateBankTransferPaymentRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private string code;
-        private int? amount;
+        private string bank;
+        private int retries;
 
         /// <summary>
-        /// Code for the charge. Sending this field will update the code send on the charge and order creation.
+        /// Bank
         /// </summary>
-        [JsonProperty("code")]
-        public string Code 
+        [JsonProperty("bank")]
+        public string Bank 
         { 
             get 
             {
-                return this.code; 
+                return this.bank; 
             } 
             set 
             {
-                this.code = value;
-                onPropertyChanged("Code");
+                this.bank = value;
+                onPropertyChanged("Bank");
             }
         }
 
         /// <summary>
-        /// The amount that will be captured
+        /// Number of retries
         /// </summary>
-        [JsonProperty("amount")]
-        public int? Amount 
+        [JsonProperty("retries")]
+        public int Retries 
         { 
             get 
             {
-                return this.amount; 
+                return this.retries; 
             } 
             set 
             {
-                this.amount = value;
-                onPropertyChanged("Amount");
+                this.retries = value;
+                onPropertyChanged("Retries");
             }
         }
     }
