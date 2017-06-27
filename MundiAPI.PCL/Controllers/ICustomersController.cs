@@ -237,5 +237,81 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
         Task<Models.GetCustomerResponse> UpdateCustomerAsync(string customerId, Models.UpdateCustomerRequest request);
 
+        /// <summary>
+        /// Delete a Customer's access tokens
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <return>Returns the Models.ListAccessTokensResponse response from the API call</return>
+        Models.ListAccessTokensResponse DeleteAccessTokens(string customerId);
+
+        /// <summary>
+        /// Delete a Customer's access tokens
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <return>Returns the Models.ListAccessTokensResponse response from the API call</return>
+        Task<Models.ListAccessTokensResponse> DeleteAccessTokensAsync(string customerId);
+
+        /// <summary>
+        /// Get all access tokens from a customer
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <return>Returns the Models.ListAccessTokensResponse response from the API call</return>
+        Models.ListAccessTokensResponse GetAccessTokens(string customerId);
+
+        /// <summary>
+        /// Get all access tokens from a customer
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <return>Returns the Models.ListAccessTokensResponse response from the API call</return>
+        Task<Models.ListAccessTokensResponse> GetAccessTokensAsync(string customerId);
+
+        /// <summary>
+        /// Delete a customer's access token
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="tokenId">Required parameter: Token Id</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        Models.GetAccessTokenResponse DeleteAccessToken(string customerId, string tokenId);
+
+        /// <summary>
+        /// Delete a customer's access token
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="tokenId">Required parameter: Token Id</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        Task<Models.GetAccessTokenResponse> DeleteAccessTokenAsync(string customerId, string tokenId);
+
+        /// <summary>
+        /// Creates a access token for a customer
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="request">Required parameter: Request for creating a access token</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        Models.GetAccessTokenResponse CreateAccessToken(string customerId, Models.CreateAccessTokenRequest request);
+
+        /// <summary>
+        /// Creates a access token for a customer
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="request">Required parameter: Request for creating a access token</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        Task<Models.GetAccessTokenResponse> CreateAccessTokenAsync(string customerId, Models.CreateAccessTokenRequest request);
+
+        /// <summary>
+        /// Get a Customer's access token
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="tokenId">Required parameter: Token Id</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        Models.GetAccessTokenResponse GetAccessToken(string customerId, string tokenId);
+
+        /// <summary>
+        /// Get a Customer's access token
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="tokenId">Required parameter: Token Id</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        Task<Models.GetAccessTokenResponse> GetAccessTokenAsync(string customerId, string tokenId);
+
     }
 } 
