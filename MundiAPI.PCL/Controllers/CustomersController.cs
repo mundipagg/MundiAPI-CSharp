@@ -956,5 +956,327 @@ namespace MundiAPI.PCL.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete a Customer's access tokens
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <return>Returns the Models.ListAccessTokensResponse response from the API call</return>
+        public Models.ListAccessTokensResponse DeleteAccessTokens(string customerId)
+        {
+            Task<Models.ListAccessTokensResponse> t = DeleteAccessTokensAsync(customerId);
+            APIHelper.RunTaskSynchronously(t);
+            return t.Result;
+        }
+
+        /// <summary>
+        /// Delete a Customer's access tokens
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <return>Returns the Models.ListAccessTokensResponse response from the API call</return>
+        public async Task<Models.ListAccessTokensResponse> DeleteAccessTokensAsync(string customerId)
+        {
+            //the base uri for api requestss
+            string _baseUri = Configuration.BaseUri;
+
+            //prepare query string for API call
+            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+            _queryBuilder.Append("/customers/{customer_id}/access-tokens/");
+
+            //process optional template parameters
+            APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
+            {
+                { "customer_id", customerId }
+            });
+
+
+            //validate and preprocess url
+            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
+
+            //append request with appropriate headers and parameters
+            var _headers = new Dictionary<string,string>()
+            {
+                { "user-agent", "MundiSDK" },
+                { "accept", "application/json" }
+            };
+
+            //prepare the API call request to fetch the response
+            HttpRequest _request = ClientInstance.Get(_queryUrl,_headers, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
+
+            //invoke request and get response
+            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
+            HttpContext _context = new HttpContext(_request,_response);
+            //handle errors defined at the API level
+            base.ValidateResponse(_response, _context);
+
+            try
+            {
+                return APIHelper.JsonDeserialize<Models.ListAccessTokensResponse>(_response.Body);
+            }
+            catch (Exception _ex)
+            {
+                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
+            }
+        }
+
+        /// <summary>
+        /// Get all access tokens from a customer
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <return>Returns the Models.ListAccessTokensResponse response from the API call</return>
+        public Models.ListAccessTokensResponse GetAccessTokens(string customerId)
+        {
+            Task<Models.ListAccessTokensResponse> t = GetAccessTokensAsync(customerId);
+            APIHelper.RunTaskSynchronously(t);
+            return t.Result;
+        }
+
+        /// <summary>
+        /// Get all access tokens from a customer
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <return>Returns the Models.ListAccessTokensResponse response from the API call</return>
+        public async Task<Models.ListAccessTokensResponse> GetAccessTokensAsync(string customerId)
+        {
+            //the base uri for api requestss
+            string _baseUri = Configuration.BaseUri;
+
+            //prepare query string for API call
+            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+            _queryBuilder.Append("/customers/{customer_id}/access-tokens");
+
+            //process optional template parameters
+            APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
+            {
+                { "customer_id", customerId }
+            });
+
+
+            //validate and preprocess url
+            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
+
+            //append request with appropriate headers and parameters
+            var _headers = new Dictionary<string,string>()
+            {
+                { "user-agent", "MundiSDK" },
+                { "accept", "application/json" }
+            };
+
+            //prepare the API call request to fetch the response
+            HttpRequest _request = ClientInstance.Get(_queryUrl,_headers, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
+
+            //invoke request and get response
+            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
+            HttpContext _context = new HttpContext(_request,_response);
+            //handle errors defined at the API level
+            base.ValidateResponse(_response, _context);
+
+            try
+            {
+                return APIHelper.JsonDeserialize<Models.ListAccessTokensResponse>(_response.Body);
+            }
+            catch (Exception _ex)
+            {
+                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
+            }
+        }
+
+        /// <summary>
+        /// Delete a customer's access token
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="tokenId">Required parameter: Token Id</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        public Models.GetAccessTokenResponse DeleteAccessToken(string customerId, string tokenId)
+        {
+            Task<Models.GetAccessTokenResponse> t = DeleteAccessTokenAsync(customerId, tokenId);
+            APIHelper.RunTaskSynchronously(t);
+            return t.Result;
+        }
+
+        /// <summary>
+        /// Delete a customer's access token
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="tokenId">Required parameter: Token Id</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        public async Task<Models.GetAccessTokenResponse> DeleteAccessTokenAsync(string customerId, string tokenId)
+        {
+            //the base uri for api requestss
+            string _baseUri = Configuration.BaseUri;
+
+            //prepare query string for API call
+            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+            _queryBuilder.Append("/customers/{customer_id}/access-tokens/{token_id}");
+
+            //process optional template parameters
+            APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
+            {
+                { "customer_id", customerId },
+                { "token_id", tokenId }
+            });
+
+
+            //validate and preprocess url
+            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
+
+            //append request with appropriate headers and parameters
+            var _headers = new Dictionary<string,string>()
+            {
+                { "user-agent", "MundiSDK" },
+                { "accept", "application/json" }
+            };
+
+            //prepare the API call request to fetch the response
+            HttpRequest _request = ClientInstance.Delete(_queryUrl, _headers, null, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
+
+            //invoke request and get response
+            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
+            HttpContext _context = new HttpContext(_request,_response);
+            //handle errors defined at the API level
+            base.ValidateResponse(_response, _context);
+
+            try
+            {
+                return APIHelper.JsonDeserialize<Models.GetAccessTokenResponse>(_response.Body);
+            }
+            catch (Exception _ex)
+            {
+                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
+            }
+        }
+
+        /// <summary>
+        /// Creates a access token for a customer
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="request">Required parameter: Request for creating a access token</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        public Models.GetAccessTokenResponse CreateAccessToken(string customerId, Models.CreateAccessTokenRequest request)
+        {
+            Task<Models.GetAccessTokenResponse> t = CreateAccessTokenAsync(customerId, request);
+            APIHelper.RunTaskSynchronously(t);
+            return t.Result;
+        }
+
+        /// <summary>
+        /// Creates a access token for a customer
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="request">Required parameter: Request for creating a access token</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        public async Task<Models.GetAccessTokenResponse> CreateAccessTokenAsync(string customerId, Models.CreateAccessTokenRequest request)
+        {
+            //the base uri for api requestss
+            string _baseUri = Configuration.BaseUri;
+
+            //prepare query string for API call
+            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+            _queryBuilder.Append("/customers/{customer_id}/access-tokens");
+
+            //process optional template parameters
+            APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
+            {
+                { "customer_id", customerId }
+            });
+
+
+            //validate and preprocess url
+            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
+
+            //append request with appropriate headers and parameters
+            var _headers = new Dictionary<string,string>()
+            {
+                { "user-agent", "MundiSDK" },
+                { "accept", "application/json" },
+                { "content-type", "application/json; charset=utf-8" }
+            };
+
+            //append body params
+            var _body = APIHelper.JsonSerialize(request);
+
+            //prepare the API call request to fetch the response
+            HttpRequest _request = ClientInstance.PostBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
+
+            //invoke request and get response
+            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
+            HttpContext _context = new HttpContext(_request,_response);
+            //handle errors defined at the API level
+            base.ValidateResponse(_response, _context);
+
+            try
+            {
+                return APIHelper.JsonDeserialize<Models.GetAccessTokenResponse>(_response.Body);
+            }
+            catch (Exception _ex)
+            {
+                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
+            }
+        }
+
+        /// <summary>
+        /// Get a Customer's access token
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="tokenId">Required parameter: Token Id</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        public Models.GetAccessTokenResponse GetAccessToken(string customerId, string tokenId)
+        {
+            Task<Models.GetAccessTokenResponse> t = GetAccessTokenAsync(customerId, tokenId);
+            APIHelper.RunTaskSynchronously(t);
+            return t.Result;
+        }
+
+        /// <summary>
+        /// Get a Customer's access token
+        /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="tokenId">Required parameter: Token Id</param>
+        /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
+        public async Task<Models.GetAccessTokenResponse> GetAccessTokenAsync(string customerId, string tokenId)
+        {
+            //the base uri for api requestss
+            string _baseUri = Configuration.BaseUri;
+
+            //prepare query string for API call
+            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+            _queryBuilder.Append("/customers/{customer_id}/access-tokens/{token_id}");
+
+            //process optional template parameters
+            APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
+            {
+                { "customer_id", customerId },
+                { "token_id", tokenId }
+            });
+
+
+            //validate and preprocess url
+            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
+
+            //append request with appropriate headers and parameters
+            var _headers = new Dictionary<string,string>()
+            {
+                { "user-agent", "MundiSDK" },
+                { "accept", "application/json" }
+            };
+
+            //prepare the API call request to fetch the response
+            HttpRequest _request = ClientInstance.Get(_queryUrl,_headers, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
+
+            //invoke request and get response
+            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
+            HttpContext _context = new HttpContext(_request,_response);
+            //handle errors defined at the API level
+            base.ValidateResponse(_response, _context);
+
+            try
+            {
+                return APIHelper.JsonDeserialize<Models.GetAccessTokenResponse>(_response.Body);
+            }
+            catch (Exception _ex)
+            {
+                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
+            }
+        }
+
     }
 } 
