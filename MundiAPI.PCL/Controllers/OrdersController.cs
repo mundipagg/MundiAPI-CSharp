@@ -18,7 +18,6 @@ using MundiAPI.PCL.Http.Request;
 using MundiAPI.PCL.Http.Response;
 using MundiAPI.PCL.Http.Client;
 using MundiAPI.PCL.Exceptions;
-using MundiAPI.PCL.Models;
 
 namespace MundiAPI.PCL.Controllers
 {
@@ -69,7 +68,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetOrderResponse response from the API call</return>
         public async Task<Models.GetOrderResponse> GetOrderAsync(string orderId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -129,7 +128,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.ListOrderResponse response from the API call</return>
         public async Task<Models.ListOrderResponse> GetOrdersAsync()
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -185,7 +184,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetOrderResponse response from the API call</return>
         public async Task<Models.GetOrderResponse> CreateOrderAsync(Models.CreateOrderRequest body)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call

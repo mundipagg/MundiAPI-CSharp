@@ -6,6 +6,7 @@
 using System;
 using MundiAPI.PCL.Controllers;
 using MundiAPI.PCL.Http.Client;
+using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL
 {
@@ -91,7 +92,7 @@ namespace MundiAPI.PCL
                 BaseController.ClientInstance = value;
             }        
         }
-        
+        #region Constructors
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -105,5 +106,6 @@ namespace MundiAPI.PCL
             Configuration.BasicAuthUserName = basicAuthUserName;
             Configuration.BasicAuthPassword = basicAuthPassword;
         }
+        #endregion
     }
 }

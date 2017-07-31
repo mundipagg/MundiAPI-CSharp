@@ -5,6 +5,8 @@
  */
 using System;
 using System.Collections.Generic;
+using MundiAPI.PCL;
+using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {

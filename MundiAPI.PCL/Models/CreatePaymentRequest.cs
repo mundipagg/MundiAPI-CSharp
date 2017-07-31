@@ -27,6 +27,7 @@ namespace MundiAPI.PCL.Models
         private string currency;
         private Models.CreateVoucherPaymentRequest voucher;
         private Models.CreateBankTransferPaymentRequest bankTransfer;
+        private string gatewayAffiliationId;
 
         /// <summary>
         /// Payment method
@@ -127,6 +128,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.bankTransfer = value;
                 onPropertyChanged("BankTransfer");
+            }
+        }
+
+        /// <summary>
+        /// Gateway affiliation code
+        /// </summary>
+        [JsonProperty("gateway_affiliation_id")]
+        public string GatewayAffiliationId 
+        { 
+            get 
+            {
+                return this.gatewayAffiliationId; 
+            } 
+            set 
+            {
+                this.gatewayAffiliationId = value;
+                onPropertyChanged("GatewayAffiliationId");
             }
         }
     }

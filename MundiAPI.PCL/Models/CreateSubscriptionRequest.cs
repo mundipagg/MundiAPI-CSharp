@@ -21,12 +21,9 @@ namespace MundiAPI.PCL.Models
     public class CreateSubscriptionRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private string planId;
         private Models.CreateCustomerRequest customer;
         private Models.CreateCardRequest card;
         private string code;
-        private string customerId;
-        private string cardId;
         private string paymentMethod;
         private string billingType;
         private string statementDescriptor;
@@ -40,28 +37,15 @@ namespace MundiAPI.PCL.Models
         private List<Models.CreateDiscountRequest> discounts;
         private Dictionary<string, string> metadata;
         private Models.CreateSetupRequest setup;
+        private string planId;
+        private string customerId;
+        private string cardId;
         private int? billingDay;
         private int? installments;
         private DateTime? startAt;
         private int? minimumPrice;
         private int? cycles;
-
-        /// <summary>
-        /// Plan id
-        /// </summary>
-        [JsonProperty("plan_id")]
-        public string PlanId 
-        { 
-            get 
-            {
-                return this.planId; 
-            } 
-            set 
-            {
-                this.planId = value;
-                onPropertyChanged("PlanId");
-            }
-        }
+        private string cardToken;
 
         /// <summary>
         /// Customer
@@ -111,40 +95,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.code = value;
                 onPropertyChanged("Code");
-            }
-        }
-
-        /// <summary>
-        /// Customer id
-        /// </summary>
-        [JsonProperty("customer_id")]
-        public string CustomerId 
-        { 
-            get 
-            {
-                return this.customerId; 
-            } 
-            set 
-            {
-                this.customerId = value;
-                onPropertyChanged("CustomerId");
-            }
-        }
-
-        /// <summary>
-        /// Card id
-        /// </summary>
-        [JsonProperty("card_id")]
-        public string CardId 
-        { 
-            get 
-            {
-                return this.cardId; 
-            } 
-            set 
-            {
-                this.cardId = value;
-                onPropertyChanged("CardId");
             }
         }
 
@@ -370,6 +320,57 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
+        /// Plan id
+        /// </summary>
+        [JsonProperty("plan_id")]
+        public string PlanId 
+        { 
+            get 
+            {
+                return this.planId; 
+            } 
+            set 
+            {
+                this.planId = value;
+                onPropertyChanged("PlanId");
+            }
+        }
+
+        /// <summary>
+        /// Customer id
+        /// </summary>
+        [JsonProperty("customer_id")]
+        public string CustomerId 
+        { 
+            get 
+            {
+                return this.customerId; 
+            } 
+            set 
+            {
+                this.customerId = value;
+                onPropertyChanged("CustomerId");
+            }
+        }
+
+        /// <summary>
+        /// Card id
+        /// </summary>
+        [JsonProperty("card_id")]
+        public string CardId 
+        { 
+            get 
+            {
+                return this.cardId; 
+            } 
+            set 
+            {
+                this.cardId = value;
+                onPropertyChanged("CardId");
+            }
+        }
+
+        /// <summary>
         /// Billing day
         /// </summary>
         [JsonProperty("billing_day")]
@@ -452,6 +453,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.cycles = value;
                 onPropertyChanged("Cycles");
+            }
+        }
+
+        /// <summary>
+        /// Card token
+        /// </summary>
+        [JsonProperty("card_token")]
+        public string CardToken 
+        { 
+            get 
+            {
+                return this.cardToken; 
+            } 
+            set 
+            {
+                this.cardToken = value;
+                onPropertyChanged("CardToken");
             }
         }
     }

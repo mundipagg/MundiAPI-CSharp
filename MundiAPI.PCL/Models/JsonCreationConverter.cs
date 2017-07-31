@@ -7,10 +7,12 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using MundiAPI.PCL;
+using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public abstract class JsonCreationConverter<T> : JsonConverter 
+    public abstract class JsonCreationConverter<T> : JsonConverter
     {
         public string typeName;
         public Dictionary<string, Type> dic;
@@ -18,7 +20,7 @@ namespace MundiAPI.PCL.Models
         {
             JToken token;
             if (!jsonObject.TryGetValue(typeName, out token))
-                return  (T)Activator.CreateInstance(objectType);
+                return (T)Activator.CreateInstance(objectType);
             foreach (var type in dic)
                 if (type.Key.Equals(token.ToString()))
                     return (T)Activator.CreateInstance(type.Value);
@@ -27,7 +29,11 @@ namespace MundiAPI.PCL.Models
 
         public override bool CanConvert(Type objectType)
         {
+#if  NETSTANDARD1_3
+            return typeof(T).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo());
+#else
             return typeof(T).IsAssignableFrom(objectType);
+#endif
         }
 
         public override object ReadJson(JsonReader reader, Type objectType,

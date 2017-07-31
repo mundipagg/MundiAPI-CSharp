@@ -18,7 +18,6 @@ using MundiAPI.PCL.Http.Request;
 using MundiAPI.PCL.Http.Response;
 using MundiAPI.PCL.Http.Client;
 using MundiAPI.PCL.Exceptions;
-using MundiAPI.PCL.Models;
 
 namespace MundiAPI.PCL.Controllers
 {
@@ -69,7 +68,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.ListAddressesResponse response from the API call</return>
         public async Task<Models.ListAddressesResponse> GetAddressesAsync(string customerId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -131,7 +130,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.ListCardsResponse response from the API call</return>
         public async Task<Models.ListCardsResponse> GetCardsAsync(string customerId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -191,7 +190,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.ListCustomersResponse response from the API call</return>
         public async Task<Models.ListCustomersResponse> GetCustomersAsync()
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -247,7 +246,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
         public async Task<Models.GetCustomerResponse> CreateCustomerAsync(Models.CreateCustomerRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -307,7 +306,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
         public async Task<Models.GetCustomerResponse> GetCustomerAsync(string customerId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -373,7 +372,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
         public async Task<Models.GetAddressResponse> UpdateAddressAsync(string customerId, string addressId, Models.UpdateAddressRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -444,7 +443,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetCardResponse response from the API call</return>
         public async Task<Models.GetCardResponse> UpdateCardAsync(string customerId, string cardId, Models.UpdateCardRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -513,7 +512,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
         public async Task<Models.GetAddressResponse> GetAddressAsync(string customerId, string addressId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -578,7 +577,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
         public async Task<Models.GetAddressResponse> DeleteAddressAsync(string customerId, string addressId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -643,7 +642,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetCardResponse response from the API call</return>
         public async Task<Models.GetCardResponse> DeleteCardAsync(string customerId, string cardId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -708,7 +707,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetAddressResponse response from the API call</return>
         public async Task<Models.GetAddressResponse> CreateAddressAsync(string customerId, Models.CreateAddressRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -776,7 +775,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetCardResponse response from the API call</return>
         public async Task<Models.GetCardResponse> GetCardAsync(string customerId, string cardId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -841,7 +840,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetCardResponse response from the API call</return>
         public async Task<Models.GetCardResponse> CreateCardAsync(string customerId, Models.CreateCardRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -909,7 +908,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
         public async Task<Models.GetCustomerResponse> UpdateCustomerAsync(string customerId, Models.UpdateCustomerRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -975,7 +974,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.ListAccessTokensResponse response from the API call</return>
         public async Task<Models.ListAccessTokensResponse> DeleteAccessTokensAsync(string customerId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -1037,7 +1036,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.ListAccessTokensResponse response from the API call</return>
         public async Task<Models.ListAccessTokensResponse> GetAccessTokensAsync(string customerId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -1101,7 +1100,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
         public async Task<Models.GetAccessTokenResponse> DeleteAccessTokenAsync(string customerId, string tokenId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -1166,7 +1165,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
         public async Task<Models.GetAccessTokenResponse> CreateAccessTokenAsync(string customerId, Models.CreateAccessTokenRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -1234,7 +1233,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
         public async Task<Models.GetAccessTokenResponse> GetAccessTokenAsync(string customerId, string tokenId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
