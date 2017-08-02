@@ -4,9 +4,7 @@ Mundipagg API
 
 ## How to Build
 
-The generated code uses a few NuGet Packages e.g., Newtonsoft.Json, UniRest,
-and Microsoft Base Class Library. The reference to these packages is already
-added as in the packages.config file. If the automatic NuGet package restore
+The generated code uses the Newtonsoft Json.NET NuGet Package. If the automatic NuGet package restore
 is enabled, these dependencies will be installed automatically. Therefore,
 you will need internet access for build.
 

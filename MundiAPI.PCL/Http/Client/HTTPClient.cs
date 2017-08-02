@@ -12,7 +12,7 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Http.Client
 {
-   public class HTTPClient : IHttpClient
+    public class HTTPClient : IHttpClient
     {
         public static IHttpClient SharedClient { get; set; }
         private readonly HttpClient _client = new HttpClient();
@@ -41,13 +41,13 @@ namespace MundiAPI.PCL.Http.Client
             //raise the on before request event
             RaiseOnBeforeHttpRequestEvent(request);
 
-            HttpResponseMessage responseMessage = await HttpResponseMessage(request);
+            HttpResponseMessage responseMessage = await HttpResponseMessage(request).ConfigureAwait(false);
 
             HttpResponse response = new HttpStringResponse
             {
                 Headers = responseMessage.Headers.ToDictionary(l => l.Key, k => k.Value.First()),
-                RawBody = await responseMessage.Content.ReadAsStreamAsync(),
-                Body = await responseMessage.Content.ReadAsStringAsync(),
+                RawBody = await responseMessage.Content.ReadAsStreamAsync().ConfigureAwait(false),
+                Body = await responseMessage.Content.ReadAsStringAsync().ConfigureAwait(false),
                 StatusCode = (int)responseMessage.StatusCode
             };
 
@@ -68,12 +68,12 @@ namespace MundiAPI.PCL.Http.Client
             //raise the on before request event
             RaiseOnBeforeHttpRequestEvent(request);
 
-            HttpResponseMessage responseMessage = await HttpResponseMessage(request);
+            HttpResponseMessage responseMessage = await HttpResponseMessage(request).ConfigureAwait(false);
 
             HttpResponse response = new HttpResponse
             {
                 Headers = responseMessage.Headers.ToDictionary(l => l.Key, k => k.Value.First()),
-                RawBody = await responseMessage.Content.ReadAsStreamAsync(),
+                RawBody = await responseMessage.Content.ReadAsStreamAsync().ConfigureAwait(false),
                 StatusCode = (int)responseMessage.StatusCode
             };
 
@@ -253,7 +253,7 @@ namespace MundiAPI.PCL.Http.Client
                     requestMessage.Content = new FormUrlEncodedContent(parameters);
                 }
             }
-            return await _client.SendAsync(requestMessage);
+            return await _client.SendAsync(requestMessage).ConfigureAwait(false);
         }
 
         #endregion
