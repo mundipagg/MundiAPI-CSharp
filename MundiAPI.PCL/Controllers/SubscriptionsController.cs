@@ -18,7 +18,6 @@ using MundiAPI.PCL.Http.Request;
 using MundiAPI.PCL.Http.Response;
 using MundiAPI.PCL.Http.Client;
 using MundiAPI.PCL.Exceptions;
-using MundiAPI.PCL.Models;
 
 namespace MundiAPI.PCL.Controllers
 {
@@ -71,7 +70,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
         public async Task<Models.GetSubscriptionResponse> UpdateSubscriptionBillingDateAsync(string subscriptionId, Models.UpdateSubscriptionBillingDateRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -141,7 +140,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetUsageResponse response from the API call</return>
         public async Task<Models.GetUsageResponse> CreateUsageAsync(string subscriptionId, string itemId, Models.CreateUsageRequest body)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -212,7 +211,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetSubscriptionItemResponse response from the API call</return>
         public async Task<Models.GetSubscriptionItemResponse> UpdateSubscriptionItemAsync(string subscriptionId, string itemId, Models.UpdateSubscriptionItemRequest body)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -277,7 +276,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.ListSubscriptionsResponse response from the API call</return>
         public async Task<Models.ListSubscriptionsResponse> GetSubscriptionsAsync()
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -335,7 +334,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
         public async Task<Models.GetSubscriptionResponse> UpdateSubscriptionCardAsync(string subscriptionId, Models.UpdateSubscriptionCardRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -401,7 +400,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
         public async Task<Models.GetSubscriptionResponse> CreateSubscriptionAsync(Models.CreateSubscriptionRequest body)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -463,7 +462,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetSubscriptionItemResponse response from the API call</return>
         public async Task<Models.GetSubscriptionItemResponse> CreateSubscriptionItemAsync(string subscriptionId, Models.CreateSubscriptionItemRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -531,7 +530,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetDiscountResponse response from the API call</return>
         public async Task<Models.GetDiscountResponse> CreateDiscountAsync(string subscriptionId, Models.CreateDiscountRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -597,7 +596,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
         public async Task<Models.GetSubscriptionResponse> GetSubscriptionAsync(string subscriptionId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -661,7 +660,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
         public async Task<Models.GetSubscriptionResponse> UpdateSubscriptionPaymentMethodAsync(string subscriptionId, Models.UpdateSubscriptionPaymentMethodRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -729,7 +728,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.ListUsagesResponse response from the API call</return>
         public async Task<Models.ListUsagesResponse> GetUsagesAsync(string subscriptionId, string itemId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -796,7 +795,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetUsageResponse response from the API call</return>
         public async Task<Models.GetUsageResponse> DeleteUsageAsync(string subscriptionId, string itemId, string usageId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -862,7 +861,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetDiscountResponse response from the API call</return>
         public async Task<Models.GetDiscountResponse> DeleteDiscountAsync(string subscriptionId, string discountId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -927,7 +926,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetSubscriptionResponse response from the API call</return>
         public async Task<Models.GetSubscriptionResponse> CancelSubscriptionAsync(string subscriptionId, Models.CreateCancelSubscriptionRequest request = null)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -995,7 +994,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetSubscriptionItemResponse response from the API call</return>
         public async Task<Models.GetSubscriptionItemResponse> DeleteSubscriptionItemAsync(string subscriptionId, string subscriptionItemId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call

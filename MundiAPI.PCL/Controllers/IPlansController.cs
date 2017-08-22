@@ -15,7 +15,6 @@ using MundiAPI.PCL.Utilities;
 using MundiAPI.PCL.Http.Request;
 using MundiAPI.PCL.Http.Response;
 using MundiAPI.PCL.Http.Client;
-using MundiAPI.PCL.Models;
 
 namespace MundiAPI.PCL.Controllers
 {

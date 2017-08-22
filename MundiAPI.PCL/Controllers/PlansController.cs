@@ -18,7 +18,6 @@ using MundiAPI.PCL.Http.Request;
 using MundiAPI.PCL.Http.Response;
 using MundiAPI.PCL.Http.Client;
 using MundiAPI.PCL.Exceptions;
-using MundiAPI.PCL.Models;
 
 namespace MundiAPI.PCL.Controllers
 {
@@ -69,7 +68,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.ListPlanItemsResponse response from the API call</return>
         public async Task<Models.ListPlanItemsResponse> GetPlanItemsAsync(string planId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -135,7 +134,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetPlanItemResponse response from the API call</return>
         public async Task<Models.GetPlanItemResponse> UpdatePlanItemAsync(string planId, string planItemId, Models.UpdatePlanItemRequest body)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -202,7 +201,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetPlanResponse response from the API call</return>
         public async Task<Models.GetPlanResponse> GetPlanAsync(string planId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -266,7 +265,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetPlanItemResponse response from the API call</return>
         public async Task<Models.GetPlanItemResponse> CreatePlanItemAsync(string planId, Models.CreatePlanItemRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -334,7 +333,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetPlanResponse response from the API call</return>
         public async Task<Models.GetPlanResponse> UpdatePlanAsync(string planId, Models.UpdatePlanRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -400,7 +399,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetPlanResponse response from the API call</return>
         public async Task<Models.GetPlanResponse> CreatePlanAsync(Models.CreatePlanRequest body)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -458,7 +457,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.ListPlansResponse response from the API call</return>
         public async Task<Models.ListPlansResponse> GetPlansAsync()
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -514,7 +513,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetPlanResponse response from the API call</return>
         public async Task<Models.GetPlanResponse> DeletePlanAsync(string planId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -578,7 +577,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetPlanItemResponse response from the API call</return>
         public async Task<Models.GetPlanItemResponse> GetPlanItemAsync(string planId, string planItemId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -643,7 +642,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetPlanItemResponse response from the API call</return>
         public async Task<Models.GetPlanItemResponse> DeletePlanItemAsync(string planId, string planItemId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call

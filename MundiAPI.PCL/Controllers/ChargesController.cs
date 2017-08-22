@@ -18,7 +18,6 @@ using MundiAPI.PCL.Http.Request;
 using MundiAPI.PCL.Http.Response;
 using MundiAPI.PCL.Http.Client;
 using MundiAPI.PCL.Exceptions;
-using MundiAPI.PCL.Models;
 
 namespace MundiAPI.PCL.Controllers
 {
@@ -69,7 +68,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         public async Task<Models.GetChargeResponse> GetChargeAsync(string chargeId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -131,7 +130,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         public async Task<Models.GetChargeResponse> RetryChargeAsync(string chargeId)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -191,7 +190,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.ListChargesResponse response from the API call</return>
         public async Task<Models.ListChargesResponse> GetChargesAsync()
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -247,7 +246,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         public async Task<Models.GetChargeResponse> CreateChargeAsync(Models.CreateChargeRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -309,7 +308,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         public async Task<Models.GetChargeResponse> UpdateChargeCardAsync(string chargeId, Models.UpdateChargeCardRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -377,7 +376,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         public async Task<Models.GetChargeResponse> UpdateChargePaymentMethodAsync(string chargeId, Models.UpdateChargePaymentMethodRequest request)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -445,7 +444,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         public async Task<Models.GetChargeResponse> CancelChargeAsync(string chargeId, Models.CreateCancelChargeRequest request = null)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call
@@ -513,7 +512,7 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         public async Task<Models.GetChargeResponse> CaptureChargeAsync(string chargeId, Models.CreateCaptureChargeRequest request = null)
         {
-            //the base uri for api requestss
+            //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
 
             //prepare query string for API call

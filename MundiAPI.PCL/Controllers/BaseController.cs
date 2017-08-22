@@ -26,7 +26,7 @@ namespace MundiAPI.PCL.Controllers
                 {
                     if(null == clientInstance)
                     {
-                        clientInstance = new UnirestClient()
+                        clientInstance = new HTTPClient()
 ;
                     }
                     return clientInstance;
