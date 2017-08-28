@@ -233,6 +233,7 @@ namespace MundiAPI.PCL.Http.Client
                             var fileContent = new StreamContent(fileInfo.FileStream);
                             fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
                             {
+                                Name = param.Key,
                                 FileName = fileInfo.FileName
                             };
                             fileContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");

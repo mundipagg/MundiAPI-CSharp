@@ -94,6 +94,7 @@ MundiAPIClient client = new MundiAPIClient(basicAuthUserName, basicAuthPassword)
 * [PlansController](#plans_controller)
 * [InvoicesController](#invoices_controller)
 * [OrdersController](#orders_controller)
+* [TokensController](#tokens_controller)
 
 ## <a name="charges_controller"></a>![Class: ](https://apidocs.io/img/class.png "MundiAPI.PCL.Controllers.ChargesController") ChargesController
 
@@ -309,6 +310,34 @@ string chargeId = "charge_id";
 var request = new Models.CreateCaptureChargeRequest();
 
 Models.GetChargeResponse result = await charges.CaptureCharge(chargeId, request);
+
+```
+
+
+### <a name="update_charge_metadata"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.ChargesController.UpdateChargeMetadata") UpdateChargeMetadata
+
+> Updates the metadata from a charge
+
+
+```csharp
+Task<Models.GetChargeResponse> UpdateChargeMetadata(string chargeId, Models.UpdateMetadataRequest request)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | The charge id |
+| request |  ``` Required ```  | Request for updating the charge metadata |
+
+
+#### Example Usage
+
+```csharp
+string chargeId = "charge_id";
+var request = new Models.UpdateMetadataRequest();
+
+Models.GetChargeResponse result = await charges.UpdateChargeMetadata(chargeId, request);
 
 ```
 
@@ -839,6 +868,34 @@ Models.GetAccessTokenResponse result = await customers.GetAccessToken(customerId
 ```
 
 
+### <a name="update_customer_metadata"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.CustomersController.UpdateCustomerMetadata") UpdateCustomerMetadata
+
+> Updates the metadata a customer
+
+
+```csharp
+Task<Models.GetCustomerResponse> UpdateCustomerMetadata(string customerId, Models.UpdateMetadataRequest request)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | The customer id |
+| request |  ``` Required ```  | Request for updating the customer metadata |
+
+
+#### Example Usage
+
+```csharp
+string customerId = "customer_id";
+var request = new Models.UpdateMetadataRequest();
+
+Models.GetCustomerResponse result = await customers.UpdateCustomerMetadata(customerId, request);
+
+```
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png "MundiAPI.PCL.Controllers.SubscriptionsController") SubscriptionsController
@@ -1263,6 +1320,34 @@ Models.GetSubscriptionItemResponse result = await subscriptions.DeleteSubscripti
 ```
 
 
+### <a name="update_subscription_metadata"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.UpdateSubscriptionMetadata") UpdateSubscriptionMetadata
+
+> Updates the metadata from a subscription
+
+
+```csharp
+Task<Models.GetSubscriptionResponse> UpdateSubscriptionMetadata(string subscriptionId, Models.UpdateMetadataRequest request)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| request |  ``` Required ```  | Request for updating the subscrption metadata |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+var request = new Models.UpdateMetadataRequest();
+
+Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionMetadata(subscriptionId, request);
+
+```
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="plans_controller"></a>![Class: ](https://apidocs.io/img/class.png "MundiAPI.PCL.Controllers.PlansController") PlansController
@@ -1539,6 +1624,34 @@ Models.GetPlanItemResponse result = await plans.DeletePlanItem(planId, planItemI
 ```
 
 
+### <a name="update_plan_metadata"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.PlansController.UpdatePlanMetadata") UpdatePlanMetadata
+
+> Updates the metadata from a plan
+
+
+```csharp
+Task<Models.GetPlanResponse> UpdatePlanMetadata(string planId, Models.UpdateMetadataRequest request)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | The plan id |
+| request |  ``` Required ```  | Request for updating the plan metadata |
+
+
+#### Example Usage
+
+```csharp
+string planId = "plan_id";
+var request = new Models.UpdateMetadataRequest();
+
+Models.GetPlanResponse result = await plans.UpdatePlanMetadata(planId, request);
+
+```
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="invoices_controller"></a>![Class: ](https://apidocs.io/img/class.png "MundiAPI.PCL.Controllers.InvoicesController") InvoicesController
@@ -1647,6 +1760,34 @@ Models.GetInvoiceResponse result = await invoices.GetInvoice(invoiceId);
 ```
 
 
+### <a name="update_invoice_metadata"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.InvoicesController.UpdateInvoiceMetadata") UpdateInvoiceMetadata
+
+> Updates the metadata from an invoice
+
+
+```csharp
+Task<Models.GetInvoiceResponse> UpdateInvoiceMetadata(string invoiceId, Models.UpdateMetadataRequest request)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | The invoice id |
+| request |  ``` Required ```  | Request for updating the invoice metadata |
+
+
+#### Example Usage
+
+```csharp
+string invoiceId = "invoice_id";
+var request = new Models.UpdateMetadataRequest();
+
+Models.GetInvoiceResponse result = await invoices.UpdateInvoiceMetadata(invoiceId, request);
+
+```
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png "MundiAPI.PCL.Controllers.OrdersController") OrdersController
@@ -1725,6 +1866,106 @@ Task<Models.GetOrderResponse> CreateOrder(Models.CreateOrderRequest body)
 var body = new Models.CreateOrderRequest();
 
 Models.GetOrderResponse result = await orders.CreateOrder(body);
+
+```
+
+
+### <a name="update_order_metadata"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.OrdersController.UpdateOrderMetadata") UpdateOrderMetadata
+
+> Updates the metadata from an order
+
+
+```csharp
+Task<Models.GetOrderResponse> UpdateOrderMetadata(string orderId, Models.UpdateMetadataRequest request)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | The order id |
+| request |  ``` Required ```  | Request for updating the order metadata |
+
+
+#### Example Usage
+
+```csharp
+string orderId = "order_id";
+var request = new Models.UpdateMetadataRequest();
+
+Models.GetOrderResponse result = await orders.UpdateOrderMetadata(orderId, request);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="tokens_controller"></a>![Class: ](https://apidocs.io/img/class.png "MundiAPI.PCL.Controllers.TokensController") TokensController
+
+### Get singleton instance
+
+The singleton instance of the ``` TokensController ``` class can be accessed from the API Client.
+
+```csharp
+ITokensController tokens = client.Tokens;
+```
+
+### <a name="get_token"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.TokensController.GetToken") GetToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Gets a token from its id
+
+
+```csharp
+Task<Models.GetTokenResponse> GetToken(string id, string publicKey)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| id |  ``` Required ```  | Token id |
+| publicKey |  ``` Required ```  | Public key |
+
+
+#### Example Usage
+
+```csharp
+string id = "id";
+string publicKey = "public_key";
+
+Models.GetTokenResponse result = await tokens.GetToken(id, publicKey);
+
+```
+
+
+### <a name="create_token"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.TokensController.CreateToken") CreateToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetTokenResponse> CreateToken(string publicKey, Models.CreateTokenRequest request)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| publicKey |  ``` Required ```  | Public key |
+| request |  ``` Required ```  | Request for creating a token |
+
+
+#### Example Usage
+
+```csharp
+string publicKey = "public_key";
+var request = new Models.CreateTokenRequest();
+
+Models.GetTokenResponse result = await tokens.CreateToken(publicKey, request);
 
 ```
 

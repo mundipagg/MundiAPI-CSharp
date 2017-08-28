@@ -170,5 +170,21 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetPlanItemResponse response from the API call</return>
         Task<Models.GetPlanItemResponse> DeletePlanItemAsync(string planId, string planItemId);
 
+        /// <summary>
+        /// Updates the metadata from a plan
+        /// </summary>
+        /// <param name="planId">Required parameter: The plan id</param>
+        /// <param name="request">Required parameter: Request for updating the plan metadata</param>
+        /// <return>Returns the Models.GetPlanResponse response from the API call</return>
+        Models.GetPlanResponse UpdatePlanMetadata(string planId, Models.UpdateMetadataRequest request);
+
+        /// <summary>
+        /// Updates the metadata from a plan
+        /// </summary>
+        /// <param name="planId">Required parameter: The plan id</param>
+        /// <param name="request">Required parameter: Request for updating the plan metadata</param>
+        /// <return>Returns the Models.GetPlanResponse response from the API call</return>
+        Task<Models.GetPlanResponse> UpdatePlanMetadataAsync(string planId, Models.UpdateMetadataRequest request);
+
     }
 } 

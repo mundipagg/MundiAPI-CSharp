@@ -21,14 +21,14 @@ namespace MundiAPI.PCL.Models
     public class ListUsagesResponse : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private List<string> data;
+        private List<Models.GetUsageResponse> data;
         private Models.PagingResponse paging;
 
         /// <summary>
         /// The usage objects
         /// </summary>
         [JsonProperty("data")]
-        public List<string> Data 
+        public List<Models.GetUsageResponse> Data 
         { 
             get 
             {

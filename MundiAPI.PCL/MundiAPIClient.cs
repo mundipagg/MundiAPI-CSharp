@@ -78,6 +78,17 @@ namespace MundiAPI.PCL
                 return OrdersController.Instance;
             }
         }
+
+        /// <summary>
+        /// Singleton access to Tokens controller
+        /// </summary>
+        public ITokensController Tokens
+        {
+            get
+            {
+                return TokensController.Instance;
+            }
+        }
         /// <summary>
         /// The shared http client to use for all API calls
         /// </summary>

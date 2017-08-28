@@ -22,7 +22,7 @@ namespace MundiAPI.PCL.Models
     {
         // These fields hold the values for the public properties.
         private List<Models.GetPlanResponse> data;
-        private string paging;
+        private Models.PagingResponse paging;
 
         /// <summary>
         /// The plan objects
@@ -45,7 +45,7 @@ namespace MundiAPI.PCL.Models
         /// Paging object
         /// </summary>
         [JsonProperty("paging")]
-        public string Paging 
+        public Models.PagingResponse Paging 
         { 
             get 
             {
