@@ -41,5 +41,10 @@ namespace MundiAPI.PCL
         /// </summary>
         IOrdersController Orders { get;}
 
+        /// <summary>
+        /// Singleton access to Tokens controller
+        /// </summary>
+        ITokensController Tokens { get;}
+
     }
 }

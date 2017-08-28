@@ -312,5 +312,21 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetAccessTokenResponse response from the API call</return>
         Task<Models.GetAccessTokenResponse> GetAccessTokenAsync(string customerId, string tokenId);
 
+        /// <summary>
+        /// Updates the metadata a customer
+        /// </summary>
+        /// <param name="customerId">Required parameter: The customer id</param>
+        /// <param name="request">Required parameter: Request for updating the customer metadata</param>
+        /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
+        Models.GetCustomerResponse UpdateCustomerMetadata(string customerId, Models.UpdateMetadataRequest request);
+
+        /// <summary>
+        /// Updates the metadata a customer
+        /// </summary>
+        /// <param name="customerId">Required parameter: The customer id</param>
+        /// <param name="request">Required parameter: Request for updating the customer metadata</param>
+        /// <return>Returns the Models.GetCustomerResponse response from the API call</return>
+        Task<Models.GetCustomerResponse> UpdateCustomerMetadataAsync(string customerId, Models.UpdateMetadataRequest request);
+
     }
 } 

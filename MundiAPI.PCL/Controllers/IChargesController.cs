@@ -138,5 +138,21 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         Task<Models.GetChargeResponse> CaptureChargeAsync(string chargeId, Models.CreateCaptureChargeRequest request = null);
 
+        /// <summary>
+        /// Updates the metadata from a charge
+        /// </summary>
+        /// <param name="chargeId">Required parameter: The charge id</param>
+        /// <param name="request">Required parameter: Request for updating the charge metadata</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        Models.GetChargeResponse UpdateChargeMetadata(string chargeId, Models.UpdateMetadataRequest request);
+
+        /// <summary>
+        /// Updates the metadata from a charge
+        /// </summary>
+        /// <param name="chargeId">Required parameter: The charge id</param>
+        /// <param name="request">Required parameter: Request for updating the charge metadata</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        Task<Models.GetChargeResponse> UpdateChargeMetadataAsync(string chargeId, Models.UpdateMetadataRequest request);
+
     }
 } 

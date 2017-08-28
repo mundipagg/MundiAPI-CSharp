@@ -28,6 +28,7 @@ namespace MundiAPI.PCL.Models
         private Models.CreateVoucherPaymentRequest voucher;
         private Models.CreateBankTransferPaymentRequest bankTransfer;
         private string gatewayAffiliationId;
+        private int? amount;
 
         /// <summary>
         /// Payment method
@@ -145,6 +146,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.gatewayAffiliationId = value;
                 onPropertyChanged("GatewayAffiliationId");
+            }
+        }
+
+        /// <summary>
+        /// The amount of the payment, in cents
+        /// </summary>
+        [JsonProperty("amount")]
+        public int? Amount 
+        { 
+            get 
+            {
+                return this.amount; 
+            } 
+            set 
+            {
+                this.amount = value;
+                onPropertyChanged("Amount");
             }
         }
     }

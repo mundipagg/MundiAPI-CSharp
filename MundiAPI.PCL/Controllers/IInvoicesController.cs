@@ -74,5 +74,21 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
         Task<Models.GetInvoiceResponse> GetInvoiceAsync(string invoiceId);
 
+        /// <summary>
+        /// Updates the metadata from an invoice
+        /// </summary>
+        /// <param name="invoiceId">Required parameter: The invoice id</param>
+        /// <param name="request">Required parameter: Request for updating the invoice metadata</param>
+        /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
+        Models.GetInvoiceResponse UpdateInvoiceMetadata(string invoiceId, Models.UpdateMetadataRequest request);
+
+        /// <summary>
+        /// Updates the metadata from an invoice
+        /// </summary>
+        /// <param name="invoiceId">Required parameter: The invoice id</param>
+        /// <param name="request">Required parameter: Request for updating the invoice metadata</param>
+        /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
+        Task<Models.GetInvoiceResponse> UpdateInvoiceMetadataAsync(string invoiceId, Models.UpdateMetadataRequest request);
+
     }
 } 

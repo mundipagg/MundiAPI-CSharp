@@ -60,5 +60,21 @@ namespace MundiAPI.PCL.Controllers
         /// <return>Returns the Models.GetOrderResponse response from the API call</return>
         Task<Models.GetOrderResponse> CreateOrderAsync(Models.CreateOrderRequest body);
 
+        /// <summary>
+        /// Updates the metadata from an order
+        /// </summary>
+        /// <param name="orderId">Required parameter: The order id</param>
+        /// <param name="request">Required parameter: Request for updating the order metadata</param>
+        /// <return>Returns the Models.GetOrderResponse response from the API call</return>
+        Models.GetOrderResponse UpdateOrderMetadata(string orderId, Models.UpdateMetadataRequest request);
+
+        /// <summary>
+        /// Updates the metadata from an order
+        /// </summary>
+        /// <param name="orderId">Required parameter: The order id</param>
+        /// <param name="request">Required parameter: Request for updating the order metadata</param>
+        /// <return>Returns the Models.GetOrderResponse response from the API call</return>
+        Task<Models.GetOrderResponse> UpdateOrderMetadataAsync(string orderId, Models.UpdateMetadataRequest request);
+
     }
 } 
