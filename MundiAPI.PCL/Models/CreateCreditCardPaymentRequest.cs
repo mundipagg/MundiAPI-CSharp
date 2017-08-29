@@ -28,6 +28,7 @@ namespace MundiAPI.PCL.Models
         private bool updateSubscriptionCard;
         private string cardId;
         private string cardToken;
+        private bool recurrence;
         private bool? capture = true;
 
         /// <summary>
@@ -146,6 +147,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.cardToken = value;
                 onPropertyChanged("CardToken");
+            }
+        }
+
+        /// <summary>
+        /// Indicates a recurrence
+        /// </summary>
+        [JsonProperty("recurrence")]
+        public bool Recurrence 
+        { 
+            get 
+            {
+                return this.recurrence; 
+            } 
+            set 
+            {
+                this.recurrence = value;
+                onPropertyChanged("Recurrence");
             }
         }
 
