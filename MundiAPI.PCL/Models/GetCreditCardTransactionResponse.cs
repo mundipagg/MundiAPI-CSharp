@@ -29,6 +29,7 @@ namespace MundiAPI.PCL.Models
         private string acquirerAuthCode;
         private string operationType;
         private Models.GetCardResponse card;
+        private string acquirerMessage;
         private int? installments;
 
         /// <summary>
@@ -164,6 +165,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.card = value;
                 onPropertyChanged("Card");
+            }
+        }
+
+        /// <summary>
+        /// Acquirer message
+        /// </summary>
+        [JsonProperty("acquirer_message")]
+        public string AcquirerMessage 
+        { 
+            get 
+            {
+                return this.acquirerMessage; 
+            } 
+            set 
+            {
+                this.acquirerMessage = value;
+                onPropertyChanged("AcquirerMessage");
             }
         }
 
