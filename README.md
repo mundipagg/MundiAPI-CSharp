@@ -1360,32 +1360,6 @@ The singleton instance of the ``` PlansController ``` class can be accessed from
 IPlansController plans = client.Plans;
 ```
 
-### <a name="get_plan_items"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.PlansController.GetPlanItems") GetPlanItems
-
-> Gets all items from a plan
-
-
-```csharp
-Task<Models.ListPlanItemsResponse> GetPlanItems(string planId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-
-
-#### Example Usage
-
-```csharp
-string planId = "plan_id";
-
-Models.ListPlanItemsResponse result = await plans.GetPlanItems(planId);
-
-```
-
-
 ### <a name="update_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.PlansController.UpdatePlanItem") UpdatePlanItem
 
 > Updates a plan item
