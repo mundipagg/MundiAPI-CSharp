@@ -21,20 +21,6 @@ namespace MundiAPI.PCL.Controllers
     public partial interface IPlansController
     {
         /// <summary>
-        /// Gets all items from a plan
-        /// </summary>
-        /// <param name="planId">Required parameter: Plan id</param>
-        /// <return>Returns the Models.ListPlanItemsResponse response from the API call</return>
-        Models.ListPlanItemsResponse GetPlanItems(string planId);
-
-        /// <summary>
-        /// Gets all items from a plan
-        /// </summary>
-        /// <param name="planId">Required parameter: Plan id</param>
-        /// <return>Returns the Models.ListPlanItemsResponse response from the API call</return>
-        Task<Models.ListPlanItemsResponse> GetPlanItemsAsync(string planId);
-
-        /// <summary>
         /// Updates a plan item
         /// </summary>
         /// <param name="planId">Required parameter: Plan id</param>
