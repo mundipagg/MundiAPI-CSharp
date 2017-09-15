@@ -26,6 +26,7 @@ namespace MundiAPI.PCL.Models
         private Models.CreateBoletoPaymentRequest boleto;
         private string currency;
         private Models.CreateVoucherPaymentRequest voucher;
+        private List<string> metadata;
         private Models.CreateBankTransferPaymentRequest bankTransfer;
         private string gatewayAffiliationId;
         private int? amount;
@@ -112,6 +113,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.voucher = value;
                 onPropertyChanged("Voucher");
+            }
+        }
+
+        /// <summary>
+        /// Metadata
+        /// </summary>
+        [JsonProperty("metadata")]
+        public List<string> Metadata 
+        { 
+            get 
+            {
+                return this.metadata; 
+            } 
+            set 
+            {
+                this.metadata = value;
+                onPropertyChanged("Metadata");
             }
         }
 
