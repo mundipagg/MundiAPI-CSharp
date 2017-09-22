@@ -30,6 +30,7 @@ namespace MundiAPI.PCL.Models
         private Models.CreateBankTransferPaymentRequest bankTransfer;
         private string gatewayAffiliationId;
         private int? amount;
+        private Models.CreateCheckoutPaymentRequest checkout;
 
         /// <summary>
         /// Payment method
@@ -181,6 +182,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.amount = value;
                 onPropertyChanged("Amount");
+            }
+        }
+
+        /// <summary>
+        /// Settings for checkout payment
+        /// </summary>
+        [JsonProperty("checkout")]
+        public Models.CreateCheckoutPaymentRequest Checkout 
+        { 
+            get 
+            {
+                return this.checkout; 
+            } 
+            set 
+            {
+                this.checkout = value;
+                onPropertyChanged("Checkout");
             }
         }
     }
