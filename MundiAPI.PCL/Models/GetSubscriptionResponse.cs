@@ -35,7 +35,7 @@ namespace MundiAPI.PCL.Models
         private DateTime createdAt;
         private DateTime updatedAt;
         private Models.GetCustomerResponse customer;
-        private Models.GetCardResponse creditCard;
+        private Models.GetCardResponse card;
         private List<Models.GetSubscriptionItemResponse> items;
         private string statementDescriptor;
         private Dictionary<string, string> metadata;
@@ -44,6 +44,7 @@ namespace MundiAPI.PCL.Models
         private int? billingDay;
         private int? minimumPrice;
         private DateTime? canceledAt;
+        private List<Models.GetDiscountResponse> discounts;
 
         /// <summary>
         /// TODO: Write general description for this method
@@ -289,17 +290,17 @@ namespace MundiAPI.PCL.Models
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("credit_card")]
-        public Models.GetCardResponse CreditCard 
+        [JsonProperty("card")]
+        public Models.GetCardResponse Card 
         { 
             get 
             {
-                return this.creditCard; 
+                return this.card; 
             } 
             set 
             {
-                this.creditCard = value;
-                onPropertyChanged("CreditCard");
+                this.card = value;
+                onPropertyChanged("Card");
             }
         }
 
@@ -438,6 +439,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.canceledAt = value;
                 onPropertyChanged("CanceledAt");
+            }
+        }
+
+        /// <summary>
+        /// Subscription discounts
+        /// </summary>
+        [JsonProperty("discounts")]
+        public List<Models.GetDiscountResponse> Discounts 
+        { 
+            get 
+            {
+                return this.discounts; 
+            } 
+            set 
+            {
+                this.discounts = value;
+                onPropertyChanged("Discounts");
             }
         }
     }
