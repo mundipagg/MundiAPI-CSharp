@@ -158,24 +158,6 @@ Models.GetChargeResponse result = await charges.RetryCharge(chargeId);
 ```
 
 
-### <a name="get_charges"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.ChargesController.GetCharges") GetCharges
-
-> Lists all charges
-
-
-```csharp
-Task<Models.ListChargesResponse> GetCharges()
-```
-
-#### Example Usage
-
-```csharp
-
-Models.ListChargesResponse result = await charges.GetCharges();
-
-```
-
-
 ### <a name="create_charge"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.ChargesController.CreateCharge") CreateCharge
 
 > Creates a new charge
@@ -338,6 +320,34 @@ string chargeId = "charge_id";
 var request = new Models.UpdateMetadataRequest();
 
 Models.GetChargeResponse result = await charges.UpdateChargeMetadata(chargeId, request);
+
+```
+
+
+### <a name="get_charges"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.ChargesController.GetCharges") GetCharges
+
+> Lists all charges
+
+
+```csharp
+Task<Models.ListChargesResponse> GetCharges(int? page = null, int? size = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+#### Example Usage
+
+```csharp
+int? page = 111;
+int? size = 111;
+
+Models.ListChargesResponse result = await charges.GetCharges(page, size);
 
 ```
 

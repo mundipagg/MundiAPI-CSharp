@@ -49,18 +49,6 @@ namespace MundiAPI.PCL.Controllers
         Task<Models.GetChargeResponse> RetryChargeAsync(string chargeId);
 
         /// <summary>
-        /// Lists all charges
-        /// </summary>
-        /// <return>Returns the Models.ListChargesResponse response from the API call</return>
-        Models.ListChargesResponse GetCharges();
-
-        /// <summary>
-        /// Lists all charges
-        /// </summary>
-        /// <return>Returns the Models.ListChargesResponse response from the API call</return>
-        Task<Models.ListChargesResponse> GetChargesAsync();
-
-        /// <summary>
         /// Creates a new charge
         /// </summary>
         /// <param name="request">Required parameter: Request for creating a charge</param>
@@ -153,6 +141,22 @@ namespace MundiAPI.PCL.Controllers
         /// <param name="request">Required parameter: Request for updating the charge metadata</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         Task<Models.GetChargeResponse> UpdateChargeMetadataAsync(string chargeId, Models.UpdateMetadataRequest request);
+
+        /// <summary>
+        /// Lists all charges
+        /// </summary>
+        /// <param name="page">Optional parameter: Page number</param>
+        /// <param name="size">Optional parameter: Page size</param>
+        /// <return>Returns the Models.ListChargesResponse response from the API call</return>
+        Models.ListChargesResponse GetCharges(int? page = null, int? size = null);
+
+        /// <summary>
+        /// Lists all charges
+        /// </summary>
+        /// <param name="page">Optional parameter: Page number</param>
+        /// <param name="size">Optional parameter: Page size</param>
+        /// <return>Returns the Models.ListChargesResponse response from the API call</return>
+        Task<Models.ListChargesResponse> GetChargesAsync(int? page = null, int? size = null);
 
     }
 } 
