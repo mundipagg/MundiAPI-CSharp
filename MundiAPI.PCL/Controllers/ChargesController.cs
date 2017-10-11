@@ -578,10 +578,26 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="page">Optional parameter: Page number</param>
         /// <param name="size">Optional parameter: Page size</param>
+        /// <param name="code">Optional parameter: Filter for charge's code</param>
+        /// <param name="status">Optional parameter: Filter for charge's status</param>
+        /// <param name="paymentMethod">Optional parameter: Filter for charge's payment method</param>
+        /// <param name="customerId">Optional parameter: Filter for charge's customer id</param>
+        /// <param name="orderId">Optional parameter: Filter for charge's order id</param>
+        /// <param name="createdSince">Optional parameter: Filter for the beginning of the range for charge's creation</param>
+        /// <param name="createdUntil">Optional parameter: Filter for the end of the range for charge's creation</param>
         /// <return>Returns the Models.ListChargesResponse response from the API call</return>
-        public Models.ListChargesResponse GetCharges(int? page = null, int? size = null)
+        public Models.ListChargesResponse GetCharges(
+                int? page = null,
+                int? size = null,
+                string code = null,
+                string status = null,
+                string paymentMethod = null,
+                string customerId = null,
+                string orderId = null,
+                DateTime? createdSince = null,
+                DateTime? createdUntil = null)
         {
-            Task<Models.ListChargesResponse> t = GetChargesAsync(page, size);
+            Task<Models.ListChargesResponse> t = GetChargesAsync(page, size, code, status, paymentMethod, customerId, orderId, createdSince, createdUntil);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -591,8 +607,24 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="page">Optional parameter: Page number</param>
         /// <param name="size">Optional parameter: Page size</param>
+        /// <param name="code">Optional parameter: Filter for charge's code</param>
+        /// <param name="status">Optional parameter: Filter for charge's status</param>
+        /// <param name="paymentMethod">Optional parameter: Filter for charge's payment method</param>
+        /// <param name="customerId">Optional parameter: Filter for charge's customer id</param>
+        /// <param name="orderId">Optional parameter: Filter for charge's order id</param>
+        /// <param name="createdSince">Optional parameter: Filter for the beginning of the range for charge's creation</param>
+        /// <param name="createdUntil">Optional parameter: Filter for the end of the range for charge's creation</param>
         /// <return>Returns the Models.ListChargesResponse response from the API call</return>
-        public async Task<Models.ListChargesResponse> GetChargesAsync(int? page = null, int? size = null)
+        public async Task<Models.ListChargesResponse> GetChargesAsync(
+                int? page = null,
+                int? size = null,
+                string code = null,
+                string status = null,
+                string paymentMethod = null,
+                string customerId = null,
+                string orderId = null,
+                DateTime? createdSince = null,
+                DateTime? createdUntil = null)
         {
             //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
@@ -605,7 +637,14 @@ namespace MundiAPI.PCL.Controllers
             APIHelper.AppendUrlWithQueryParameters(_queryBuilder, new Dictionary<string, object>()
             {
                 { "page", page },
-                { "size", size }
+                { "size", size },
+                { "code", code },
+                { "status", status },
+                { "payment_method", paymentMethod },
+                { "customer_id", customerId },
+                { "order_id", orderId },
+                { "created_since", (createdSince.HasValue) ? createdSince.Value.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK") : null },
+                { "created_until", (createdUntil.HasValue) ? createdUntil.Value.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK") : null }
             },ArrayDeserializationFormat,ParameterSeparator);
 
 

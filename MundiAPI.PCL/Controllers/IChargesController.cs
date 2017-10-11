@@ -147,16 +147,48 @@ namespace MundiAPI.PCL.Controllers
         /// </summary>
         /// <param name="page">Optional parameter: Page number</param>
         /// <param name="size">Optional parameter: Page size</param>
+        /// <param name="code">Optional parameter: Filter for charge's code</param>
+        /// <param name="status">Optional parameter: Filter for charge's status</param>
+        /// <param name="paymentMethod">Optional parameter: Filter for charge's payment method</param>
+        /// <param name="customerId">Optional parameter: Filter for charge's customer id</param>
+        /// <param name="orderId">Optional parameter: Filter for charge's order id</param>
+        /// <param name="createdSince">Optional parameter: Filter for the beginning of the range for charge's creation</param>
+        /// <param name="createdUntil">Optional parameter: Filter for the end of the range for charge's creation</param>
         /// <return>Returns the Models.ListChargesResponse response from the API call</return>
-        Models.ListChargesResponse GetCharges(int? page = null, int? size = null);
+        Models.ListChargesResponse GetCharges(
+                int? page = null,
+                int? size = null,
+                string code = null,
+                string status = null,
+                string paymentMethod = null,
+                string customerId = null,
+                string orderId = null,
+                DateTime? createdSince = null,
+                DateTime? createdUntil = null);
 
         /// <summary>
         /// Lists all charges
         /// </summary>
         /// <param name="page">Optional parameter: Page number</param>
         /// <param name="size">Optional parameter: Page size</param>
+        /// <param name="code">Optional parameter: Filter for charge's code</param>
+        /// <param name="status">Optional parameter: Filter for charge's status</param>
+        /// <param name="paymentMethod">Optional parameter: Filter for charge's payment method</param>
+        /// <param name="customerId">Optional parameter: Filter for charge's customer id</param>
+        /// <param name="orderId">Optional parameter: Filter for charge's order id</param>
+        /// <param name="createdSince">Optional parameter: Filter for the beginning of the range for charge's creation</param>
+        /// <param name="createdUntil">Optional parameter: Filter for the end of the range for charge's creation</param>
         /// <return>Returns the Models.ListChargesResponse response from the API call</return>
-        Task<Models.ListChargesResponse> GetChargesAsync(int? page = null, int? size = null);
+        Task<Models.ListChargesResponse> GetChargesAsync(
+                int? page = null,
+                int? size = null,
+                string code = null,
+                string status = null,
+                string paymentMethod = null,
+                string customerId = null,
+                string orderId = null,
+                DateTime? createdSince = null,
+                DateTime? createdUntil = null);
 
     }
 } 
