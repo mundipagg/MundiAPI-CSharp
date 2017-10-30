@@ -18,16 +18,15 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class UpdateCustomerRequest : BaseModel 
+    public class UpdateRecipientRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
         private string name;
         private string email;
-        private string document;
+        private string description;
         private string type;
-        private Models.CreateAddressRequest address;
+        private string status;
         private Dictionary<string, string> metadata;
-        private Models.CreatePhonesRequest phones;
 
         /// <summary>
         /// Name
@@ -64,24 +63,24 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Document number
+        /// Description
         /// </summary>
-        [JsonProperty("document")]
-        public string Document 
+        [JsonProperty("description")]
+        public string Description 
         { 
             get 
             {
-                return this.document; 
+                return this.description; 
             } 
             set 
             {
-                this.document = value;
-                onPropertyChanged("Document");
+                this.description = value;
+                onPropertyChanged("Description");
             }
         }
 
         /// <summary>
-        /// Person type
+        /// Type
         /// </summary>
         [JsonProperty("type")]
         public string Type 
@@ -98,19 +97,19 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Address
+        /// Status
         /// </summary>
-        [JsonProperty("address")]
-        public Models.CreateAddressRequest Address 
+        [JsonProperty("status")]
+        public string Status 
         { 
             get 
             {
-                return this.address; 
+                return this.status; 
             } 
             set 
             {
-                this.address = value;
-                onPropertyChanged("Address");
+                this.status = value;
+                onPropertyChanged("Status");
             }
         }
 
@@ -128,23 +127,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.metadata = value;
                 onPropertyChanged("Metadata");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonProperty("phones")]
-        public Models.CreatePhonesRequest Phones 
-        { 
-            get 
-            {
-                return this.phones; 
-            } 
-            set 
-            {
-                this.phones = value;
-                onPropertyChanged("Phones");
             }
         }
     }
