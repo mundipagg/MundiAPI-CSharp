@@ -10,7 +10,7 @@
     <AssemblyName>MundiAPI.PCL</AssemblyName>
     <OutputType>Library</OutputType>
     <OutputPath>bin/DEBUG/</OutputPath>
-    <ProjectGuid>{db005eb9-23d3-4184-8001-a0946e637163}</ProjectGuid>
+    <ProjectGuid>{ef694141-bd55-439f-aa61-dc55c12aad2e}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>ee2bb91c</NuGetPackageImportStamp>

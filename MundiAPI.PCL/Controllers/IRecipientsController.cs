@@ -217,7 +217,7 @@ namespace MundiAPI.PCL.Controllers
         /// <param name="timeframe">Required parameter: Timeframe</param>
         /// <param name="paymentDate">Required parameter: Anticipation payment date</param>
         /// <return>Returns the Models.GetAnticipationLimitResponse response from the API call</return>
-        Models.GetAnticipationLimitResponse GetAnticipationLimits(string recipientId, string timeframe, string paymentDate);
+        Models.GetAnticipationLimitResponse GetAnticipationLimits(string recipientId, string timeframe, DateTime paymentDate);
 
         /// <summary>
         /// Gets the anticipation limits for a recipient
@@ -226,7 +226,7 @@ namespace MundiAPI.PCL.Controllers
         /// <param name="timeframe">Required parameter: Timeframe</param>
         /// <param name="paymentDate">Required parameter: Anticipation payment date</param>
         /// <return>Returns the Models.GetAnticipationLimitResponse response from the API call</return>
-        Task<Models.GetAnticipationLimitResponse> GetAnticipationLimitsAsync(string recipientId, string timeframe, string paymentDate);
+        Task<Models.GetAnticipationLimitResponse> GetAnticipationLimitsAsync(string recipientId, string timeframe, DateTime paymentDate);
 
         /// <summary>
         /// Retrieves a paginated list of anticipations from a recipient

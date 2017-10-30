@@ -801,7 +801,7 @@ namespace MundiAPI.PCL.Controllers
         /// <param name="timeframe">Required parameter: Timeframe</param>
         /// <param name="paymentDate">Required parameter: Anticipation payment date</param>
         /// <return>Returns the Models.GetAnticipationLimitResponse response from the API call</return>
-        public Models.GetAnticipationLimitResponse GetAnticipationLimits(string recipientId, string timeframe, string paymentDate)
+        public Models.GetAnticipationLimitResponse GetAnticipationLimits(string recipientId, string timeframe, DateTime paymentDate)
         {
             Task<Models.GetAnticipationLimitResponse> t = GetAnticipationLimitsAsync(recipientId, timeframe, paymentDate);
             APIHelper.RunTaskSynchronously(t);
@@ -815,7 +815,7 @@ namespace MundiAPI.PCL.Controllers
         /// <param name="timeframe">Required parameter: Timeframe</param>
         /// <param name="paymentDate">Required parameter: Anticipation payment date</param>
         /// <return>Returns the Models.GetAnticipationLimitResponse response from the API call</return>
-        public async Task<Models.GetAnticipationLimitResponse> GetAnticipationLimitsAsync(string recipientId, string timeframe, string paymentDate)
+        public async Task<Models.GetAnticipationLimitResponse> GetAnticipationLimitsAsync(string recipientId, string timeframe, DateTime paymentDate)
         {
             //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
@@ -834,7 +834,7 @@ namespace MundiAPI.PCL.Controllers
             APIHelper.AppendUrlWithQueryParameters(_queryBuilder, new Dictionary<string, object>()
             {
                 { "timeframe", timeframe },
-                { "payment_date", paymentDate }
+                { "payment_date", paymentDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK") }
             },ArrayDeserializationFormat,ParameterSeparator);
 
 
