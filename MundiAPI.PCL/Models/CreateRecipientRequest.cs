@@ -18,19 +18,19 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class UpdateCustomerRequest : BaseModel 
+    public class CreateRecipientRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
         private string name;
         private string email;
+        private string description;
         private string document;
         private string type;
-        private Models.CreateAddressRequest address;
+        private Models.CreateBankAccountRequest defaultBankAccount;
         private Dictionary<string, string> metadata;
-        private Models.CreatePhonesRequest phones;
 
         /// <summary>
-        /// Name
+        /// Recipient name
         /// </summary>
         [JsonProperty("name")]
         public string Name 
@@ -47,7 +47,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Email
+        /// Recipient email
         /// </summary>
         [JsonProperty("email")]
         public string Email 
@@ -64,7 +64,24 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Document number
+        /// Recipient description
+        /// </summary>
+        [JsonProperty("description")]
+        public string Description 
+        { 
+            get 
+            {
+                return this.description; 
+            } 
+            set 
+            {
+                this.description = value;
+                onPropertyChanged("Description");
+            }
+        }
+
+        /// <summary>
+        /// Recipient document number
         /// </summary>
         [JsonProperty("document")]
         public string Document 
@@ -81,7 +98,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Person type
+        /// Recipient type
         /// </summary>
         [JsonProperty("type")]
         public string Type 
@@ -98,19 +115,19 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Address
+        /// Bank account
         /// </summary>
-        [JsonProperty("address")]
-        public Models.CreateAddressRequest Address 
+        [JsonProperty("default_bank_account")]
+        public Models.CreateBankAccountRequest DefaultBankAccount 
         { 
             get 
             {
-                return this.address; 
+                return this.defaultBankAccount; 
             } 
             set 
             {
-                this.address = value;
-                onPropertyChanged("Address");
+                this.defaultBankAccount = value;
+                onPropertyChanged("DefaultBankAccount");
             }
         }
 
@@ -128,23 +145,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.metadata = value;
                 onPropertyChanged("Metadata");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonProperty("phones")]
-        public Models.CreatePhonesRequest Phones 
-        { 
-            get 
-            {
-                return this.phones; 
-            } 
-            set 
-            {
-                this.phones = value;
-                onPropertyChanged("Phones");
             }
         }
     }
