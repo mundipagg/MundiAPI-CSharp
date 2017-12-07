@@ -24,6 +24,7 @@ namespace MundiAPI.PCL.Models
         private string description;
         private string status;
         private Models.UpdatePricingSchemeRequest pricingScheme;
+        private string name;
         private int? cycles;
         private int? quantity;
         private int? minimumPrice;
@@ -76,6 +77,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.pricingScheme = value;
                 onPropertyChanged("PricingScheme");
+            }
+        }
+
+        /// <summary>
+        /// Item name
+        /// </summary>
+        [JsonProperty("name")]
+        public string Name 
+        { 
+            get 
+            {
+                return this.name; 
+            } 
+            set 
+            {
+                this.name = value;
+                onPropertyChanged("Name");
             }
         }
 
