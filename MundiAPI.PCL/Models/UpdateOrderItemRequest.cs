@@ -18,18 +18,16 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class CreateOrderItemRequest : BaseModel 
+    public class UpdateOrderItemRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
         private int amount;
         private string description;
         private int quantity;
         private string category;
-        private Models.CreateSellerRequest seller;
-        private string sellerId;
 
         /// <summary>
-        /// Amount
+        /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("amount")]
         public int Amount 
@@ -46,7 +44,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Description
+        /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("description")]
         public string Description 
@@ -63,7 +61,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Quantity
+        /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("quantity")]
         public int Quantity 
@@ -80,7 +78,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Category
+        /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("category")]
         public string Category 
@@ -93,40 +91,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.category = value;
                 onPropertyChanged("Category");
-            }
-        }
-
-        /// <summary>
-        /// Item seller
-        /// </summary>
-        [JsonProperty("seller")]
-        public Models.CreateSellerRequest Seller 
-        { 
-            get 
-            {
-                return this.seller; 
-            } 
-            set 
-            {
-                this.seller = value;
-                onPropertyChanged("Seller");
-            }
-        }
-
-        /// <summary>
-        /// seller identificator
-        /// </summary>
-        [JsonProperty("seller_id")]
-        public string SellerId 
-        { 
-            get 
-            {
-                return this.sellerId; 
-            } 
-            set 
-            {
-                this.sellerId = value;
-                onPropertyChanged("SellerId");
             }
         }
     }
