@@ -10,7 +10,7 @@
     <AssemblyName>MundiAPI.PCL</AssemblyName>
     <OutputType>Library</OutputType>
     <OutputPath>bin/DEBUG/</OutputPath>
-    <ProjectGuid>{57cafd01-c503-4166-90a2-295124bfd574}</ProjectGuid>
+    <ProjectGuid>{a9224a61-8a3b-493a-a539-d28c04b34f46}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>ee2bb91c</NuGetPackageImportStamp>
@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\GetCheckoutBoletoPaymentResponse.cs" />
+    <Compile Include="Models\GetBankAccountResponse.cs" />
     <Compile Include="Models\GetRecipientResponse.cs" />
     <Compile Include="Models\CreateBankAccountRequest.cs" />
     <Compile Include="Models\CreateRecipientRequest.cs" />
@@ -99,11 +100,11 @@
     <Compile Include="Models\GetBankTransferTransactionResponse.cs" />
     <Compile Include="Models\CreateBankTransferPaymentRequest.cs" />
     <Compile Include="Models\CreateCaptureChargeRequest.cs" />
-    <Compile Include="Models\GetVoucherTransactionResponse.cs" />
-    <Compile Include="Models\GetBankAccountResponse.cs" />
-    <Compile Include="Models\GetCreditCardTransactionResponse.cs" />
     <Compile Include="Models\UpdateRecipientRequest.cs" />
-    <Compile Include="Models\ListRecipientResponse.cs" />
+    <Compile Include="Models\GetVoucherTransactionResponse.cs" />
+    <Compile Include="Models\GetGatewayRecipientResponse.cs" />
+    <Compile Include="Models\UpdateRecipientBankAccountRequest.cs" />
+    <Compile Include="Models\GetBoletoTransactionResponse.cs" />
     <Compile Include="Models\GetCheckoutPaymentResponse.cs" />
     <Compile Include="Models\UpdateCustomerRequest.cs" />
     <Compile Include="Models\GetUsageResponse.cs" />
@@ -132,11 +133,10 @@
     <Compile Include="Models\GetAnticipationResponse.cs" />
     <Compile Include="Models\GetBalanceResponse.cs" />
     <Compile Include="Models\ListTransferResponse.cs" />
-    <Compile Include="Models\UpdateRecipientBankAccountRequest.cs" />
-    <Compile Include="Models\GetGatewayRecipientResponse.cs" />
-    <Compile Include="Models\GetBoletoTransactionResponse.cs" />
-    <Compile Include="Models\CreateVoucherPaymentRequest.cs" />
-    <Compile Include="Models\GetPhoneResponse.cs" />
+    <Compile Include="Models\ListRecipientResponse.cs" />
+    <Compile Include="Models\CreateCheckoutPaymentRequest.cs" />
+    <Compile Include="Models\GetCreditCardTransactionResponse.cs" />
+    <Compile Include="Models\GetPhonesResponse.cs" />
     <Compile Include="Models\UpdateSubscriptionItemRequest.cs" />
     <Compile Include="Models\UpdatePlanItemRequest.cs" />
     <Compile Include="Models\UpdateCardRequest.cs" />
@@ -166,13 +166,13 @@
     <Compile Include="Models\GetCheckoutCardInstallmentOptionsResponse.cs" />
     <Compile Include="Models\GetCheckoutCardPaymentResponse.cs" />
     <Compile Include="Models\CreateUsageRequest.cs" />
-    <Compile Include="Models\GetPhonesResponse.cs" />
+    <Compile Include="Models\CreateVoucherPaymentRequest.cs" />
     <Compile Include="Models\CreateShippingRequest.cs" />
     <Compile Include="Models\GetTransactionResponseCreationConverter.cs" />
     <Compile Include="Models\GetTransactionResponse.cs" />
+    <Compile Include="Models\GetPhoneResponse.cs" />
     <Compile Include="Models\CreatePhonesRequest.cs" />
     <Compile Include="Models\CreatePhoneRequest.cs" />
-    <Compile Include="Models\CreateBoletoPaymentRequest.cs" />
     <Compile Include="Models\GetPlanResponse.cs" />
     <Compile Include="Models\GetPlanItemResponse.cs" />
     <Compile Include="Models\GetPeriodResponse.cs" />
@@ -200,7 +200,7 @@
     <Compile Include="Models\GetAddressResponse.cs" />
     <Compile Include="Models\GetCardResponse.cs" />
     <Compile Include="Models\CreateAddressRequest.cs" />
-    <Compile Include="Models\CreateCheckoutPaymentRequest.cs" />
+    <Compile Include="Models\CreateBoletoPaymentRequest.cs" />
     <Compile Include="Exceptions\ErrorException.cs" />
     <Compile Include="Controllers\ChargesController.cs" />
     <Compile Include="Controllers\IChargesController.cs" />
