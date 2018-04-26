@@ -29,6 +29,7 @@ namespace MundiAPI.PCL.Models
         private string status;
         private Models.GetSubscriptionItemResponse subscriptionItem;
         private DateTime? deletedAt;
+        private string code;
 
         /// <summary>
         /// Id
@@ -166,6 +167,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.deletedAt = value;
                 onPropertyChanged("DeletedAt");
+            }
+        }
+
+        /// <summary>
+        /// Identification code in the client system
+        /// </summary>
+        [JsonProperty("code")]
+        public string Code 
+        { 
+            get 
+            {
+                return this.code; 
+            } 
+            set 
+            {
+                this.code = value;
+                onPropertyChanged("Code");
             }
         }
     }
