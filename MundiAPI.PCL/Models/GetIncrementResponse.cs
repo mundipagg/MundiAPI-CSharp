@@ -18,12 +18,12 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class GetDiscountResponse : BaseModel 
+    public class GetIncrementResponse : BaseModel 
     {
         // These fields hold the values for the public properties.
         private string id;
         private double mvalue;
-        private string discountType;
+        private string incrementType;
         private string status;
         private DateTime createdAt;
         private Models.GetSubscriptionResponse subscription;
@@ -68,17 +68,17 @@ namespace MundiAPI.PCL.Models
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("discount_type")]
-        public string DiscountType 
+        [JsonProperty("increment_type")]
+        public string IncrementType 
         { 
             get 
             {
-                return this.discountType; 
+                return this.incrementType; 
             } 
             set 
             {
-                this.discountType = value;
-                onPropertyChanged("DiscountType");
+                this.incrementType = value;
+                onPropertyChanged("IncrementType");
             }
         }
 
