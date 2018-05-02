@@ -34,6 +34,7 @@ namespace MundiAPI.PCL.Models
         private string sessionId;
         private Models.CreateLocationRequest location;
         private Models.CreateDeviceRequest device;
+        private string currency;
 
         /// <summary>
         /// Items
@@ -253,6 +254,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.device = value;
                 onPropertyChanged("Device");
+            }
+        }
+
+        /// <summary>
+        /// Currency
+        /// </summary>
+        [JsonProperty("currency")]
+        public string Currency 
+        { 
+            get 
+            {
+                return this.currency; 
+            } 
+            set 
+            {
+                this.currency = value;
+                onPropertyChanged("Currency");
             }
         }
     }
