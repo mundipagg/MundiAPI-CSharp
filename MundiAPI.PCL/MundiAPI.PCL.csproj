@@ -10,7 +10,7 @@
     <AssemblyName>MundiAPI.PCL</AssemblyName>
     <OutputType>Library</OutputType>
     <OutputPath>bin/DEBUG/</OutputPath>
-    <ProjectGuid>{2bb02b96-d901-40b3-8b75-64c6141388b1}</ProjectGuid>
+    <ProjectGuid>{a52d2902-106e-4dab-b577-cb88c65e3fd6}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>ee2bb91c</NuGetPackageImportStamp>
@@ -208,6 +208,8 @@
     <Compile Include="Models\CreateCardRequest.cs" />
     <Compile Include="Models\GetCardResponse.cs" />
     <Compile Include="Exceptions\ErrorException.cs" />
+    <Compile Include="Controllers\SubscriptionsController.cs" />
+    <Compile Include="Controllers\ISubscriptionsController.cs" />
     <Compile Include="Controllers\ChargesController.cs" />
     <Compile Include="Controllers\IChargesController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
@@ -216,8 +218,6 @@
     <Compile Include="Controllers\IInvoicesController.cs" />
     <Compile Include="Controllers\PlansController.cs" />
     <Compile Include="Controllers\IPlansController.cs" />
-    <Compile Include="Controllers\SubscriptionsController.cs" />
-    <Compile Include="Controllers\ISubscriptionsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\IOrdersController.cs" />
     <Compile Include="Controllers\TokensController.cs" />
