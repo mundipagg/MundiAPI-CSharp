@@ -21,28 +21,10 @@ namespace MundiAPI.PCL.Models
     public class CreateVoucherPaymentRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private bool capture;
         private string statementDescriptor;
         private string cardId;
         private string cardToken;
         private Models.CreateCardRequest card;
-
-        /// <summary>
-        /// Indicates if the operation should be only authorization or auth and capture.
-        /// </summary>
-        [JsonProperty("capture")]
-        public bool Capture 
-        { 
-            get 
-            {
-                return this.capture; 
-            } 
-            set 
-            {
-                this.capture = value;
-                onPropertyChanged("Capture");
-            }
-        }
 
         /// <summary>
         /// The text that will be shown on the voucher's statement

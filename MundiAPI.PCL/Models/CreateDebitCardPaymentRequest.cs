@@ -18,41 +18,19 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class CreateCreditCardPaymentRequest : BaseModel 
+    public class CreateDebitCardPaymentRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private int? installments = 1;
         private string statementDescriptor;
         private Models.CreateCardRequest card;
         private string cardId;
         private string cardToken;
         private bool? recurrence;
-        private bool? capture = true;
-        private bool? extendedLimitEnabled;
-        private string extendedLimitCode;
-        private long? merchantCategoryCode;
         private Models.CreatePaymentAuthentiticationRequest authentication;
         private Models.CreateCardPaymentTokenRequest token;
 
         /// <summary>
-        /// Number of installments
-        /// </summary>
-        [JsonProperty("installments")]
-        public int? Installments 
-        { 
-            get 
-            {
-                return this.installments; 
-            } 
-            set 
-            {
-                this.installments = value;
-                onPropertyChanged("Installments");
-            }
-        }
-
-        /// <summary>
-        /// The text that will be shown on the credit card's statement
+        /// The text that will be shown on the debit card's statement
         /// </summary>
         [JsonProperty("statement_descriptor")]
         public string StatementDescriptor 
@@ -69,7 +47,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Credit card data
+        /// Debit card data
         /// </summary>
         [JsonProperty("card")]
         public Models.CreateCardRequest Card 
@@ -86,7 +64,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// The credit card id
+        /// The debit card id
         /// </summary>
         [JsonProperty("card_id")]
         public string CardId 
@@ -103,7 +81,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// The debit card token
         /// </summary>
         [JsonProperty("card_token")]
         public string CardToken 
@@ -137,74 +115,6 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Indicates if the operation should be only authorization or auth and capture.
-        /// </summary>
-        [JsonProperty("capture")]
-        public bool? Capture 
-        { 
-            get 
-            {
-                return this.capture; 
-            } 
-            set 
-            {
-                this.capture = value;
-                onPropertyChanged("Capture");
-            }
-        }
-
-        /// <summary>
-        /// Indicates whether the extended label (private label) is enabled
-        /// </summary>
-        [JsonProperty("extended_limit_enabled")]
-        public bool? ExtendedLimitEnabled 
-        { 
-            get 
-            {
-                return this.extendedLimitEnabled; 
-            } 
-            set 
-            {
-                this.extendedLimitEnabled = value;
-                onPropertyChanged("ExtendedLimitEnabled");
-            }
-        }
-
-        /// <summary>
-        /// Extended Limit Code
-        /// </summary>
-        [JsonProperty("extended_limit_code")]
-        public string ExtendedLimitCode 
-        { 
-            get 
-            {
-                return this.extendedLimitCode; 
-            } 
-            set 
-            {
-                this.extendedLimitCode = value;
-                onPropertyChanged("ExtendedLimitCode");
-            }
-        }
-
-        /// <summary>
-        /// Customer business segment code
-        /// </summary>
-        [JsonProperty("merchant_category_code")]
-        public long? MerchantCategoryCode 
-        { 
-            get 
-            {
-                return this.merchantCategoryCode; 
-            } 
-            set 
-            {
-                this.merchantCategoryCode = value;
-                onPropertyChanged("MerchantCategoryCode");
-            }
-        }
-
-        /// <summary>
         /// The payment authentication request
         /// </summary>
         [JsonProperty("authentication")]
@@ -222,7 +132,7 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// The Credit card payment token request
+        /// The Debit card payment token request
         /// </summary>
         [JsonProperty("token")]
         public Models.CreateCardPaymentTokenRequest Token 
