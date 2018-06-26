@@ -23,6 +23,7 @@ namespace MundiAPI.PCL.Models
                 { "safetypay",typeof(GetSafetyPayTransactionResponse)},
                 { "boleto",typeof(GetBoletoTransactionResponse)},
                 { "debit_card",typeof(GetDebitCardTransactionResponse)},
+                { "cash",typeof(GetCashTransactionResponse)},
             };
         }
     }
