@@ -212,6 +212,7 @@
     <Compile Include="Models\CreatePlanRequest.cs" />
     <Compile Include="Models\CreatePricingSchemeRequest.cs" />
     <Compile Include="Models\UpdatePricingSchemeRequest.cs" />
+    <Compile Include="Models\GetCustomerResponse.cs" />
     <Compile Include="Models\UpdatePriceBracketRequest.cs" />
     <Compile Include="Models\GetShippingResponse.cs" />
     <Compile Include="Models\UpdateChargeCardRequest.cs" />
