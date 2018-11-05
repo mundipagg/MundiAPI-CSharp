@@ -18,29 +18,10 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class ApplePayHeaderRequest : BaseModel 
+    public class CreateGooglePayHeaderRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
-        private string publicKeyHash;
         private string ephemeralPublicKey;
-        private string transactionId;
-
-        /// <summary>
-        /// SHA–256 hash, Base64 string codified
-        /// </summary>
-        [JsonProperty("public_key_hash")]
-        public string PublicKeyHash 
-        { 
-            get 
-            {
-                return this.publicKeyHash; 
-            } 
-            set 
-            {
-                this.publicKeyHash = value;
-                onPropertyChanged("PublicKeyHash");
-            }
-        }
 
         /// <summary>
         /// X.509 encoded key bytes, Base64 encoded as a string
@@ -56,23 +37,6 @@ namespace MundiAPI.PCL.Models
             {
                 this.ephemeralPublicKey = value;
                 onPropertyChanged("EphemeralPublicKey");
-            }
-        }
-
-        /// <summary>
-        /// Transaction identifier, generated on Device
-        /// </summary>
-        [JsonProperty("transaction_id")]
-        public string TransactionId 
-        { 
-            get 
-            {
-                return this.transactionId; 
-            } 
-            set 
-            {
-                this.transactionId = value;
-                onPropertyChanged("TransactionId");
             }
         }
     }
