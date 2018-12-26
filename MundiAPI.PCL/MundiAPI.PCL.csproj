@@ -10,7 +10,7 @@
     <AssemblyName>MundiAPI.PCL</AssemblyName>
     <OutputType>Library</OutputType>
     <OutputPath>bin/DEBUG/</OutputPath>
-    <ProjectGuid>{01366c53-5505-4053-ba20-7068965286ea}</ProjectGuid>
+    <ProjectGuid>{d482a1c1-d046-48c6-9ea0-f46af7ce0f65}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>ee2bb91c</NuGetPackageImportStamp>
@@ -71,15 +71,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\GetCheckoutBoletoPaymentResponse.cs" />
-    <Compile Include="Models\UpdateCustomerRequest.cs" />
-    <Compile Include="Models\GetCheckoutPaymentResponse.cs" />
     <Compile Include="Models\GetBoletoTransactionResponse.cs" />
     <Compile Include="Models\CreateBoletoPaymentRequest.cs" />
     <Compile Include="Models\GetInvoiceItemResponse.cs" />
     <Compile Include="Models\CreateCreditCardPaymentRequest.cs" />
     <Compile Include="Models\ListDiscountsResponse.cs" />
-    <Compile Include="Models\GetUsageResponse.cs" />
     <Compile Include="Models\CreateSubscriptionRequest.cs" />
+    <Compile Include="Models\CreateUsageRequest.cs" />
     <Compile Include="Models\GetSubscriptionResponse.cs" />
     <Compile Include="Models\CreateDiscountRequest.cs" />
     <Compile Include="Models\CreateIncrementRequest.cs" />
@@ -87,12 +85,13 @@
     <Compile Include="Models\GetUsagesDetailsResponse.cs" />
     <Compile Include="Models\GetIncrementResponse.cs" />
     <Compile Include="Models\ListIncrementsResponse.cs" />
-    <Compile Include="Models\CreateUsageRequest.cs" />
+    <Compile Include="Models\CreateOrderRequest.cs" />
+    <Compile Include="Models\ListUsagesDetailsResponse.cs" />
+    <Compile Include="Models\GetCardResponse.cs" />
+    <Compile Include="Models\GetCheckoutPaymentResponse.cs" />
+    <Compile Include="Models\CreateTransferSettingsRequest.cs" />
+    <Compile Include="Models\UpdateCustomerRequest.cs" />
     <Compile Include="Models\ListSellerResponse.cs" />
-    <Compile Include="Models\UpdateSellerRequest.cs" />
-    <Compile Include="Models\GetSellersRequest.cs" />
-    <Compile Include="Models\GetAnticipationResponse.cs" />
-    <Compile Include="Models\CreateAnticipationRequest.cs" />
     <Compile Include="Models\ListAnticipationResponse.cs" />
     <Compile Include="Models\GetAnticipationLimitResponse.cs" />
     <Compile Include="Models\GetAnticipationLimitsResponse.cs" />
@@ -108,14 +107,12 @@
     <Compile Include="Models\CreateSubscriptionItemRequest.cs" />
     <Compile Include="Models\UpdateOrderStatusRequest.cs" />
     <Compile Include="Models\UpdateOrderItemRequest.cs" />
-    <Compile Include="Models\CreateOrderRequest.cs" />
-    <Compile Include="Models\ListUsagesDetailsResponse.cs" />
-    <Compile Include="Models\GetCardResponse.cs" />
-    <Compile Include="Models\CreateTransferSettingsRequest.cs" />
-    <Compile Include="Models\CreateCancelChargeSplitRulesRequest.cs" />
-    <Compile Include="Models\CreateCheckoutPaymentRequest.cs" />
-    <Compile Include="Models\CreateShippingRequest.cs" />
-    <Compile Include="Models\GetShippingResponse.cs" />
+    <Compile Include="Models\GetSellersRequest.cs" />
+    <Compile Include="Models\UpdateSellerRequest.cs" />
+    <Compile Include="Models\GetUsageResponse.cs" />
+    <Compile Include="Models\UpdateTransferSettingsRequest.cs" />
+    <Compile Include="Models\CreateRecipientRequest.cs" />
+    <Compile Include="Models\GetGatewayResponseResponse.cs" />
     <Compile Include="Models\UpdateSubscriptionStartAtRequest.cs" />
     <Compile Include="Models\GetCheckoutCreditCardPaymentResponse.cs" />
     <Compile Include="Models\GetThreeDSecureResponse.cs" />
@@ -126,16 +123,17 @@
     <Compile Include="Models\CreateSplitRequest.cs" />
     <Compile Include="Models\CreateSplitOptionsRequest.cs" />
     <Compile Include="Models\UpdateCurrentCycleEndDateRequest.cs" />
+    <Compile Include="Models\CreateTransactionReportFileRequest.cs" />
+    <Compile Include="Models\ListTransactionsFilesResponse.cs" />
+    <Compile Include="Models\GetTransactionReportFileResponse.cs" />
     <Compile Include="Models\CreateCheckoutBankTransferRequest.cs" />
+    <Compile Include="Models\ListChargeTransactionsResponse.cs" />
     <Compile Include="Models\UpdateCurrentCycleStatusRequest.cs" />
     <Compile Include="Models\CreateGooglePayRequest.cs" />
-    <Compile Include="Models\CreateOrderItemRequest.cs" />
-    <Compile Include="Models\GetBalanceResponse.cs" />
-    <Compile Include="Models\CreateCancelChargeRequest.cs" />
-    <Compile Include="Models\UpdateSubscriptionMinimumPriceRequest.cs" />
-    <Compile Include="Models\UpdateTransferSettingsRequest.cs" />
-    <Compile Include="Models\CreateRecipientRequest.cs" />
-    <Compile Include="Models\GetGatewayResponseResponse.cs" />
+    <Compile Include="Models\GetShippingResponse.cs" />
+    <Compile Include="Models\CreateShippingRequest.cs" />
+    <Compile Include="Models\CreateCheckoutPaymentRequest.cs" />
+    <Compile Include="Models\CreateCancelChargeSplitRulesRequest.cs" />
     <Compile Include="Models\GetGatewayErrorResponse.cs" />
     <Compile Include="Models\CreateThreeDSecureRequest.cs" />
     <Compile Include="Models\CreatePaymentAuthenticationRequest.cs" />
@@ -144,17 +142,21 @@
     <Compile Include="Models\UpdateChargePaymentMethodRequest.cs" />
     <Compile Include="Models\CreateApplePayHeaderRequest.cs" />
     <Compile Include="Models\CreateApplePayRequest.cs" />
+    <Compile Include="Models\CreateAnticipationRequest.cs" />
     <Compile Include="Models\GetDebitCardTransactionResponse.cs" />
-    <Compile Include="Models\GetTransactionResponseCreationConverter.cs" />
-    <Compile Include="Models\GetTransactionResponse.cs" />
     <Compile Include="Models\CreateCashPaymentRequest.cs" />
     <Compile Include="Models\CreateConfirmPaymentRequest.cs" />
     <Compile Include="Models\GetCashTransactionResponse.cs" />
     <Compile Include="Models\UpdateSubscriptionDueDaysRequest.cs" />
+    <Compile Include="Models\UpdateSubscriptionMinimumPriceRequest.cs" />
     <Compile Include="Models\GetSplitResponse.cs" />
+    <Compile Include="Models\CreateCancelChargeRequest.cs" />
+    <Compile Include="Models\CreateOrderItemRequest.cs" />
+    <Compile Include="Models\GetTransactionResponseCreationConverter.cs" />
+    <Compile Include="Models\GetTransactionResponse.cs" />
     <Compile Include="Models\CreateGooglePayHeaderRequest.cs" />
+    <Compile Include="Models\GetAnticipationResponse.cs" />
     <Compile Include="Models\ListTransferResponse.cs" />
-    <Compile Include="Models\ListRecipientResponse.cs" />
     <Compile Include="Models\UpdateCardRequest.cs" />
     <Compile Include="Models\UpdatePlanItemRequest.cs" />
     <Compile Include="Models\UpdateSubscriptionItemRequest.cs" />
@@ -162,8 +164,8 @@
     <Compile Include="Models\CreateAccessTokenRequest.cs" />
     <Compile Include="Models\UpdatePlanRequest.cs" />
     <Compile Include="Models\GetAddressResponse.cs" />
-    <Compile Include="Models\CreateChargeRequest.cs" />
     <Compile Include="Models\GetChargeResponse.cs" />
+    <Compile Include="Models\GetPricingSchemeResponse.cs" />
     <Compile Include="Models\GetDiscountResponse.cs" />
     <Compile Include="Models\CreatePriceBracketRequest.cs" />
     <Compile Include="Models\GetPriceBracketResponse.cs" />
@@ -171,9 +173,10 @@
     <Compile Include="Models\CreateSetupRequest.cs" />
     <Compile Include="Models\GetSetupResponse.cs" />
     <Compile Include="Models\CreateAddressRequest.cs" />
-    <Compile Include="Models\GetPricingSchemeResponse.cs" />
+    <Compile Include="Models\CreateCardRequest.cs" />
+    <Compile Include="Models\CreateChargeRequest.cs" />
+    <Compile Include="Models\CreatePlanRequest.cs" />
     <Compile Include="Models\GetOrderResponse.cs" />
-    <Compile Include="Models\PagingResponse.cs" />
     <Compile Include="Models\ListCustomersResponse.cs" />
     <Compile Include="Models\GetCheckoutCardInstallmentOptionsResponse.cs" />
     <Compile Include="Models\UpdateSubscriptionBillingDateRequest.cs" />
@@ -192,12 +195,10 @@
     <Compile Include="Models\ListPlansResponse.cs" />
     <Compile Include="Models\ListAddressesResponse.cs" />
     <Compile Include="Models\ListCardsResponse.cs" />
-    <Compile Include="Models\CreateCardRequest.cs" />
-    <Compile Include="Models\UpdateRecipientBankAccountRequest.cs" />
-    <Compile Include="Models\CreatePlanRequest.cs" />
-    <Compile Include="Models\UpdatePricingSchemeRequest.cs" />
-    <Compile Include="Models\GetCardTokenResponse.cs" />
-    <Compile Include="Models\GetTokenResponse.cs" />
+    <Compile Include="Models\PagingResponse.cs" />
+    <Compile Include="Models\GetBalanceResponse.cs" />
+    <Compile Include="Models\CreatePricingSchemeRequest.cs" />
+    <Compile Include="Models\UpdatePriceBracketRequest.cs" />
     <Compile Include="Models\UpdateMetadataRequest.cs" />
     <Compile Include="Models\CreateCheckoutCardInstallmentOptionRequest.cs" />
     <Compile Include="Models\CreateCheckoutBoletoPaymentRequest.cs" />
@@ -213,11 +214,12 @@
     <Compile Include="Models\GetBankAccountResponse.cs" />
     <Compile Include="Models\UpdateRecipientRequest.cs" />
     <Compile Include="Models\GetGatewayRecipientResponse.cs" />
+    <Compile Include="Models\ListRecipientResponse.cs" />
+    <Compile Include="Models\UpdateRecipientBankAccountRequest.cs" />
+    <Compile Include="Models\GetTokenResponse.cs" />
+    <Compile Include="Models\GetCardTokenResponse.cs" />
+    <Compile Include="Models\CreateCardPaymentTokenRequest.cs" />
     <Compile Include="Models\CreateCardTokenRequest.cs" />
-    <Compile Include="Models\CreatePricingSchemeRequest.cs" />
-    <Compile Include="Models\CreateTokenRequest.cs" />
-    <Compile Include="Models\CreateCustomerRequest.cs" />
-    <Compile Include="Models\UpdatePriceBracketRequest.cs" />
     <Compile Include="Models\UpdateChargeCardRequest.cs" />
     <Compile Include="Models\GetPeriodResponse.cs" />
     <Compile Include="Models\GetPlanItemResponse.cs" />
@@ -226,15 +228,17 @@
     <Compile Include="Models\CreatePhonesRequest.cs" />
     <Compile Include="Models\GetPhoneResponse.cs" />
     <Compile Include="Models\GetPhonesResponse.cs" />
+    <Compile Include="Models\UpdatePricingSchemeRequest.cs" />
     <Compile Include="Models\CreateVoucherPaymentRequest.cs" />
-    <Compile Include="Models\GetVoucherTransactionResponse.cs" />
     <Compile Include="Models\CreateCaptureChargeRequest.cs" />
     <Compile Include="Models\CreateBankTransferPaymentRequest.cs" />
     <Compile Include="Models\GetBankTransferTransactionResponse.cs" />
     <Compile Include="Models\GetSafetyPayTransactionResponse.cs" />
     <Compile Include="Models\GetAccessTokenResponse.cs" />
     <Compile Include="Models\ListAccessTokensResponse.cs" />
-    <Compile Include="Models\CreateCardPaymentTokenRequest.cs" />
+    <Compile Include="Models\CreateCustomerRequest.cs" />
+    <Compile Include="Models\CreateTokenRequest.cs" />
+    <Compile Include="Models\GetVoucherTransactionResponse.cs" />
     <Compile Include="Exceptions\ErrorException.cs" />
     <Compile Include="Controllers\SubscriptionsController.cs" />
     <Compile Include="Controllers\ISubscriptionsController.cs" />
@@ -254,6 +258,8 @@
     <Compile Include="Controllers\ITokensController.cs" />
     <Compile Include="Controllers\SellersController.cs" />
     <Compile Include="Controllers\ISellersController.cs" />
+    <Compile Include="Controllers\TransactionsController.cs" />
+    <Compile Include="Controllers\ITransactionsController.cs" />
     <Compile Include="Http\Client\IHTTPClient.cs" />
     <Compile Include="Http\Client\HTTPClient.cs" />
     <Compile Include="Http\Client\HttpEventHandlers.cs" />
