@@ -18,13 +18,13 @@ using MundiAPI.PCL.Utilities;
 
 namespace MundiAPI.PCL.Models
 {
-    public class UpdateCurrentCycleEndDateRequest : BaseModel 
+    public class CreatePeriodRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
         private DateTime? endAt;
 
         /// <summary>
-        /// Current cycle end date
+        /// TODO: Write general description for this method
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
         [JsonProperty("end_at")]
