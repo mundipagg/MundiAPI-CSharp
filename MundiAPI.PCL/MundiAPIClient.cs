@@ -14,17 +14,6 @@ namespace MundiAPI.PCL
     {
 
         /// <summary>
-        /// Singleton access to Subscriptions controller
-        /// </summary>
-        public ISubscriptionsController Subscriptions
-        {
-            get
-            {
-                return SubscriptionsController.Instance;
-            }
-        }
-
-        /// <summary>
         /// Singleton access to Orders controller
         /// </summary>
         public IOrdersController Orders
@@ -32,6 +21,17 @@ namespace MundiAPI.PCL
             get
             {
                 return OrdersController.Instance;
+            }
+        }
+
+        /// <summary>
+        /// Singleton access to Subscriptions controller
+        /// </summary>
+        public ISubscriptionsController Subscriptions
+        {
+            get
+            {
+                return SubscriptionsController.Instance;
             }
         }
 
