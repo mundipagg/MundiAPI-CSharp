@@ -32,7 +32,7 @@ namespace MundiAPI.PCL.Models
         private string extendedLimitCode;
         private long? merchantCategoryCode;
         private Models.CreatePaymentAuthenticationRequest authentication;
-        private Models.CreateCardPaymentTokenRequest contactless;
+        private Models.CreateCardPaymentContactlessRequest contactless;
         private bool? autoRecovery;
 
         /// <summary>
@@ -226,7 +226,7 @@ namespace MundiAPI.PCL.Models
         /// The Credit card payment contactless request
         /// </summary>
         [JsonProperty("contactless")]
-        public Models.CreateCardPaymentTokenRequest Contactless 
+        public Models.CreateCardPaymentContactlessRequest Contactless 
         { 
             get 
             {
