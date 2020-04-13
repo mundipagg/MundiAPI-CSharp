@@ -22,7 +22,7 @@ namespace MundiAPI.PCL.Models
     {
         // These fields hold the values for the public properties.
         private string url;
-        private string barCode;
+        private string barcode;
         private string nossoNumero;
         private string bank;
         private string documentNumber;
@@ -58,17 +58,17 @@ namespace MundiAPI.PCL.Models
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("bar_code")]
-        public string BarCode 
+        [JsonProperty("barcode")]
+        public string Barcode 
         { 
             get 
             {
-                return this.barCode; 
+                return this.barcode; 
             } 
             set 
             {
-                this.barCode = value;
-                onPropertyChanged("BarCode");
+                this.barcode = value;
+                onPropertyChanged("Barcode");
             }
         }
 

@@ -32,7 +32,7 @@ namespace MundiAPI.PCL.Models
         /// <summary>
         /// Id
         /// </summary>
-        [JsonProperty("Id")]
+        [JsonProperty("id")]
         public string Id 
         { 
             get 
