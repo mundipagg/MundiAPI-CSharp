@@ -34,6 +34,7 @@ namespace MundiAPI.PCL.Models
         private Models.CreatePaymentAuthenticationRequest authentication;
         private Models.CreateCardPaymentContactlessRequest contactless;
         private bool? autoRecovery;
+        private string operationType;
 
         /// <summary>
         /// Number of installments
@@ -253,6 +254,23 @@ namespace MundiAPI.PCL.Models
             {
                 this.autoRecovery = value;
                 onPropertyChanged("AutoRecovery");
+            }
+        }
+
+        /// <summary>
+        /// AuthOnly, AuthAndCapture, PreAuth
+        /// </summary>
+        [JsonProperty("operation_type")]
+        public string OperationType 
+        { 
+            get 
+            {
+                return this.operationType; 
+            } 
+            set 
+            {
+                this.operationType = value;
+                onPropertyChanged("OperationType");
             }
         }
     }
