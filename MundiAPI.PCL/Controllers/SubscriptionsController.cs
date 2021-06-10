@@ -91,7 +91,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -157,7 +157,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -228,7 +228,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -310,7 +310,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -392,7 +392,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -459,7 +459,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -525,7 +525,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -588,7 +588,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -659,7 +659,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -730,7 +730,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -800,7 +800,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -866,7 +866,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -938,7 +938,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "idempotency-key", idempotencyKey }
             };
@@ -1058,7 +1058,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -1124,7 +1124,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -1196,7 +1196,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "idempotency-key", idempotencyKey }
             };
@@ -1275,7 +1275,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "idempotency-key", idempotencyKey }
             };
@@ -1343,7 +1343,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "idempotency-key", idempotencyKey }
             };
@@ -1410,7 +1410,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -1480,7 +1480,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -1553,7 +1553,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -1619,7 +1619,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -1697,7 +1697,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -1764,7 +1764,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "idempotency-key", idempotencyKey }
             };
@@ -1859,7 +1859,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -1963,7 +1963,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -2072,7 +2072,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -2138,7 +2138,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -2209,7 +2209,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -2280,7 +2280,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -2351,7 +2351,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -2421,7 +2421,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
             };
@@ -2490,7 +2490,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -2555,7 +2555,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -2619,7 +2619,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "idempotency-key", idempotencyKey }
             };
@@ -2685,7 +2685,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 

@@ -109,6 +109,7 @@ namespace MundiAPI.PCL.Controllers
         /// <param name="status">Optional parameter: Filter for Invoice's status</param>
         /// <param name="dueSince">Optional parameter: Filter for Invoice's due date start range</param>
         /// <param name="dueUntil">Optional parameter: Filter for Invoice's due date end range</param>
+        /// <param name="customerDocument">Optional parameter: Fillter for invoice's document</param>
         /// <return>Returns the Models.ListInvoicesResponse response from the API call</return>
         Models.ListInvoicesResponse GetInvoices(
                 int? page = null,
@@ -120,7 +121,8 @@ namespace MundiAPI.PCL.Controllers
                 DateTime? createdUntil = null,
                 string status = null,
                 DateTime? dueSince = null,
-                DateTime? dueUntil = null);
+                DateTime? dueUntil = null,
+                string customerDocument = null);
 
         /// <summary>
         /// Gets all invoices
@@ -135,6 +137,7 @@ namespace MundiAPI.PCL.Controllers
         /// <param name="status">Optional parameter: Filter for Invoice's status</param>
         /// <param name="dueSince">Optional parameter: Filter for Invoice's due date start range</param>
         /// <param name="dueUntil">Optional parameter: Filter for Invoice's due date end range</param>
+        /// <param name="customerDocument">Optional parameter: Fillter for invoice's document</param>
         /// <return>Returns the Models.ListInvoicesResponse response from the API call</return>
         Task<Models.ListInvoicesResponse> GetInvoicesAsync(
                 int? page = null,
@@ -146,7 +149,8 @@ namespace MundiAPI.PCL.Controllers
                 DateTime? createdUntil = null,
                 string status = null,
                 DateTime? dueSince = null,
-                DateTime? dueUntil = null);
+                DateTime? dueUntil = null,
+                string customerDocument = null);
 
         /// <summary>
         /// Updates the metadata from an invoice
