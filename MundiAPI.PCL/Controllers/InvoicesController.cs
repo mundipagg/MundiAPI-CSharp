@@ -90,7 +90,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "idempotency-key", idempotencyKey }
             };
@@ -153,7 +153,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -230,7 +230,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -301,7 +301,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -342,6 +342,7 @@ namespace MundiAPI.PCL.Controllers
         /// <param name="status">Optional parameter: Filter for Invoice's status</param>
         /// <param name="dueSince">Optional parameter: Filter for Invoice's due date start range</param>
         /// <param name="dueUntil">Optional parameter: Filter for Invoice's due date end range</param>
+        /// <param name="customerDocument">Optional parameter: Fillter for invoice's document</param>
         /// <return>Returns the Models.ListInvoicesResponse response from the API call</return>
         public Models.ListInvoicesResponse GetInvoices(
                 int? page = null,
@@ -353,9 +354,10 @@ namespace MundiAPI.PCL.Controllers
                 DateTime? createdUntil = null,
                 string status = null,
                 DateTime? dueSince = null,
-                DateTime? dueUntil = null)
+                DateTime? dueUntil = null,
+                string customerDocument = null)
         {
-            Task<Models.ListInvoicesResponse> t = GetInvoicesAsync(page, size, code, customerId, subscriptionId, createdSince, createdUntil, status, dueSince, dueUntil);
+            Task<Models.ListInvoicesResponse> t = GetInvoicesAsync(page, size, code, customerId, subscriptionId, createdSince, createdUntil, status, dueSince, dueUntil, customerDocument);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -373,6 +375,7 @@ namespace MundiAPI.PCL.Controllers
         /// <param name="status">Optional parameter: Filter for Invoice's status</param>
         /// <param name="dueSince">Optional parameter: Filter for Invoice's due date start range</param>
         /// <param name="dueUntil">Optional parameter: Filter for Invoice's due date end range</param>
+        /// <param name="customerDocument">Optional parameter: Fillter for invoice's document</param>
         /// <return>Returns the Models.ListInvoicesResponse response from the API call</return>
         public async Task<Models.ListInvoicesResponse> GetInvoicesAsync(
                 int? page = null,
@@ -384,7 +387,8 @@ namespace MundiAPI.PCL.Controllers
                 DateTime? createdUntil = null,
                 string status = null,
                 DateTime? dueSince = null,
-                DateTime? dueUntil = null)
+                DateTime? dueUntil = null,
+                string customerDocument = null)
         {
             //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
@@ -405,7 +409,8 @@ namespace MundiAPI.PCL.Controllers
                 { "created_until", (createdUntil.HasValue) ? createdUntil.Value.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK") : null },
                 { "status", status },
                 { "due_since", (dueSince.HasValue) ? dueSince.Value.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK") : null },
-                { "due_until", (dueUntil.HasValue) ? dueUntil.Value.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK") : null }
+                { "due_until", (dueUntil.HasValue) ? dueUntil.Value.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK") : null },
+                { "customer_document", customerDocument }
             },ArrayDeserializationFormat,ParameterSeparator);
 
 
@@ -415,7 +420,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
@@ -481,7 +486,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "idempotency-key", idempotencyKey }
@@ -548,7 +553,7 @@ namespace MundiAPI.PCL.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "MundiSDK - DotNet 0.16.21" },
+                { "user-agent", "MundiSDK - DotNet 2.0.0" },
                 { "accept", "application/json" }
             };
 
