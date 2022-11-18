@@ -243,8 +243,8 @@ Task<Models.ListAddressesResponse> GetAddresses(string customerId, int? page = n
 
 ```csharp
 string customerId = "customer_id";
-int? page = 74;
-int? size = 74;
+int? page = 222;
+int? size = 222;
 
 Models.ListAddressesResponse result = await customers.GetAddresses(customerId, page, size);
 
@@ -453,8 +453,8 @@ Task<Models.ListAccessTokensResponse> GetAccessTokens(string customerId, int? pa
 
 ```csharp
 string customerId = "customer_id";
-int? page = 74;
-int? size = 74;
+int? page = 222;
+int? size = 222;
 
 Models.ListAccessTokensResponse result = await customers.GetAccessTokens(customerId, page, size);
 
@@ -557,108 +557,6 @@ Models.GetCardResponse result = await customers.UpdateCard(customerId, cardId, r
 ```
 
 
-### <a name="get_cards"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.CustomersController.GetCards") GetCards
-
-> Get all cards from a customer
-
-
-```csharp
-Task<Models.ListCardsResponse> GetCards(string customerId, int? page = null, int? size = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-#### Example Usage
-
-```csharp
-string customerId = "customer_id";
-int? page = 74;
-int? size = 74;
-
-Models.ListCardsResponse result = await customers.GetCards(customerId, page, size);
-
-```
-
-
-### <a name="delete_card"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.CustomersController.DeleteCard") DeleteCard
-
-> Delete a customer's card
-
-
-```csharp
-Task<Models.GetCardResponse> DeleteCard(string customerId, string cardId, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| cardId |  ``` Required ```  | Card Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string customerId = "customer_id";
-string cardId = "card_id";
-string idempotencyKey = "idempotency-key";
-
-Models.GetCardResponse result = await customers.DeleteCard(customerId, cardId, idempotencyKey);
-
-```
-
-
-### <a name="get_customers"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.CustomersController.GetCustomers") GetCustomers
-
-> Get all Customers
-
-
-```csharp
-Task<Models.ListCustomersResponse> GetCustomers(
-        string name = null,
-        string document = null,
-        int? page = 1,
-        int? size = 10,
-        string email = null,
-        string code = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Name of the Customer |
-| document |  ``` Optional ```  | Document of the Customer |
-| page |  ``` Optional ```  ``` DefaultValue ```  | Current page the the search |
-| size |  ``` Optional ```  ``` DefaultValue ```  | Quantity pages of the search |
-| email |  ``` Optional ```  | Customer's email |
-| code |  ``` Optional ```  | Customer's code |
-
-
-#### Example Usage
-
-```csharp
-string name = "name";
-string document = "document";
-int? page = 1;
-int? size = 10;
-string email = "email";
-string code = "Code";
-
-Models.ListCustomersResponse result = await customers.GetCustomers(name, document, page, size, email, code);
-
-```
-
-
 ### <a name="delete_access_token"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.CustomersController.DeleteAccessToken") DeleteAccessToken
 
 > Delete a customer's access token
@@ -743,6 +641,108 @@ string customerId = "customer_id";
 string cardId = "card_id";
 
 Models.GetCardResponse result = await customers.GetCard(customerId, cardId);
+
+```
+
+
+### <a name="get_cards"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.CustomersController.GetCards") GetCards
+
+> Get all cards from a customer
+
+
+```csharp
+Task<Models.ListCardsResponse> GetCards(string customerId, int? page = null, int? size = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+#### Example Usage
+
+```csharp
+string customerId = "customer_id";
+int? page = 222;
+int? size = 222;
+
+Models.ListCardsResponse result = await customers.GetCards(customerId, page, size);
+
+```
+
+
+### <a name="delete_card"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.CustomersController.DeleteCard") DeleteCard
+
+> Delete a customer's card
+
+
+```csharp
+Task<Models.GetCardResponse> DeleteCard(string customerId, string cardId, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| cardId |  ``` Required ```  | Card Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string customerId = "customer_id";
+string cardId = "card_id";
+string idempotencyKey = "idempotency-key";
+
+Models.GetCardResponse result = await customers.DeleteCard(customerId, cardId, idempotencyKey);
+
+```
+
+
+### <a name="get_customers"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.CustomersController.GetCustomers") GetCustomers
+
+> Get all Customers
+
+
+```csharp
+Task<Models.ListCustomersResponse> GetCustomers(
+        string name = null,
+        string document = null,
+        int? page = 1,
+        int? size = 10,
+        string email = null,
+        string code = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| name |  ``` Optional ```  | Name of the Customer |
+| document |  ``` Optional ```  | Document of the Customer |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Current page the the search |
+| size |  ``` Optional ```  ``` DefaultValue ```  | Quantity pages of the search |
+| email |  ``` Optional ```  | Customer's email |
+| code |  ``` Optional ```  | Customer's code |
+
+
+#### Example Usage
+
+```csharp
+string name = "name";
+string document = "document";
+int? page = 1;
+int? size = 10;
+string email = "email";
+string code = "Code";
+
+Models.ListCustomersResponse result = await customers.GetCustomers(name, document, page, size, email, code);
 
 ```
 
@@ -881,8 +881,8 @@ Task<Models.ListChargesResponse> GetCharges(
 #### Example Usage
 
 ```csharp
-int? page = 74;
-int? size = 74;
+int? page = 222;
+int? size = 222;
 string code = "code";
 string status = "status";
 string paymentMethod = "payment_method";
@@ -1124,8 +1124,8 @@ Task<Models.ListChargeTransactionsResponse> GetChargeTransactions(string chargeI
 
 ```csharp
 string chargeId = "charge_id";
-int? page = 74;
-int? size = 74;
+int? page = 222;
+int? size = 222;
 
 Models.ListChargeTransactionsResponse result = await charges.GetChargeTransactions(chargeId, page, size);
 
@@ -1282,8 +1282,8 @@ Task<Models.ListRecipientResponse> GetRecipients(int? page = null, int? size = n
 #### Example Usage
 
 ```csharp
-int? page = 74;
-int? size = 74;
+int? page = 222;
+int? size = 222;
 
 Models.ListRecipientResponse result = await recipients.GetRecipients(page, size);
 
@@ -1353,8 +1353,8 @@ Task<Models.ListAnticipationResponse> GetAnticipations(
 
 ```csharp
 string recipientId = "recipient_id";
-int? page = 74;
-int? size = 74;
+int? page = 222;
+int? size = 222;
 string status = "status";
 string timeframe = "timeframe";
 DateTime? paymentDateSince = DateTime.Now();
@@ -1453,6 +1453,36 @@ Models.GetRecipientResponse result = await recipients.GetRecipient(recipientId);
 ```
 
 
+### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.RecipientsController.GetAnticipationLimits") GetAnticipationLimits
+
+> Gets the anticipation limits for a recipient
+
+
+```csharp
+Task<Models.GetAnticipationLimitResponse> GetAnticipationLimits(string recipientId, string timeframe, DateTime paymentDate)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| timeframe |  ``` Required ```  | Timeframe |
+| paymentDate |  ``` Required ```  | Anticipation payment date |
+
+
+#### Example Usage
+
+```csharp
+string recipientId = "recipient_id";
+string timeframe = "timeframe";
+DateTime paymentDate = DateTime.Now();
+
+Models.GetAnticipationLimitResponse result = await recipients.GetAnticipationLimits(recipientId, timeframe, paymentDate);
+
+```
+
+
 ### <a name="get_transfer"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.RecipientsController.GetTransfer") GetTransfer
 
 > Gets a transfer
@@ -1512,8 +1542,8 @@ Task<Models.ListTransferResponse> GetTransfers(
 
 ```csharp
 string recipientId = "recipient_id";
-int? page = 74;
-int? size = 74;
+int? page = 8;
+int? size = 8;
 string status = "status";
 DateTime? createdSince = DateTime.Now();
 DateTime? createdUntil = DateTime.Now();
@@ -1611,36 +1641,6 @@ Models.GetTransferResponse result = await recipients.CreateTransfer(recipientId,
 ```
 
 
-### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.RecipientsController.GetAnticipationLimits") GetAnticipationLimits
-
-> Gets the anticipation limits for a recipient
-
-
-```csharp
-Task<Models.GetAnticipationLimitResponse> GetAnticipationLimits(string recipientId, string timeframe, DateTime paymentDate)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| timeframe |  ``` Required ```  | Timeframe |
-| paymentDate |  ``` Required ```  | Anticipation payment date |
-
-
-#### Example Usage
-
-```csharp
-string recipientId = "recipient_id";
-string timeframe = "timeframe";
-DateTime paymentDate = DateTime.Now();
-
-Models.GetAnticipationLimitResponse result = await recipients.GetAnticipationLimits(recipientId, timeframe, paymentDate);
-
-```
-
-
 ### <a name="create_withdraw"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.RecipientsController.CreateWithdraw") CreateWithdraw
 
 > TODO: Add a method description
@@ -1728,8 +1728,8 @@ Task<Models.ListWithdrawals> GetWithdrawals(
 
 ```csharp
 string recipientId = "recipient_id";
-int? page = 74;
-int? size = 74;
+int? page = 8;
+int? size = 8;
 string status = "status";
 DateTime? createdSince = DateTime.Now();
 DateTime? createdUntil = DateTime.Now();
@@ -2139,8 +2139,8 @@ Task<Models.GetUsagesDetailsResponse> GetUsagesDetails(
 ```csharp
 string subscriptionId = "subscription_id";
 string cycleId = "cycle_id";
-int? size = 32;
-int? page = 32;
+int? size = 8;
+int? page = 8;
 string itemId = "item_id";
 string mgroup = "group";
 
@@ -2323,8 +2323,8 @@ Task<Models.ListIncrementsResponse> GetIncrements(string subscriptionId, int? pa
 
 ```csharp
 string subscriptionId = "subscription_id";
-int? page = 32;
-int? size = 32;
+int? page = 8;
+int? size = 8;
 
 Models.ListIncrementsResponse result = await subscriptions.GetIncrements(subscriptionId, page, size);
 
@@ -2433,8 +2433,8 @@ Task<Models.ListUsagesResponse> GetUsages(
 ```csharp
 string subscriptionId = "subscription_id";
 string itemId = "item_id";
-int? page = 32;
-int? size = 32;
+int? page = 8;
+int? size = 8;
 string code = "code";
 string mgroup = "group";
 DateTime? usedSince = DateTime.Now();
@@ -2531,6 +2531,175 @@ string page = "page";
 string size = "size";
 
 Models.ListCyclesResponse result = await subscriptions.GetSubscriptionCycles(subscriptionId, page, size);
+
+```
+
+
+### <a name="get_subscriptions"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetSubscriptions") GetSubscriptions
+
+> Gets all subscriptions
+
+
+```csharp
+Task<Models.ListSubscriptionsResponse> GetSubscriptions(
+        int? page = null,
+        int? size = null,
+        string code = null,
+        string billingType = null,
+        string customerId = null,
+        string planId = null,
+        string cardId = null,
+        string status = null,
+        DateTime? nextBillingSince = null,
+        DateTime? nextBillingUntil = null,
+        DateTime? createdSince = null,
+        DateTime? createdUntil = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| code |  ``` Optional ```  | Filter for subscription's code |
+| billingType |  ``` Optional ```  | Filter for subscription's billing type |
+| customerId |  ``` Optional ```  | Filter for subscription's customer id |
+| planId |  ``` Optional ```  | Filter for subscription's plan id |
+| cardId |  ``` Optional ```  | Filter for subscription's card id |
+| status |  ``` Optional ```  | Filter for subscription's status |
+| nextBillingSince |  ``` Optional ```  | Filter for subscription's next billing date start range |
+| nextBillingUntil |  ``` Optional ```  | Filter for subscription's next billing date end range |
+| createdSince |  ``` Optional ```  | Filter for subscription's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for subscriptions creation date end range |
+
+
+#### Example Usage
+
+```csharp
+int? page = 8;
+int? size = 8;
+string code = "code";
+string billingType = "billing_type";
+string customerId = "customer_id";
+string planId = "plan_id";
+string cardId = "card_id";
+string status = "status";
+DateTime? nextBillingSince = DateTime.Now();
+DateTime? nextBillingUntil = DateTime.Now();
+DateTime? createdSince = DateTime.Now();
+DateTime? createdUntil = DateTime.Now();
+
+Models.ListSubscriptionsResponse result = await subscriptions.GetSubscriptions(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil);
+
+```
+
+
+### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetDiscountById") GetDiscountById
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetDiscountResponse> GetDiscountById(string subscriptionId, string discountId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| discountId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+string discountId = "discountId";
+
+Models.GetDiscountResponse result = await subscriptions.GetDiscountById(subscriptionId, discountId);
+
+```
+
+
+### <a name="get_subscription_items"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetSubscriptionItems") GetSubscriptionItems
+
+> Get Subscription Items
+
+
+```csharp
+Task<Models.ListSubscriptionItemsResponse> GetSubscriptionItems(
+        string subscriptionId,
+        int? page = null,
+        int? size = null,
+        string name = null,
+        string code = null,
+        string status = null,
+        string description = null,
+        string createdSince = null,
+        string createdUntil = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| name |  ``` Optional ```  | The item name |
+| code |  ``` Optional ```  | Identification code in the client system |
+| status |  ``` Optional ```  | The item statis |
+| description |  ``` Optional ```  | The item description |
+| createdSince |  ``` Optional ```  | Filter for item's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for item's creation date end range |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+int? page = 172;
+int? size = 172;
+string name = "name";
+string code = "code";
+string status = "status";
+string description = "description";
+string createdSince = "created_since";
+string createdUntil = "created_until";
+
+Models.ListSubscriptionItemsResponse result = await subscriptions.GetSubscriptionItems(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil);
+
+```
+
+
+### <a name="update_subscription_minium_price"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.UpdateSubscriptionMiniumPrice") UpdateSubscriptionMiniumPrice
+
+> Atualização do valor mínimo da assinatura
+
+
+```csharp
+Task<Models.GetSubscriptionResponse> UpdateSubscriptionMiniumPrice(string subscriptionId, Models.UpdateSubscriptionMinimumPriceRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| request |  ``` Required ```  | Request da requisição com o valor mínimo que será configurado |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+var request = new Models.UpdateSubscriptionMinimumPriceRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionMiniumPrice(subscriptionId, request, idempotencyKey);
 
 ```
 
@@ -2733,8 +2902,8 @@ Task<Models.ListDiscountsResponse> GetDiscounts(string subscriptionId, int page,
 
 ```csharp
 string subscriptionId = "subscription_id";
-int page = 32;
-int size = 32;
+int page = 172;
+int size = 172;
 
 Models.ListDiscountsResponse result = await subscriptions.GetDiscounts(subscriptionId, page, size);
 
@@ -2767,175 +2936,6 @@ var request = new Models.CreateIncrementRequest();
 string idempotencyKey = "idempotency-key";
 
 Models.GetIncrementResponse result = await subscriptions.CreateIncrement(subscriptionId, request, idempotencyKey);
-
-```
-
-
-### <a name="get_subscriptions"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetSubscriptions") GetSubscriptions
-
-> Gets all subscriptions
-
-
-```csharp
-Task<Models.ListSubscriptionsResponse> GetSubscriptions(
-        int? page = null,
-        int? size = null,
-        string code = null,
-        string billingType = null,
-        string customerId = null,
-        string planId = null,
-        string cardId = null,
-        string status = null,
-        DateTime? nextBillingSince = null,
-        DateTime? nextBillingUntil = null,
-        DateTime? createdSince = null,
-        DateTime? createdUntil = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| code |  ``` Optional ```  | Filter for subscription's code |
-| billingType |  ``` Optional ```  | Filter for subscription's billing type |
-| customerId |  ``` Optional ```  | Filter for subscription's customer id |
-| planId |  ``` Optional ```  | Filter for subscription's plan id |
-| cardId |  ``` Optional ```  | Filter for subscription's card id |
-| status |  ``` Optional ```  | Filter for subscription's status |
-| nextBillingSince |  ``` Optional ```  | Filter for subscription's next billing date start range |
-| nextBillingUntil |  ``` Optional ```  | Filter for subscription's next billing date end range |
-| createdSince |  ``` Optional ```  | Filter for subscription's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for subscriptions creation date end range |
-
-
-#### Example Usage
-
-```csharp
-int? page = 32;
-int? size = 32;
-string code = "code";
-string billingType = "billing_type";
-string customerId = "customer_id";
-string planId = "plan_id";
-string cardId = "card_id";
-string status = "status";
-DateTime? nextBillingSince = DateTime.Now();
-DateTime? nextBillingUntil = DateTime.Now();
-DateTime? createdSince = DateTime.Now();
-DateTime? createdUntil = DateTime.Now();
-
-Models.ListSubscriptionsResponse result = await subscriptions.GetSubscriptions(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil);
-
-```
-
-
-### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetDiscountById") GetDiscountById
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetDiscountResponse> GetDiscountById(string subscriptionId, string discountId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| discountId |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-string discountId = "discountId";
-
-Models.GetDiscountResponse result = await subscriptions.GetDiscountById(subscriptionId, discountId);
-
-```
-
-
-### <a name="get_subscription_items"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.GetSubscriptionItems") GetSubscriptionItems
-
-> Get Subscription Items
-
-
-```csharp
-Task<Models.ListSubscriptionItemsResponse> GetSubscriptionItems(
-        string subscriptionId,
-        int? page = null,
-        int? size = null,
-        string name = null,
-        string code = null,
-        string status = null,
-        string description = null,
-        string createdSince = null,
-        string createdUntil = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| name |  ``` Optional ```  | The item name |
-| code |  ``` Optional ```  | Identification code in the client system |
-| status |  ``` Optional ```  | The item statis |
-| description |  ``` Optional ```  | The item description |
-| createdSince |  ``` Optional ```  | Filter for item's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for item's creation date end range |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-int? page = 32;
-int? size = 32;
-string name = "name";
-string code = "code";
-string status = "status";
-string description = "description";
-string createdSince = "created_since";
-string createdUntil = "created_until";
-
-Models.ListSubscriptionItemsResponse result = await subscriptions.GetSubscriptionItems(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil);
-
-```
-
-
-### <a name="update_subscription_minium_price"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.SubscriptionsController.UpdateSubscriptionMiniumPrice") UpdateSubscriptionMiniumPrice
-
-> Atualização do valor mínimo da assinatura
-
-
-```csharp
-Task<Models.GetSubscriptionResponse> UpdateSubscriptionMiniumPrice(string subscriptionId, Models.UpdateSubscriptionMinimumPriceRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| request |  ``` Required ```  | Request da requisição com o valor mínimo que será configurado |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-var request = new Models.UpdateSubscriptionMinimumPriceRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionMiniumPrice(subscriptionId, request, idempotencyKey);
 
 ```
 
@@ -3156,34 +3156,6 @@ Models.GetInvoiceResponse result = await invoices.UpdateInvoiceMetadata(invoiceI
 ```
 
 
-### <a name="cancel_invoice"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.InvoicesController.CancelInvoice") CancelInvoice
-
-> Cancels an invoice
-
-
-```csharp
-Task<Models.GetInvoiceResponse> CancelInvoice(string invoiceId, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| invoiceId |  ``` Required ```  | Invoice id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string invoiceId = "invoice_id";
-string idempotencyKey = "idempotency-key";
-
-Models.GetInvoiceResponse result = await invoices.CancelInvoice(invoiceId, idempotencyKey);
-
-```
-
-
 ### <a name="get_invoices"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.InvoicesController.GetInvoices") GetInvoices
 
 > Gets all invoices
@@ -3224,8 +3196,8 @@ Task<Models.ListInvoicesResponse> GetInvoices(
 #### Example Usage
 
 ```csharp
-int? page = 32;
-int? size = 32;
+int? page = 172;
+int? size = 172;
 string code = "code";
 string customerId = "customer_id";
 string subscriptionId = "subscription_id";
@@ -3237,6 +3209,34 @@ DateTime? dueUntil = DateTime.Now();
 string customerDocument = "customer_document";
 
 Models.ListInvoicesResponse result = await invoices.GetInvoices(page, size, code, customerId, subscriptionId, createdSince, createdUntil, status, dueSince, dueUntil, customerDocument);
+
+```
+
+
+### <a name="cancel_invoice"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.InvoicesController.CancelInvoice") CancelInvoice
+
+> Cancels an invoice
+
+
+```csharp
+Task<Models.GetInvoiceResponse> CancelInvoice(string invoiceId, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | Invoice id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string invoiceId = "invoice_id";
+string idempotencyKey = "idempotency-key";
+
+Models.GetInvoiceResponse result = await invoices.CancelInvoice(invoiceId, idempotencyKey);
 
 ```
 
@@ -3373,8 +3373,8 @@ Task<Models.ListOrderResponse> GetOrders(
 #### Example Usage
 
 ```csharp
-int? page = 32;
-int? size = 32;
+int? page = 172;
+int? size = 172;
 string code = "code";
 string status = "status";
 DateTime? createdSince = DateTime.Now();
@@ -3748,8 +3748,8 @@ Task<Models.ListPlansResponse> GetPlans(
 #### Example Usage
 
 ```csharp
-int? page = 32;
-int? size = 32;
+int? page = 80;
+int? size = 80;
 string name = "name";
 string status = "status";
 string billingType = "billing_type";
@@ -3905,34 +3905,6 @@ Models.GetPlanItemResponse result = await plans.DeletePlanItem(planId, planItemI
 ```
 
 
-### <a name="get_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.PlansController.GetPlanItem") GetPlanItem
-
-> Gets a plan item
-
-
-```csharp
-Task<Models.GetPlanItemResponse> GetPlanItem(string planId, string planItemId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| planItemId |  ``` Required ```  | Plan item id |
-
-
-#### Example Usage
-
-```csharp
-string planId = "plan_id";
-string planItemId = "plan_item_id";
-
-Models.GetPlanItemResponse result = await plans.GetPlanItem(planId, planItemId);
-
-```
-
-
 ### <a name="delete_plan"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.PlansController.DeletePlan") DeletePlan
 
 > Deletes a plan
@@ -3957,6 +3929,34 @@ string planId = "plan_id";
 string idempotencyKey = "idempotency-key";
 
 Models.GetPlanResponse result = await plans.DeletePlan(planId, idempotencyKey);
+
+```
+
+
+### <a name="get_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "MundiAPI.PCL.Controllers.PlansController.GetPlanItem") GetPlanItem
+
+> Gets a plan item
+
+
+```csharp
+Task<Models.GetPlanItemResponse> GetPlanItem(string planId, string planItemId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| planItemId |  ``` Required ```  | Plan item id |
+
+
+#### Example Usage
+
+```csharp
+string planId = "plan_id";
+string planItemId = "plan_item_id";
+
+Models.GetPlanItemResponse result = await plans.GetPlanItem(planId, planItemId);
 
 ```
 
