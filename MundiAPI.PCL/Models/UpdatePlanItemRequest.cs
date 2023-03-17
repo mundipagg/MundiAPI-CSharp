@@ -24,7 +24,7 @@ namespace MundiAPI.PCL.Models
         private string name;
         private string description;
         private string status;
-        private Models.UpdatePricingSchemeRequest pricingScheme;
+        private Models.PricingScheme3 pricingScheme;
         private int? quantity;
         private int? cycles;
 
@@ -80,10 +80,10 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// Pricing scheme
+        /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("pricing_scheme")]
-        public Models.UpdatePricingSchemeRequest PricingScheme 
+        public Models.PricingScheme3 PricingScheme 
         { 
             get 
             {
