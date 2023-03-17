@@ -22,7 +22,7 @@ namespace MundiAPI.PCL.Models
     {
         // These fields hold the values for the public properties.
         private string type;
-        private Models.GetThreeDSecureResponse threedSecure;
+        private Models.ThreedSecure threedSecure;
 
         /// <summary>
         /// TODO: Write general description for this method
@@ -42,10 +42,10 @@ namespace MundiAPI.PCL.Models
         }
 
         /// <summary>
-        /// 3D-S payment authentication response
+        /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("threed_secure")]
-        public Models.GetThreeDSecureResponse ThreedSecure 
+        public Models.ThreedSecure ThreedSecure 
         { 
             get 
             {
