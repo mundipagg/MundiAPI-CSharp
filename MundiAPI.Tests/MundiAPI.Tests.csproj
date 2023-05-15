@@ -8,7 +8,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{f7cb71ed-f121-4065-8756-8049b882820a}</ProjectGuid>
+    <ProjectGuid>{07967e79-4469-427d-bef6-0b93baa29b23}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MundiAPI.Tests</RootNamespace>
@@ -90,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MundiAPI.PCL\MundiAPI.PCL.csproj">
-      <Project>{7b294522-a226-4cbc-8367-61d41d9dd284}</Project>
+      <Project>{9f3edae4-8fe2-46c8-baaa-e8208c8e29c6}</Project>
       <Name>MundiAPI.PCL</Name>
     </ProjectReference>
   </ItemGroup>
