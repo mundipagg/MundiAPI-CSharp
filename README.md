@@ -67,6 +67,7 @@ In order to setup authentication and initialization of the API client, you need 
 
 | Parameter | Description |
 |-----------|-------------|
+| serviceRefererName | TODO: add a description |
 | basicAuthUserName | The username to use with basic authentication |
 | basicAuthPassword | The password to use with basic authentication |
 
@@ -76,10 +77,11 @@ API client can be initialized as following.
 
 ```csharp
 // Configuration parameters and credentials
+string serviceRefererName = "serviceRefererName";
 string basicAuthUserName = "basicAuthUserName"; // The username to use with basic authentication
 string basicAuthPassword = "basicAuthPassword"; // The password to use with basic authentication
 
-MundiAPIClient client = new MundiAPIClient(basicAuthUserName, basicAuthPassword);
+MundiAPIClient client = new MundiAPIClient(serviceRefererName, basicAuthUserName, basicAuthPassword);
 ```
 
 
@@ -684,8 +686,8 @@ Task<PCL.Models.SubscriptionsResponse3> GetSubscriptions(
 #### Example Usage
 
 ```csharp
-int? page = 184;
-int? size = 184;
+int? page = 73;
+int? size = 73;
 string code = "code";
 string billingType = "billing_type";
 string customerId = "customer_id";
@@ -745,8 +747,8 @@ Task<PCL.Models.GetUsagesDetailsResponse> GetUsagesDetails(
 ```csharp
 string subscriptionId = "subscription_id";
 string cycleId = "cycle_id";
-int? size = 184;
-int? page = 184;
+int? size = 73;
+int? page = 73;
 string itemId = "item_id";
 string mgroup = "group";
 
@@ -923,8 +925,8 @@ Task<PCL.Models.SubscriptionsItemsUsagesResponse1> GetUsages(
 ```csharp
 string subscriptionId = "subscription_id";
 string itemId = "item_id";
-int? page = 184;
-int? size = 184;
+int? page = 73;
+int? size = 73;
 string code = "code";
 string mgroup = "group";
 DateTime? usedSince = DateTime.Now();
@@ -1009,8 +1011,8 @@ Task<PCL.Models.ListIncrementsResponse> GetIncrements(string subscriptionId, int
 
 ```csharp
 string subscriptionId = "subscription_id";
-int? page = 184;
-int? size = 184;
+int? page = 73;
+int? size = 73;
 
 PCL.Models.ListIncrementsResponse result = await subscriptions.GetIncrements(subscriptionId, page, size);
 
@@ -1106,8 +1108,8 @@ Task<PCL.Models.SubscriptionsItemsResponse3> GetSubscriptionItems(
 
 ```csharp
 string subscriptionId = "subscription_id";
-int? page = 184;
-int? size = 184;
+int? page = 73;
+int? size = 73;
 string name = "name";
 string code = "code";
 string status = "status";
@@ -1440,8 +1442,8 @@ Task<PCL.Models.ListDiscountsResponse> GetDiscounts(string subscriptionId, int p
 
 ```csharp
 string subscriptionId = "subscription_id";
-int page = 142;
-int size = 142;
+int page = 73;
+int size = 73;
 
 PCL.Models.ListDiscountsResponse result = await subscriptions.GetDiscounts(subscriptionId, page, size);
 
@@ -1864,8 +1866,8 @@ Task<PCL.Models.OrdersResponse> GetOrders(
 #### Example Usage
 
 ```csharp
-int? page = 142;
-int? size = 142;
+int? page = 73;
+int? size = 73;
 string code = "code";
 string status = "status";
 DateTime? createdSince = DateTime.Now();
@@ -2303,8 +2305,8 @@ Task<PCL.Models.PlansResponse> GetPlans(
 #### Example Usage
 
 ```csharp
-int? page = 142;
-int? size = 142;
+int? page = 31;
+int? size = 31;
 string name = "name";
 string status = "status";
 string billingType = "billing_type";
@@ -2818,8 +2820,8 @@ Task<PCL.Models.InvoicesResponse2> GetInvoices(
 #### Example Usage
 
 ```csharp
-int? page = 142;
-int? size = 142;
+int? page = 31;
+int? size = 31;
 string code = "code";
 string customerId = "customer_id";
 string subscriptionId = "subscription_id";
@@ -2921,8 +2923,8 @@ Task<PCL.Models.CustomersAccessTokensResponse1> GetAccessTokens(string customerI
 
 ```csharp
 string customerId = "customer_id";
-int? page = 142;
-int? size = 142;
+int? page = 31;
+int? size = 31;
 
 PCL.Models.CustomersAccessTokensResponse1 result = await customers.GetAccessTokens(customerId, page, size);
 
@@ -3077,8 +3079,8 @@ Task<PCL.Models.CustomersAddressesResponse> GetAddresses(string customerId, int?
 
 ```csharp
 string customerId = "customer_id";
-int? page = 142;
-int? size = 142;
+int? page = 31;
+int? size = 31;
 
 PCL.Models.CustomersAddressesResponse result = await customers.GetAddresses(customerId, page, size);
 
@@ -3407,8 +3409,8 @@ Task<PCL.Models.CustomersCardsResponse1> GetCards(string customerId, int? page =
 
 ```csharp
 string customerId = "customer_id";
-int? page = 142;
-int? size = 142;
+int? page = 31;
+int? size = 31;
 
 PCL.Models.CustomersCardsResponse1 result = await customers.GetCards(customerId, page, size);
 
@@ -3935,8 +3937,8 @@ Task<PCL.Models.ChargesResponse2> GetCharges(
 #### Example Usage
 
 ```csharp
-int? page = 233;
-int? size = 233;
+int? page = 122;
+int? size = 122;
 string code = "code";
 string status = "status";
 string paymentMethod = "payment_method";
@@ -4225,8 +4227,8 @@ Task<PCL.Models.ChargesTransactionsResponse> GetChargeTransactions(string charge
 
 ```csharp
 string chargeId = "charge_id";
-int? page = 233;
-int? size = 233;
+int? page = 122;
+int? size = 122;
 
 PCL.Models.ChargesTransactionsResponse result = await charges.GetChargeTransactions(chargeId, page, size);
 
@@ -4438,8 +4440,8 @@ Task<PCL.Models.RecipientsResponse> GetRecipients(int? page = null, int? size = 
 #### Example Usage
 
 ```csharp
-int? page = 233;
-int? size = 233;
+int? page = 122;
+int? size = 122;
 
 PCL.Models.RecipientsResponse result = await recipients.GetRecipients(page, size);
 
@@ -4570,8 +4572,8 @@ Task<PCL.Models.RecipientsAnticipationsResponse1> GetAnticipations(
 
 ```csharp
 string recipientId = "recipient_id";
-int? page = 233;
-int? size = 233;
+int? page = 122;
+int? size = 122;
 string status = "status";
 string timeframe = "timeframe";
 DateTime? paymentDateSince = DateTime.Now();
@@ -4825,8 +4827,8 @@ Task<PCL.Models.RecipientsTransfersResponse1> GetTransfers(
 
 ```csharp
 string recipientId = "recipient_id";
-int? page = 233;
-int? size = 233;
+int? page = 122;
+int? size = 122;
 string status = "status";
 DateTime? createdSince = DateTime.Now();
 DateTime? createdUntil = DateTime.Now();
@@ -4999,8 +5001,8 @@ Task<PCL.Models.ListWithdrawals> GetWithdrawals(
 
 ```csharp
 string recipientId = "recipient_id";
-int? page = 233;
-int? size = 233;
+int? page = 122;
+int? size = 122;
 string status = "status";
 DateTime? createdSince = DateTime.Now();
 DateTime? createdUntil = DateTime.Now();
